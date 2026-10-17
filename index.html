@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYRAC | Your Best Digital Self</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="premium-preloader" class="preloader-overlay">
+        <div class="preloader-content">
+            
+           <div class="preloader-logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path class="draw-shape shape-light" d="M10,0 L90,0 L80,30 L10,30 Z" />
+                    <path class="draw-shape shape-accent" d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" />
+                    <path class="draw-shape shape-light" d="M20,65 L90,65 L90,95 L10,95 Z" />
+                </svg>
+            </div>
+
+            <div class="preloader-brand">
+                <span class="char" style="--char-index: 1;">Z</span>
+                <span class="char" style="--char-index: 2;">Y</span>
+                <span class="char" style="--char-index: 3;">R</span>
+                <span class="char" style="--char-index: 4;">A</span>
+                <span class="char" style="--char-index: 5;">C</span>
+            </div>
+            
+            <div class="micro-loader">
+                <div class="micro-progress"></div>
+            </div>
+
+        </div>
+    </div>
+
+   <div class="dynamic-background"></div>
+
+   <nav class="navbar glass">
+        <a href="#home" class="logo-link" aria-label="Go to homepage">
+            <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#1a1a1a"/>
+                <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
+                <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#1a1a1a"/>
+            </svg>
+            
+            <span class="logo-divider">|</span>
+            
+            <span class="logo-text">ZYR<span class="accent">A</span>C</span>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#contact" class="btn-glass">Contact</a></li>
+        </ul>
+    </nav>
+
+   <section id="home" class="hero-editorial">
+        <div class="hero-grid">
+            
+            <div class="hero-copy fade-in">
+                <canvas id="hero-canvas" class="interactive-canvas"></canvas>
+                
+                <div class="hero-text-content">
+                    <div class="status-badge">
+                        <span class="dot-indicator"></span> Architecture Ready
+                    </div>
+                    
+                    <h1 class="hero-headline">
+                        Build your best<br>
+                        <span class="caligraph-text accent">Digital Self.</span>
+                    </h1>
+                    
+                    <p class="hero-lead">
+We build lightning fast, custom web platforms that put you in total control. No relying on third-party software or middlemen just a premium digital space that connects you directly to your customers and elevates your brand.                    </p>
+                    
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn-solid">Start Building</a>
+                        <a href="#portfolio" class="btn-text-link">View Vault</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-composition fade-in delay-1" id="parallax-zone">
+                
+                <div class="glass-frame dashboard-frame parallax-layer" data-speed="2">
+                    
+                    <div class="dash-header">
+                        <div class="mac-dots"><span></span><span></span><span></span></div>
+                        <span class="dash-title">Production Server Telemetry</span>
+                    </div>
+                    
+                    <div class="dash-content">
+                        <div class="dash-top-row">
+                            <div class="dash-stat">
+                                <span class="stat-title">Active Deployments</span>
+                                <span class="stat-value" id="counter-deployments">0</span>
+                            </div>
+                            <div class="dash-stat">
+                                <span class="stat-title">Requests / Sec</span>
+                                <span class="stat-value" id="counter-requests">0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="dash-graph-wrapper">
+                            <svg viewBox="0 0 100 40" class="real-graph" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="graphGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="var(--primary-orange)" stop-opacity="0.35"/>
+                                        <stop offset="100%" stop-color="var(--primary-orange)" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <polygon id="live-graph-fill" points="" fill="url(#graphGrad)"></polygon>
+                                <polyline id="live-graph-line" points="" fill="none" stroke="var(--primary-orange)" stroke-width="1.2" stroke-linejoin="miter" stroke-linecap="butt"></polyline>
+                                <circle id="live-graph-dot" cx="100" cy="40" r="1.5" fill="#fff" stroke="var(--primary-orange)" stroke-width="0.5"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="glass-frame floating-notification parallax-layer" data-speed="5">
+                    <div class="notif-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="notif-text">
+                        <span class="notif-title">Enterprise Contract Initiated</span>
+                        <span class="notif-time">Just now</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+  
+   <!-- ==========================================================================
+         SECTION: THE METHODOLOGY (PROCESS)
+         ========================================================================== -->
+    <section id="process" class="storyboard-section">
+        <div class="storyboard-container">
+            
+            <div class="storyboard-header fade-in">
+                <span class="director-badge">Our Process</span>
+                <h2 class="storyboard-title">The <span class="caligraph-text accent">Methodology.</span></h2>
+                <p class="storyboard-lead">A clear, uncompromising approach to building your digital platform. No guesswork, no confusing jargon—just a proven system for success.</p>
+            </div>
+
+            <div class="storyboard-grid">
+                
+                <!-- Phase 01 -->
+                <div class="storyboard-panel panel-left fade-in">
+                    <div class="cinematic-bars"></div>
+                    <div class="panel-meta">
+                        <span class="scene-num">PHASE 01</span>
+                        <!-- Blueprint/Planning Icon -->
+                        <span class="camera-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </span>
+                    </div>
+                    <div class="panel-content">
+                        <h3 class="panel-heading">The Blueprint</h3>
+                        <div class="action-text">
+                            <span class="action-label">STRATEGY:</span>
+                            <p>Before we write a single line of code, we take the time to understand your exact business goals. We map out the perfect user journey to ensure your new website or app will actually convert visitors into paying clients.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 02 -->
+                <div class="storyboard-panel panel-right fade-in delay-1">
+                    <div class="cinematic-bars"></div>
+                    <div class="panel-meta">
+                        <span class="scene-num">PHASE 02</span>
+                        <!-- Engineering/Building Icon -->
+                        <span class="camera-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </span>
+                    </div>
+                    <div class="panel-content">
+                        <h3 class="panel-heading">Custom Engineering</h3>
+                        <div class="action-text">
+                            <span class="action-label">DEVELOPMENT:</span>
+                            <p>We build your platform completely from scratch. Instead of relying on slow, pre-made templates, we hand-code everything so your software is lightning-fast, highly secure, and tailored perfectly to your brand.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 03 -->
+                <div class="storyboard-panel panel-left fade-in delay-2">
+                    <div class="cinematic-bars"></div>
+                    <div class="panel-meta">
+                        <span class="scene-num">PHASE 03</span>
+                        <!-- Launch/Rocket Icon -->
+                        <span class="camera-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                        </span>
+                    </div>
+                    <div class="panel-content">
+                        <h3 class="panel-heading">Launch & Scale</h3>
+                        <div class="action-text">
+                            <span class="action-label">DEPLOYMENT:</span>
+                            <p>After rigorous testing to ensure perfection, we take your project live. You are handed a flawless, premium digital platform that is ready to handle heavy traffic, impress your audience, and scale as your company grows.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: GLOBAL CLIENT STORIES (SPOTLIGHT GLASS EDITION)
+         ========================================================================== -->
+    <section id="reviews" class="global-reviews-section">
+        
+        <div class="global-container">
+            
+            <div class="section-header fade-in">
+                <span class="premium-badge">Client Stories</span>
+                <h2 class="section-title">Trusted by <span class="caligraph-text accent">Founders.</span></h2>
+                <p class="section-subtitle">We partner with global teams to build software, web apps, and digital platforms that are fast, beautiful, and easy to scale.</p>
+            </div>
+
+            <div class="global-reviews-grid" id="spotlight-grid">
+                
+                <!-- Review Card 1 -->
+                <div class="spotlight-card fade-in delay-1">
+                    <div class="spotlight-glow"></div>
+                    <div class="card-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+                        <p class="review-text">"They rebuilt our backend from scratch. Our web app is now incredibly fast and never crashes, even during our busiest months. Truly reliable engineering."</p>
+                        
+                        <div class="client-profile">
+                            <div class="profile-avatar">SJ</div>
+                            <div class="profile-info">
+                                <h4>Sarah Jenkins</h4>
+                                <span>CTO, ScaleTech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="spotlight-card fade-in delay-2">
+                    <div class="spotlight-glow"></div>
+                    <div class="card-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+                        <p class="review-text">"We needed a custom platform to connect directly with our users. ZYRAC delivered a beautiful, easy-to-use system that our customers absolutely love."</p>
+                        
+                        <div class="client-profile">
+                            <div class="profile-avatar">ER</div>
+                            <div class="profile-info">
+                                <h4>Elena Rostova</h4>
+                                <span>Founder, Aura Direct</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="spotlight-card fade-in delay-3">
+                    <div class="spotlight-glow"></div>
+                    <div class="card-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+                        <p class="review-text">"The team is highly professional, moves fast, and understands exactly what a modern business needs. The cross-platform integration they built works perfectly."</p>
+                        
+                        <div class="client-profile">
+                            <div class="profile-avatar">DK</div>
+                            <div class="profile-info">
+                                <h4>David Kim</h4>
+                                <span>Product Lead, FinSync</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 4 -->
+                <div class="spotlight-card fade-in delay-1">
+                    <div class="spotlight-glow"></div>
+                    <div class="card-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+                        <p class="review-text">"Our old website was slow and hard to manage. The new architecture is smooth, modern, and gave us complete control over our content and brand."</p>
+                        
+                        <div class="client-profile">
+                            <div class="profile-avatar">JO</div>
+                            <div class="profile-info">
+                                <h4>James O'Connor</h4>
+                                <span>VP of Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 5 -->
+                <div class="spotlight-card fade-in delay-2">
+                    <div class="spotlight-glow"></div>
+                    <div class="card-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+                        <p class="review-text">"They don't just write code; they act as true technical partners. If you need complex custom software or enterprise tools, this is the team to hire."</p>
+                        
+                        <div class="client-profile">
+                            <div class="profile-avatar">MT</div>
+                            <div class="profile-info">
+                                <h4>Marcus Thorne</h4>
+                                <span>VP Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 6 -->
+                <div class="spotlight-card fade-in delay-3">
+                    <div class="spotlight-glow"></div>
+                    <div class="card-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+                        <p class="review-text">"The design is stunning, and the performance is flawless. They removed all the clutter and elevated our brand to a completely new, global standard."</p>
+                        
+                        <div class="client-profile">
+                            <div class="profile-avatar">AM</div>
+                            <div class="profile-info">
+                                <h4>Aisha Malik</h4>
+                                <span>CEO, Elevate Platforms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+ 
+<!-- ==========================================================================
+         SECTION: TARGET AUDIENCE (WHO WE HELP)
+         ========================================================================== -->
+<!-- ==========================================================================
+         SECTION: TARGET AUDIENCE (WHO WE HELP)
+         ========================================================================== -->
+    <section id="audience" class="audience-section">
+        <div class="audience-container">
+            
+            <div class="section-header fade-in">
+                <span class="section-badge">The Right Fit</span>
+                <h2 class="section-title">Who We <span class="caligraph-text accent">Help.</span></h2>
+                <p class="section-subtitle">We partner with businesses ready to upgrade their digital presence and scale.</p>
+            </div>
+
+            <div class="premium-bento-grid">
+                
+                <!-- Large Bento Box: Focus on Direct Sales & Established Brands -->
+                <div class="premium-bento-box bento-large fade-in">
+                    <div class="bento-glow-mesh"></div>
+                    
+                    <div class="bento-content-wrapper">
+                        
+                        <div class="bento-text-content">
+                            <div class="bento-icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3 class="bento-title">Direct to Your <br><span class="accent">Customers.</span></h3>
+                            <p class="bento-text">
+                                We build premium platforms that connect you straight to your buyers. Whether you sell services or software, we make it easy for customers to say <strong>yes</strong>.
+                            </p>
+                            <div class="highlight-panel">
+                                <p class="bento-text">
+                                    <strong>No middlemen. No confusing journeys.</strong> Just a custom platform built to drive sales and deliver value.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Visualizer Graphic -->
+                        <div class="bento-visualizer">
+                            <div class="data-radar">
+                                <div class="radar-ring r1"></div>
+                                <div class="radar-ring r2"></div>
+                                <div class="radar-ring r3"></div>
+                                <div class="core-node">CONNECT</div>
+                                <div class="particle p1"></div>
+                                <div class="particle p2"></div>
+                                <div class="particle p3"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Medium Bento Box: Focus on Startups & Growing Companies -->
+                <div class="premium-bento-box bento-medium fade-in delay-1">
+                    <div class="bento-bg-pattern"></div>
+                    <div class="bento-content-vertical">
+                        <div class="bento-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="bento-title">Growing <br>Companies.</h3>
+                        <p class="bento-text">
+                            Outgrown basic templates? We help startups scale with custom, high-performance websites that instantly build trust and outshine competitors.
+                        </p>
+                        <div class="tech-metrics">
+                            <span class="metric-pill">Fast Loading</span>
+                            <span class="metric-pill">Custom UI/UX</span>
+                            <span class="metric-pill">Scalable</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="vault-section">
+    <div class="vault-container">
+        
+        <div class="vault-header fade-in">
+            <span class="vault-badge">Case Studies</span>
+            <h2 class="vault-title">Selected <span class="caligraph-text accent">Work.</span></h2>
+            <p class="vault-subtitle">Custom websites, web apps, and software built from scratch to help businesses scale, stand out, and dominate their market.</p>
+        </div>
+
+        <div class="vault-scroll-wrapper fade-in delay-1">
+            <div class="vault-track">
+                
+                <!-- Project 1: Dashboard/SaaS -->
+                <div class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-grid">
+                        <div class="ui-wireframe-dashboard">
+                            <div class="ui-header"></div>
+                            <div class="ui-sidebar"></div>
+                            <div class="ui-chart"></div>
+                        </div>
+                        <span class="tech-tag">Custom Platform</span>
+                    </div>
+                    <div class="vault-card-content">
+                        <span class="project-type">Enterprise SaaS</span>
+                        <h3 class="project-title">Vanguard Dashboard</h3>
+                        <p class="project-desc">A secure, custom-built web platform designed to organize and process complex business data smoothly, saving the client hundreds of hours a month.</p>
+                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Project 2: WebApp / Portal -->
+                <div class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-dots">
+                        <div class="ui-wireframe-portal">
+                            <div class="ui-card"></div>
+                            <div class="ui-card"></div>
+                            <div class="ui-card"></div>
+                        </div>
+                        <span class="tech-tag">Web App</span>
+                    </div>
+                    <div class="vault-card-content">
+                        <span class="project-type">Direct Sales Portal</span>
+                        <h3 class="project-title">Growth Connect</h3>
+                        <p class="project-desc">A high-converting portal that allows a premium education brand to sell directly to parents, completely bypassing third-party fees and restrictions.</p>
+                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Premium Website -->
+                <div class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-lines">
+                        <div class="ui-wireframe-hero">
+                            <div class="ui-text-block"></div>
+                            <div class="ui-button"></div>
+                        </div>
+                        <span class="tech-tag">Premium Website</span>
+                    </div>
+                    <div class="vault-card-content">
+                        <span class="project-type">Corporate Site</span>
+                        <h3 class="project-title">Aura Consulting</h3>
+                        <p class="project-desc">A stunning, fast-loading website built without templates. Designed to instantly build trust and authority for a top-tier consulting firm.</p>
+                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Mobile App -->
+                <div class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-waves">
+                        <div class="ui-wireframe-mobile">
+                            <div class="ui-mobile-screen"></div>
+                        </div>
+                        <span class="tech-tag">Mobile App</span>
+                    </div>
+                    <div class="vault-card-content">
+                        <span class="project-type">Client Application</span>
+                        <h3 class="project-title">Nexus Engagement</h3>
+                        <p class="project-desc">A seamless, easy-to-use mobile app designed to keep corporate clients connected, updated, and engaged with the brand every single day.</p>
+                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Backend / Systems -->
+                <div class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-circuit">
+                        <div class="ui-wireframe-server">
+                            <div class="ui-rack"></div>
+                            <div class="ui-rack"></div>
+                            <div class="ui-rack active"></div>
+                        </div>
+                        <span class="tech-tag">Custom Software</span>
+                    </div>
+                    <div class="vault-card-content">
+                        <span class="project-type">Backend Infrastructure</span>
+                        <h3 class="project-title">Traffic Engine</h3>
+                        <p class="project-desc">Powerful, custom backend software built to keep the client's platforms fast, secure, and crash-free even during massive spikes in traffic.</p>
+                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="scroll-instruction">
+            <span class="swipe-icon">←</span> Swipe to view projects <span class="swipe-icon">→</span>
+        </div>
+
+    </div>
+</section>
+<!-- ==========================================================================
+         SECTION: CORE INFRASTRUCTURE (TECH STACK)
+         ========================================================================== -->
+    <section id="tech-stack" class="infrastructure-section">
+        
+        <!-- The Header & Details -->
+        <div class="infrastructure-container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Infrastructure</span>
+                <h2 class="section-title">Core <span class="caligraph-text accent">Architecture.</span></h2>
+                <p class="section-subtitle">We do not rely on fragile templates or bloated site builders. We engineer raw, scalable, and secure backend systems using enterprise-grade technologies to guarantee uncompromising performance.</p>
+            </div>
+        </div>
+
+        <!-- The Smooth Scrolling Marquee -->
+        <div class="marquee-wrapper fade-in delay-1">
+            
+            <!-- Row 1: Backend & DevOps -->
+            <div class="marquee-track scroll-left">
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django">
+                    <span>Django</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux">
+                    <span>Linux</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash">
+                    <span>Bash</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker">
+                    <span>Docker</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis">
+                    <span>Redis</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                    <span>C++</span>
+                </div>
+                
+                <!-- Duplicate Row 1 for seamless infinite loop -->
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django">
+                    <span>Django</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux">
+                    <span>Linux</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash">
+                    <span>Bash</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker">
+                    <span>Docker</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis">
+                    <span>Redis</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                    <span>C++</span>
+                </div>
+            </div>
+
+            <!-- Row 2: Frontend & Core -->
+            <div class="marquee-track scroll-right">
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx">
+                    <span>Nginx</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+                    <span>Git</span>
+                </div>
+
+                <!-- Duplicate Row 2 for seamless infinite loop -->
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx">
+                    <span>Nginx</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+                    <span>Git</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <!-- ==========================================================================
+     SECTION: MEET THE FOUNDER (REAL, SIMPLE & CLIENT-FOCUSED)
+     ========================================================================== -->
+<section id="founder" class="architect-section">
+    <div class="architect-container">
+        
+        <div class="section-header fade-in">
+            <span class="section-badge">Who You'll Work With</span>
+            <h2 class="section-title">Meet the <span class="caligraph-text accent">Founder.</span></h2>
+            <p class="section-subtitle">No middlemen or account managers. When you hire us, you work directly with me.</p>
+        </div>
+
+        <div class="id-card-wrapper fade-in delay-1">
+            <div class="id-card-glass">
+                <div class="glass-shine"></div>
+                
+                <!-- Left: Clean Portrait (Local Folder Path) -->
+                <div class="id-visuals">
+                    <div class="id-avatar-frame">
+                        <!-- Put your photo path here -->
+                        <img src="assets/images/faiz-mansuri.jpg" alt="Faiz Mansuri - Founder of ZYRAC" class="architect-photo" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Right: Honest, Hand-Written Note -->
+                <div class="id-content">
+                    <div class="id-header">
+                        <span class="status-indicator">
+                            <span class="dot live"></span> Available for New Projects
+                        </span>
+                        <span class="clearance-badge">Founder</span>
+                    </div>
+                    
+                    <h3 class="architect-name">Faiz Mansuri</h3>
+                    <span class="architect-title">Founder of ZYRAC</span>
+                    
+                    <div class="manifesto-block">
+                        <p>
+                            "Most agencies charge a fortune just to hand you a slow, recycled template—and once they get paid, they disappear. I started ZYRAC to do the exact opposite.
+                        </p>
+                        <p>
+                            I build every website and app from scratch with one clear goal: <strong>helping you bring in more clients and grow your revenue.</strong> You don't have to worry about the tech or confusing setups. You tell me where you want to take your business, and I'll build the exact system to get you there."
+                        </p>
+                    </div>
+
+                    <!-- Client-Focused Benefits -->
+                    <div class="smart-tags">
+                        <span class="smart-pill">Built to Get Clients</span>
+                        <span class="smart-pill">1-on-1 Communication</span>
+                        <span class="smart-pill">Long-Term Support</span>
+                    </div>
+                    
+                    <div class="id-footer">
+                        <div class="sig-wrap">
+                            <span class="signature caligraph-text">Zyrac</span>
+                        </div>
+                        <a href="#contact" class="founder-cta">Let's Talk About Your Project →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="manifesto" class="comic-manifesto">
+        <div class="manifesto-wrapper">
+            
+            <div class="manifesto-header fade-in">
+                <span class="comic-badge">THE WHY</span>
+                <h2 class="comic-title">THE <span class="glitch-text accent" data-text="ZYRAC">ZYRAC</span> STANDARD.</h2>
+            </div>
+
+            <div class="comic-grid">
+                
+                <div class="comic-cell glass-panel halftone-bg fade-in">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <line x1="22" y1="12" x2="18" y2="12"></line>
+                            <line x1="6" y1="12" x2="2" y2="12"></line>
+                            <line x1="12" y1="6" x2="12" y2="2"></line>
+                            <line x1="12" y1="22" x2="12" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="cell-content">
+                        <div class="brutalist-box">
+                            <h3>01. CLARITY OVER CLUTTER</h3>
+                        </div>
+                        <p>Every pixel must serve a purpose. We engineer architectures that bypass the noise and connect your brand directly with decision-makers with visceral clarity.</p>
+                    </div>
+                </div>
+
+                <div class="comic-cell glass-panel halftone-bg fade-in delay-1">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                            <polyline points="13 2 13 9 22 9 11 22 11 15 2 15 13 2"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cell-content">
+                        <div class="brutalist-box">
+                            <h3>02. PARAMOUNT SPEED</h3>
+                        </div>
+                        <p>Speed isn’t just a metric; it's an experience. Utilizing robust backend engineering, we build systems designed to scale aggressively and perform flawlessly.</p>
+                    </div>
+                </div>
+
+                <div class="comic-cell glass-panel halftone-bg fade-in delay-2">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="cell-content">
+                        <div class="brutalist-box">
+                            <h3>03. VISCERAL DESIGN</h3>
+                        </div>
+                        <p>We don’t just build functional platforms; we create striking digital experiences. Our visual language commands attention and premium market authority.</p>
+                    </div>
+                </div>
+
+                <div class="comic-cell glass-panel halftone-bg fade-in delay-3">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <div class="cell-content">
+                        <div class="brutalist-box">
+                            <h3>04. RESILIENT SYSTEMS</h3>
+                        </div>
+                        <p>We build highly secure, tailored solutions. Whether standard direct outreach or offline peer-to-peer (P2P) systems, technical resilience is uncompromising.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+ <!-- ==========================================================================
+         SECTION: CONTACT (MARKETING & CONVERSION FOCUSED)
+         ========================================================================== -->
+    <section id="contact" class="cta-section">
+        
+        <div class="ink-swoosh">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" 
+                      d="M0,160 C320,300 420,0 720,160 C1020,320 1120,50 1440,200" 
+                      opacity="0.3"></path>
+            </svg>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-grid">
+                
+                <!-- Left Column: The Pitch (Simple, Funny, Marketing-Driven) -->
+                <div class="contact-info fade-in">
+                    <span class="cta-badge">Let's Talk</span>
+                    
+                    <h2 class="cta-title">
+                        Ready to build something <br>
+                        <span class="caligraph-text">incredible?</span>
+                    </h2>
+                    
+                    <!-- The Marketing Hook + Funny Quote -->
+                    <p class="cta-subtitle">Let’s build a website so good it makes your competitors rethink their life choices. Drop us a message below and let's turn your vision into a reality.</p>
+                    
+                    <!-- Easy to understand Trust Markers -->
+                    <div class="contact-trust-markers">
+                        <div class="marker">
+                            <div class="marker-dot"></div>
+                            <span>Built to Convert Visitors into Clients</span>
+                        </div>
+                        <div class="marker">
+                            <div class="marker-dot"></div>
+                            <span>Custom Designs, Zero Boring Templates</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: The Contact Card -->
+                <div class="contact-card-wrapper fade-in delay-1">
+                    <div class="glass-contact-card">
+                        
+                        <div class="card-glow-bg"></div>
+                        
+                        <div class="form-header">
+                            <h3>Start the Conversation</h3>
+                            <p>Your message goes directly to our founder's inbox.</p>
+                        </div>
+
+                       <!-- Web3Forms Routing -->
+                        <form action="https://api.web3forms.com/submit" method="POST" class="premium-form">
+                            
+                            <!-- YOUR WEB3FORMS API KEY GOES HERE -->
+                            <input type="hidden" name="access_key" value="0edbf567-d480-4cc1-8b59-837b376c799c">
+                            
+                            <!-- Form Settings & Security -->
+                            <input type="hidden" name="subject" value="New ZYRAC Project Inquiry!">
+                            <input type="hidden" name="from_name" value="ZYRAC Website">
+                            <input type="checkbox" name="botcheck" id="" style="display: none;">
+                            
+                            <!-- Plain English Input Fields -->
+                            <div class="input-grid">
+                                <div class="input-box">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                                </div>
+                                
+                                <div class="input-box">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@company.com">
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <label for="message">Tell us about your project</label>
+                                <textarea id="message" name="message" required placeholder="What are we building? (Don't worry, no technical jargon required...)"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-solid-glow">
+                                <span>Send Message</span>
+                            </button>
+                            
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="site-footer glass-footer">
+        
+        <div class="footer-top-glow"></div>
+        
+        <div class="footer-container">
+            <div class="footer-grid">
+                
+                <div class="footer-brand fade-in">
+                    <a href="#home" class="footer-logo">
+                        <h3>ZYR<span class="accent">A</span>C</h3>
+                    </a>
+                    <p class="footer-tagline">
+                        Engineering premium digital spaces. <br> 
+                        <span class="caligraph-text small">Clarity, performance, and striking design.</span>
+                    </p>
+                </div>
+
+                <div class="footer-nav fade-in delay-1">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul>
+                        <li><a href="#home">The Vision</a></li>
+                        <li><a href="#tech">Architecture</a></li>
+                        <li><a href="#manifesto">Our Standard</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav fade-in delay-2">
+                    <h4 class="footer-heading">Headquarters</h4>
+                    <div class="location-block">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="location-icon">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <p>Ahmedabad, Gujarat<br>India</p>
+                    </div>
+                </div>
+
+                <div class="footer-socials fade-in delay-3">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="social-icons">
+                        
+                        <a href="https://www.linkedin.com/in/faiz-mansuri9773423956" aria-label="LinkedIn" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        
+                        <a href="https://www.instagram.com/zyrac__" aria-label="Instagram" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        
+                        <a href="https://wa.me/919773423956?text=Hi%20Faiz,%20I'm%20interested%20in%20working%20with%20ZYRAC!" target="_blank" aria-label="WhatsApp" class="social-link glow-trail">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+</a>
+                        
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom fade-in delay-2">
+                <p>&copy; 2026 ZYRAC. All rights reserved.</p>
+                <div class="footer-legal">
+                    <span class="caligraph-text small">Your Best Digital Self.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
