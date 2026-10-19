@@ -56,88 +56,186 @@
         </ul>
     </nav>
 
-   <section id="home" class="hero-editorial">
-        <div class="hero-grid">
-            
-            <div class="hero-copy fade-in">
-                <canvas id="hero-canvas" class="interactive-canvas"></canvas>
-                
-                <div class="hero-text-content">
-                    <div class="status-badge">
-                        <span class="dot-indicator"></span> Architecture Ready
-                    </div>
-                    
-                    <h1 class="hero-headline">
-                        Build your best<br>
-                        <span class="caligraph-text accent">Digital Self.</span>
-                    </h1>
-                    
-                    <p class="hero-lead">
-We build lightning fast, custom web platforms that put you in total control. No relying on third-party software or middlemen just a premium digital space that connects you directly to your customers and elevates your brand.                    </p>
-                    
-                    <div class="hero-cta-group">
-                        <a href="#contact" class="btn-solid">Start Building</a>
-                        <a href="#portfolio" class="btn-text-link">View Vault</a>
-                    </div>
-                </div>
-            </div>
+<!-- ==========================================================================
+     SECTION 1: EMHANCE-STYLE HERO WITH 3D APPLE STUDIO SHOWCASE (NO SCARY FACE)
+     ========================================================================== -->
+<section id="home" class="emhance-hero">
+    
+    <!-- Smooth Multi-Stop Atmospheric Aura (Your Brand Orange + Warm Cream Palette) -->
+    <div class="emhance-aura-bg">
+        <canvas id="hero-canvas" class="interactive-canvas"></canvas>
+    </div>
 
-            <div class="hero-composition fade-in delay-1" id="parallax-zone">
-                
-                <div class="glass-frame dashboard-frame parallax-layer" data-speed="2">
-                    
-                    <div class="dash-header">
-                        <div class="mac-dots"><span></span><span></span><span></span></div>
-                        <span class="dash-title">Production Server Telemetry</span>
-                    </div>
-                    
-                    <div class="dash-content">
-                        <div class="dash-top-row">
-                            <div class="dash-stat">
-                                <span class="stat-title">Active Deployments</span>
-                                <span class="stat-value" id="counter-deployments">0</span>
-                            </div>
-                            <div class="dash-stat">
-                                <span class="stat-title">Requests / Sec</span>
-                                <span class="stat-value" id="counter-requests">0</span>
-                            </div>
-                        </div>
-                        
-                        <div class="dash-graph-wrapper">
-                            <svg viewBox="0 0 100 40" class="real-graph" preserveAspectRatio="none">
-                                <defs>
-                                    <linearGradient id="graphGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="var(--primary-orange)" stop-opacity="0.35"/>
-                                        <stop offset="100%" stop-color="var(--primary-orange)" stop-opacity="0"/>
-                                    </linearGradient>
-                                </defs>
-                                <polygon id="live-graph-fill" points="" fill="url(#graphGrad)"></polygon>
-                                <polyline id="live-graph-line" points="" fill="none" stroke="var(--primary-orange)" stroke-width="1.2" stroke-linejoin="miter" stroke-linecap="butt"></polyline>
-                                <circle id="live-graph-dot" cx="100" cy="40" r="1.5" fill="#fff" stroke="var(--primary-orange)" stroke-width="0.5"></circle>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="glass-frame floating-notification parallax-layer" data-speed="5">
-                    <div class="notif-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                    </div>
-                    <div class="notif-text">
-                        <span class="notif-title">Enterprise Contract Initiated</span>
-                        <span class="notif-time">Just now</span>
-                    </div>
-                </div>
-                
+    <div class="emhance-hero-container">
+        
+        <!-- TOP CENTER: Split-Pill Morphing Headline + Subtitle + Black Pill CTA -->
+        <div class="emhance-copy-stack fade-in">
+            <h1 class="emhance-title">
+                <span class="title-top-line">Custom Code for</span>
+                <span class="title-pill-row">
+                    <span class="morph-glass-pill" id="morph-pill-1">paisa vasool</span>
+                    <span class="morph-glass-pill accent-pill-text" id="morph-pill-2">conversions</span>
+                </span>
+            </h1>
+
+            <p class="emhance-subtitle">
+                Meet <strong>ZYRAC</strong> — the zero-"Jugaad" engineering studio for founders tired of slow templates and <em>"Sir 5 minute mein deploy ho raha hai"</em> excuses.
+            </p>
+
+            <div class="emhance-cta-row">
+                <a href="#contact" class="emhance-black-btn">
+                    <span>Start Your Build</span>
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>
 
-  
+        <!-- BOTTOM CENTER: 3D Apple Studio Device Showcase + 4 Floating Callout Pills -->
+        <div class="emhance-portrait-stage fade-in delay-1" id="parallax-zone">
+            
+            <!-- Bright Luminous Halo Behind the 3D Devices -->
+            <div class="portrait-halo-glow"></div>
+
+            <!-- CENTERPIECE: 3D Interactive MacBook Pro + Floating iPhone Mockup -->
+            <div class="studio-device-showcase" id="zyrac-stage-visual">
+                
+                <!-- Sleek Dark-Glass MacBook Pro Frame -->
+                <div class="macbook-pro-frame">
+                    <div class="macbook-screen">
+                        <!-- Top Camera Notch & macOS Bar -->
+                        <div class="macbook-top-bar">
+                            <div class="mac-dots"><span></span><span></span><span></span></div>
+                            <div class="macbook-notch"></div>
+                            <span class="mac-url-pill">
+                                <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                yourbrand.com • 0.38s
+                            </span>
+                        </div>
+
+                        <!-- Inside the Screen: Live High-Converting Flagship UI Preview -->
+                        <div class="screen-live-ui">
+                            
+                            <!-- Left Mini Showcase: Visual Product / SaaS Hero -->
+                            <div class="ui-preview-left">
+                                <span class="ui-mini-badge">100% ASLI CODE</span>
+                                <h3>Built to Make Clients Pay Instantly.</h3>
+                                <p>Zero WordPress bloat. Pure custom speed.</p>
+                                <div class="ui-mini-cta-row">
+                                    <span class="ui-fake-btn">Buy Now →</span>
+                                    <span class="ui-speed-tag">99.9% Uptime</span>
+                                </div>
+                            </div>
+
+                            <!-- Right Mini Showcase: Live Revenue & Speed Ring -->
+                            <div class="ui-preview-right">
+                                <div class="speed-gauge-card">
+                                    <div class="gauge-circle">
+                                        <svg viewBox="0 0 36 36" class="circular-chart">
+                                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                            <path class="circle-progress" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        </svg>
+                                        <span class="gauge-num">100</span>
+                                    </div>
+                                    <div class="gauge-copy">
+                                        <strong>Google Speed</strong>
+                                        <span>Maza Aa Gaya Tier</span>
+                                    </div>
+                                </div>
+
+                                <!-- Live Counters (Preserves your JS IDs!) -->
+                                <div class="mini-stats-grid">
+                                    <div class="mini-stat-box">
+                                        <span class="mini-label">Builds Shipped</span>
+                                        <strong class="mini-val" id="counter-deployments">214</strong>
+                                    </div>
+                                    <div class="mini-stat-box">
+                                        <span class="mini-label">Leads Driven</span>
+                                        <strong class="mini-val" id="counter-requests">8,420</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- MacBook Aluminum Base Lip -->
+                    <div class="macbook-base">
+                        <div class="macbook-groove"></div>
+                    </div>
+                </div>
+
+                <!-- Floating iPhone 16 Pro Overlay (Right Side of Laptop) -->
+                <div class="iphone-pro-floating parallax-layer" data-speed="2">
+                    <div class="iphone-dynamic-island"></div>
+                    <div class="iphone-screen-content">
+                        <div class="upi-success-badge">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="iphone-kicker">DIRECT SALE</span>
+                        <strong class="iphone-amount">₹48,500</strong>
+                        <span class="iphone-sub">0% Middleman Cut</span>
+                        <div class="iphone-pulse-bar"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 4 Floating Glass Callout Pills Around the 3D Showcase (Exact Video Positions) -->
+            
+            <!-- 1. Top-Right Pill -->
+            <div class="emhance-callout pill-top-right parallax-layer" data-speed="2.5">
+                <span class="callout-icon-circle">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </span>
+                <span class="callout-text">0.4s Speed (Zero Buffering)</span>
+            </div>
+
+            <!-- 2. Mid-Left Pill -->
+            <div class="emhance-callout pill-mid-left parallax-layer" data-speed="3.5">
+                <span class="callout-icon-circle">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </span>
+                <span class="callout-text">No "Sir Kal Ho Jayega"</span>
+            </div>
+
+            <!-- 3. Lower-Right Pill -->
+            <div class="emhance-callout pill-low-right parallax-layer" data-speed="3">
+                <span class="callout-icon-circle">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </span>
+                <span class="callout-text">No "Chacha Ka Ladka" Bugs</span>
+            </div>
+
+            <!-- 4. Bottom-Left Pill -->
+            <div class="emhance-callout pill-bottom-left parallax-layer" data-speed="4">
+                <span class="callout-icon-circle">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <polyline points="9 12 11 14 15 10"></polyline>
+                    </svg>
+                </span>
+                <span class="callout-text">No ₹500 Copied Themes</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
    <!-- ==========================================================================
          SECTION: THE METHODOLOGY (PROCESS)
          ========================================================================== -->
@@ -213,139 +311,202 @@ We build lightning fast, custom web platforms that put you in total control. No 
         </div>
     </section>
 
-    <!-- ==========================================================================
-         SECTION: GLOBAL CLIENT STORIES (SPOTLIGHT GLASS EDITION)
-         ========================================================================== -->
-    <section id="reviews" class="global-reviews-section">
+   <!-- ==========================================================================
+     SECTION: REAL INDIAN FOUNDER STORIES (SPOTLIGHT GLASS + ROI METRICS)
+     ========================================================================== -->
+<section id="reviews" class="global-reviews-section">
+    
+    <!-- Ambient Background Depth -->
+    <div class="reviews-ambient-glow glow-1"></div>
+    <div class="reviews-ambient-glow glow-2"></div>
+
+    <div class="global-container">
         
-        <div class="global-container">
+        <div class="section-header fade-in">
+            <span class="premium-badge">Asli Results • Zero Fake Hype</span>
+            <h2 class="section-title">Backed by <span class="caligraph-text accent">Founders.</span></h2>
+            <p class="section-subtitle">What happens when ambitious Indian brands ditch slow templates, 30% aggregator commissions, and "kal ho jayega" developers.</p>
             
-            <div class="section-header fade-in">
-                <span class="premium-badge">Client Stories</span>
-                <h2 class="section-title">Trusted by <span class="caligraph-text accent">Founders.</span></h2>
-                <p class="section-subtitle">We partner with global teams to build software, web apps, and digital platforms that are fast, beautiful, and easy to scale.</p>
-            </div>
-
-            <div class="global-reviews-grid" id="spotlight-grid">
-                
-                <!-- Review Card 1 -->
-                <div class="spotlight-card fade-in delay-1">
-                    <div class="spotlight-glow"></div>
-                    <div class="card-content">
-                        <div class="quote-icon">
-                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        </div>
-                        <p class="review-text">"They rebuilt our backend from scratch. Our web app is now incredibly fast and never crashes, even during our busiest months. Truly reliable engineering."</p>
-                        
-                        <div class="client-profile">
-                            <div class="profile-avatar">SJ</div>
-                            <div class="profile-info">
-                                <h4>Sarah Jenkins</h4>
-                                <span>CTO, ScaleTech</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Senior-Level Social Proof Summary Bar -->
+            <div class="reviews-trust-bar">
+                <div class="trust-stat-item">
+                    <strong>4.9/5</strong>
+                    <span>Founder Rating</span>
                 </div>
-
-                <!-- Review Card 2 -->
-                <div class="spotlight-card fade-in delay-2">
-                    <div class="spotlight-glow"></div>
-                    <div class="card-content">
-                        <div class="quote-icon">
-                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        </div>
-                        <p class="review-text">"We needed a custom platform to connect directly with our users. ZYRAC delivered a beautiful, easy-to-use system that our customers absolutely love."</p>
-                        
-                        <div class="client-profile">
-                            <div class="profile-avatar">ER</div>
-                            <div class="profile-info">
-                                <h4>Elena Rostova</h4>
-                                <span>Founder, Aura Direct</span>
-                            </div>
-                        </div>
-                    </div>
+                <span class="trust-dot"></span>
+                <div class="trust-stat-item">
+                    <strong>100%</strong>
+                    <span>On-Time Delivery</span>
                 </div>
-
-                <!-- Review Card 3 -->
-                <div class="spotlight-card fade-in delay-3">
-                    <div class="spotlight-glow"></div>
-                    <div class="card-content">
-                        <div class="quote-icon">
-                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        </div>
-                        <p class="review-text">"The team is highly professional, moves fast, and understands exactly what a modern business needs. The cross-platform integration they built works perfectly."</p>
-                        
-                        <div class="client-profile">
-                            <div class="profile-avatar">DK</div>
-                            <div class="profile-info">
-                                <h4>David Kim</h4>
-                                <span>Product Lead, FinSync</span>
-                            </div>
-                        </div>
-                    </div>
+                <span class="trust-dot"></span>
+                <div class="trust-stat-item">
+                    <strong>Zero</strong>
+                    <span>Recycled Templates</span>
                 </div>
-
-                <!-- Review Card 4 -->
-                <div class="spotlight-card fade-in delay-1">
-                    <div class="spotlight-glow"></div>
-                    <div class="card-content">
-                        <div class="quote-icon">
-                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        </div>
-                        <p class="review-text">"Our old website was slow and hard to manage. The new architecture is smooth, modern, and gave us complete control over our content and brand."</p>
-                        
-                        <div class="client-profile">
-                            <div class="profile-avatar">JO</div>
-                            <div class="profile-info">
-                                <h4>James O'Connor</h4>
-                                <span>VP of Marketing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Card 5 -->
-                <div class="spotlight-card fade-in delay-2">
-                    <div class="spotlight-glow"></div>
-                    <div class="card-content">
-                        <div class="quote-icon">
-                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        </div>
-                        <p class="review-text">"They don't just write code; they act as true technical partners. If you need complex custom software or enterprise tools, this is the team to hire."</p>
-                        
-                        <div class="client-profile">
-                            <div class="profile-avatar">MT</div>
-                            <div class="profile-info">
-                                <h4>Marcus Thorne</h4>
-                                <span>VP Engineering</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Card 6 -->
-                <div class="spotlight-card fade-in delay-3">
-                    <div class="spotlight-glow"></div>
-                    <div class="card-content">
-                        <div class="quote-icon">
-                            <svg viewBox="0 0 24 24" fill="var(--primary-orange)" opacity="0.2" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        </div>
-                        <p class="review-text">"The design is stunning, and the performance is flawless. They removed all the clutter and elevated our brand to a completely new, global standard."</p>
-                        
-                        <div class="client-profile">
-                            <div class="profile-avatar">AM</div>
-                            <div class="profile-info">
-                                <h4>Aisha Malik</h4>
-                                <span>CEO, Elevate Platforms</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
- 
+
+        <div class="global-reviews-grid" id="spotlight-grid">
+            
+            <!-- Review Card 1: D2C / Diwali Flash Sale Traffic -->
+            <div class="spotlight-card fade-in delay-1">
+                <div class="spotlight-glow"></div>
+                <div class="card-content">
+                    <div class="card-top-meta">
+                        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <span class="roi-pill">Zero Diwali Downtime</span>
+                    </div>
+                    
+                    <p class="review-text">
+                        "Our old agency charged ₹2L and disappeared the day our Diwali sale crashed. Faiz rebuilt our entire platform from scratch. We handled <span class="text-highlight">50,000+ live shoppers at once</span> without a single lag."
+                    </p>
+                    
+                    <div class="client-profile">
+                        <div class="profile-avatar">RM</div>
+                        <div class="profile-info">
+                            <div class="name-row">
+                                <h4>Rohan Mehta</h4>
+                                <span class="verified-check" title="Verified Client">✓</span>
+                            </div>
+                            <span>Founder • Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 2: Direct-to-Parent EdTech -->
+            <div class="spotlight-card featured-review fade-in delay-2">
+                <div class="spotlight-glow"></div>
+                <div class="card-content">
+                    <div class="card-top-meta">
+                        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <span class="roi-pill accent-pill">+3.2x Direct Admissions</span>
+                    </div>
+                    
+                    <p class="review-text">
+                        "We were tired of paying 30% commission to middlemen apps just to reach parents. ZYRAC built us a clean, direct-booking web app. Parents book slots in <span class="text-highlight">3 clicks via UPI</span>, and our revenue tripled."
+                    </p>
+                    
+                    <div class="client-profile">
+                        <div class="profile-avatar">AS</div>
+                        <div class="profile-info">
+                            <div class="name-row">
+                                <h4>Ananya Sharma</h4>
+                                <span class="verified-check" title="Verified Client">✓</span>
+                            </div>
+                            <span>CEO • Bengaluru</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 3: B2B Logistics / Tier-2 4G Speed -->
+            <div class="spotlight-card fade-in delay-3">
+                <div class="spotlight-glow"></div>
+                <div class="card-content">
+                    <div class="card-top-meta">
+                        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <span class="roi-pill">0.6s Load Speed</span>
+                    </div>
+                    
+                    <p class="review-text">
+                        "No excuses. They delivered our B2B portal 4 days before deadline. It loads in under a second even when our warehouse managers use it on <span class="text-highlight">patchy highway 4G</span>."
+                    </p>
+                    
+                    <div class="client-profile">
+                        <div class="profile-avatar">VP</div>
+                        <div class="profile-info">
+                            <div class="name-row">
+                                <h4>Vikramaditya Patel</h4>
+                                <span class="verified-check" title="Verified Client">✓</span>
+                            </div>
+                            <span>Director • Ahmedabad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 4: Custom CRM / SaaS Replacement -->
+            <div class="spotlight-card fade-in delay-1">
+                <div class="spotlight-glow"></div>
+                <div class="card-content">
+                    <div class="card-top-meta">
+                        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <span class="roi-pill">Saved ₹15L / Year</span>
+                    </div>
+                    
+                    <p class="review-text">
+                        "We were burning ₹1.2 Lakh every month on clunky foreign SaaS subscriptions. ZYRAC engineered our own custom internal CRM. Now <span class="text-highlight">we own 100% of the code</span> and pay zero per-seat fees."
+                    </p>
+                    
+                    <div class="client-profile">
+                        <div class="profile-avatar">KN</div>
+                        <div class="profile-info">
+                            <div class="name-row">
+                                <h4>Karthik Nair</h4>
+                                <span class="verified-check" title="Verified Client">✓</span>
+                            </div>
+                            <span>Co-Founder • Chennai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 5: Luxury / High-Ticket Consulting -->
+            <div class="spotlight-card fade-in delay-2">
+                <div class="spotlight-glow"></div>
+                <div class="card-content">
+                    <div class="card-top-meta">
+                        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <span class="roi-pill">2x High-Ticket Leads</span>
+                    </div>
+                    
+                    <p class="review-text">
+                        "Our old WordPress site looked like every other ₹10,000 template in the market. The custom platform ZYRAC built looks like a <span class="text-highlight">₹50 Crore Silicon Valley brand</span>. Corporate clients take us seriously on sight."
+                    </p>
+                    
+                    <div class="client-profile">
+                        <div class="profile-avatar">PK</div>
+                        <div class="profile-info">
+                            <div class="name-row">
+                                <h4>Priya Kapoor</h4>
+                                <span class="verified-check" title="Verified Client">✓</span>
+                            </div>
+                            <span>Managing Partner • Delhi NCR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 6: SaaS Dashboard & Direct Founder Access -->
+            <div class="spotlight-card fade-in delay-3">
+                <div class="spotlight-glow"></div>
+                <div class="card-content">
+                    <div class="card-top-meta">
+                        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <span class="roi-pill">Direct 1-on-1 Build</span>
+                    </div>
+                    
+                    <p class="review-text">
+                        "The best part? No clueless account managers playing Chinese whispers. You talk straight to Faiz, explain the business logic once, and get <span class="text-highlight">rock-solid production code</span> that just works."
+                    </p>
+                    
+                    <div class="client-profile">
+                        <div class="profile-avatar">AD</div>
+                        <div class="profile-info">
+                            <div class="name-row">
+                                <h4>Arjun Deshmukh</h4>
+                                <span class="verified-check" title="Verified Client">✓</span>
+                            </div>
+                            <span>CTO • Pune</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 <!-- ==========================================================================
          SECTION: TARGET AUDIENCE (WHO WE HELP)
          ========================================================================== -->
@@ -701,64 +862,148 @@ We build lightning fast, custom web platforms that put you in total control. No 
     </section>
 
     
-    <!-- ==========================================================================
-     SECTION: MEET THE FOUNDER (REAL, SIMPLE & CLIENT-FOCUSED)
+   <!-- ==========================================================================
+     SECTION: FOUNDER'S NOTE (ULTRA-PREMIUM PRO - CENTERED & DYNAMIC)
      ========================================================================== -->
-<section id="founder" class="architect-section">
-    <div class="architect-container">
+<section id="founder" class="founder-note-section">
+    
+    <!-- Atmospheric Visual Layer (Gradients, Rings, and Particle Mesh) -->
+    <div class="ambient-canvas">
+        <div class="glow-orb orb-primary"></div>
+        <div class="glow-orb orb-accent"></div>
+        <div class="scrolling-grid"></div>
+        <div class="hud-circle-ring ring-lg"></div>
+        <div class="hud-circle-ring ring-md"></div>
+    </div>
+
+    <div class="founder-container">
         
+        <!-- Premium Minimal Header -->
         <div class="section-header fade-in">
-            <span class="section-badge">Who You'll Work With</span>
-            <h2 class="section-title">Meet the <span class="caligraph-text accent">Founder.</span></h2>
-            <p class="section-subtitle">No middlemen or account managers. When you hire us, you work directly with me.</p>
+            <span class="section-badge">Leadership Letter</span>
+            <h2 class="section-title">A Message From <span class="caligraph-text accent">Faiz.</span></h2>
         </div>
 
-        <div class="id-card-wrapper fade-in delay-1">
-            <div class="id-card-glass">
+        <!-- The Cinematic Letter Module -->
+        <div class="letter-card-wrapper fade-in delay-1" id="proLetterWrapper">
+            <div class="letter-card-glass" id="proLetterCard">
                 <div class="glass-shine"></div>
+                <div class="subtle-grid-overlay"></div>
                 
-                <!-- Left: Clean Portrait (Local Folder Path) -->
-                <div class="id-visuals">
-                    <div class="id-avatar-frame">
-                        <!-- Put your photo path here -->
-                        <img src="assets/images/faiz-mansuri.jpg" alt="Faiz Mansuri - Founder of ZYRAC" class="architect-photo" loading="lazy">
+                <!-- HUD Boundary Target Lines -->
+                <div class="hud-bounds tl"></div>
+                <div class="hud-bounds tr"></div>
+                <div class="hud-bounds bl"></div>
+                <div class="hud-bounds br"></div>
+
+                <!-- Header Stats Bar -->
+                <div class="letter-top-bar">
+                    <div class="status-pill-wrap">
+                        <span class="pulse-indicator"></span>
+                        <span class="pill-label">Open for Collaboration</span>
+                    </div>
+
+                    <!-- Monogram Seal & Pulsing Aura -->
+                    <div class="founder-crest">
+                        <div class="crest-pulsar"></div>
+                        <div class="crest-boundary"></div>
+                        <span class="crest-text">FM</span>
+                    </div>
+
+                    <div class="role-pill-wrap">FOUNDER OF ZYRAC</div>
+                </div>
+
+                <!-- Humanized Centered Note -->
+                <div class="letter-body">
+                    <!-- Giant Aesthetic Watermark -->
+                    <div class="watermark-symbol">“</div>
+
+                    <p class="letter-greeting">Hey there,</p>
+
+                    <p class="letter-paragraph">
+                        Most agencies charge a fortune just to hand you a slow, recycled template and the moment they get paid, they disappear. I started <strong>ZYRAC</strong> to do the exact opposite.
+                    </p>
+
+                    <p class="letter-paragraph">
+                        Every website and software platform we build is crafted from scratch with one simple goal: <span class="highlight-text">helping your business bring in more clients and grow its revenue.</span> You don't need to stress over technical setups or middlemen. Tell me where you want to take your business, and I'll personally build the system to get you there.
+                    </p>
+                </div>
+
+                <!-- High-End Value Matrix (3 Interactive Cards) -->
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <div class="card-glow"></div>
+                        <div class="promise-icon-holder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="promise-content">
+                            <h4>Built to Convert</h4>
+                            <p>Tailored specifically to turn web traffic into paying clients.</p>
+                        </div>
+                    </div>
+
+                    <div class="promise-card animate-pulse-border">
+                        <div class="card-glow glow-orange"></div>
+                        <div class="promise-icon-holder accent">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="promise-content">
+                            <h4>Zero Templates</h4>
+                            <p>100% custom built, fast, and secure code from the ground up.</p>
+                        </div>
+                    </div>
+
+                    <div class="promise-card">
+                        <div class="card-glow"></div>
+                        <div class="promise-icon-holder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="promise-content">
+                            <h4>1-on-1 Partner</h4>
+                            <p>No account managers. Work directly with me from day one.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right: Honest, Hand-Written Note -->
-                <div class="id-content">
-                    <div class="id-header">
-                        <span class="status-indicator">
-                            <span class="dot live"></span> Available for New Projects
-                        </span>
-                        <span class="clearance-badge">Founder</span>
-                    </div>
-                    
-                    <h3 class="architect-name">Faiz Mansuri</h3>
-                    <span class="architect-title">Founder of ZYRAC</span>
-                    
-                    <div class="manifesto-block">
-                        <p>
-                            "Most agencies charge a fortune just to hand you a slow, recycled template—and once they get paid, they disappear. I started ZYRAC to do the exact opposite.
-                        </p>
-                        <p>
-                            I build every website and app from scratch with one clear goal: <strong>helping you bring in more clients and grow your revenue.</strong> You don't have to worry about the tech or confusing setups. You tell me where you want to take your business, and I'll build the exact system to get you there."
-                        </p>
+                <!-- Signature & Micro-Animations Area -->
+                <div class="letter-footer">
+                    <div class="signature-block">
+                        <span class="footer-small-caption">AUTHENTIC HANDWRITING</span>
+                        <span class="signature caligraph-text">Faiz Mansuri</span>
+                        <span class="founder-post">FOUNDER // CHIEF ENGINEER</span>
                     </div>
 
-                    <!-- Client-Focused Benefits -->
-                    <div class="smart-tags">
-                        <span class="smart-pill">Built to Get Clients</span>
-                        <span class="smart-pill">1-on-1 Communication</span>
-                        <span class="smart-pill">Long-Term Support</span>
-                    </div>
-                    
-                    <div class="id-footer">
-                        <div class="sig-wrap">
-                            <span class="signature caligraph-text">Zyrac</span>
+                    <!-- Micro Biometric Interaction Seal -->
+                    <div class="pro-digital-seal">
+                        <div class="seal-readout">
+                            <span class="readout-status">SYSTEM LOCKED</span>
+                            <span class="readout-action">Touch to verify ZYR-001</span>
                         </div>
-                        <a href="#contact" class="founder-cta">Let's Talk About Your Project →</a>
+                        <div class="biometric-finger-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+                                <path d="M2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2"></path>
+                                <path d="M5.5 9.5C6.5 7 9 5.5 12 5.5C15 5.5 17.5 7 18.5 9.5"></path>
+                                <path d="M7 14.5C8 12.5 10 11 12 11C14 11 16 12.5 17 14.5"></path>
+                                <path d="M9.5 18C10 16.5 11 15.5 12 15.5C13 15.5 14 16.5 14.5 18"></path>
+                            </svg>
+                            <span class="laser-scanner"></span>
+                        </div>
                     </div>
+
+                    <a href="#contact" class="pro-magnetic-btn">
+                        <span>Initiate Project Call</span>
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
                 </div>
 
             </div>
@@ -766,19 +1011,25 @@ We build lightning fast, custom web platforms that put you in total control. No 
 
     </div>
 </section>
+<!-- ==========================================================================
+     SECTION: THE ZYRAC STANDARD (WITTY, SARCASTIC & CLIENT-WINNING)
+     ========================================================================== -->
 <section id="manifesto" class="comic-manifesto">
-        <div class="manifesto-wrapper">
-            
-            <div class="manifesto-header fade-in">
-                <span class="comic-badge">THE WHY</span>
-                <h2 class="comic-title">THE <span class="glitch-text accent" data-text="ZYRAC">ZYRAC</span> STANDARD.</h2>
-            </div>
+    <div class="manifesto-wrapper">
+        
+        <div class="manifesto-header fade-in">
+            <span class="comic-badge">ZERO HYPE • SEEDHI BAAT</span>
+            <h2 class="comic-title">THE <span class="glitch-text accent" data-text="ZYRAC">ZYRAC</span> REALITY CHECK.</h2>
+            <p class="manifesto-sub">Why smart founders hire us after getting ghosted by their "cheap cousin's agency."</p>
+        </div>
 
-            <div class="comic-grid">
-                
-                <div class="comic-cell glass-panel halftone-bg fade-in">
+        <div class="comic-grid">
+            
+            <!-- Card 1 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in">
+                <div class="cell-top-row">
                     <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <circle cx="12" cy="12" r="4"></circle>
                             <line x1="22" y1="12" x2="18" y2="12"></line>
@@ -787,153 +1038,177 @@ We build lightning fast, custom web platforms that put you in total control. No 
                             <line x1="12" y1="22" x2="12" y2="18"></line>
                         </svg>
                     </div>
-                    <div class="cell-content">
-                        <div class="brutalist-box">
-                            <h3>01. CLARITY OVER CLUTTER</h3>
-                        </div>
-                        <p>Every pixel must serve a purpose. We engineer architectures that bypass the noise and connect your brand directly with decision-makers with visceral clarity.</p>
-                    </div>
+                    <span class="meme-stamp">Paisa Vasool UI</span>
                 </div>
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>01. NO "CHACHA KA LADKA" DESIGN</h3>
+                    </div>
+                    <p>Your neighbour's nephew can make a website for ₹2,000—and it will look like a 2000 page. We build clean, high-converting platforms that actually make rich clients take out their credit cards.</p>
+                </div>
+            </div>
 
-                <div class="comic-cell glass-panel halftone-bg fade-in delay-1">
+            <!-- Card 2 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in delay-1">
+                <div class="cell-top-row">
                     <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
                             <polyline points="13 2 13 9 22 9 11 22 11 15 2 15 13 2"></polyline>
                         </svg>
                     </div>
-                    <div class="cell-content">
-                        <div class="brutalist-box">
-                            <h3>02. PARAMOUNT SPEED</h3>
-                        </div>
-                        <p>Speed isn’t just a metric; it's an experience. Utilizing robust backend engineering, we build systems designed to scale aggressively and perform flawlessly.</p>
-                    </div>
+                    <span class="meme-stamp">0% Buffering</span>
                 </div>
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>02. FASTER THAN INSTANT NOODLES</h3>
+                    </div>
+                    <p>2-minute noodles take 10 minutes, and slow websites lose 90% of your customers. Our custom code loads in under a second—even when your buyer is sitting on patchy 4G inside an elevator.</p>
+                </div>
+            </div>
 
-                <div class="comic-cell glass-panel halftone-bg fade-in delay-2">
+            <!-- Card 3 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in delay-2">
+                <div class="cell-top-row">
                     <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                         </svg>
                     </div>
-                    <div class="cell-content">
-                        <div class="brutalist-box">
-                            <h3>03. VISCERAL DESIGN</h3>
-                        </div>
-                        <p>We don’t just build functional platforms; we create striking digital experiences. Our visual language commands attention and premium market authority.</p>
-                    </div>
+                    <span class="meme-stamp">Asli Custom Code</span>
                 </div>
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>03. CTRL+C &amp; CTRL+V IS BANNED</h3>
+                    </div>
+                    <p>Other agencies charge ₹1 Lakh just to install a $29 template that 500 other shops are already using. We write 100% original code from scratch. You own the code, the keys, and the flex.</p>
+                </div>
+            </div>
 
-                <div class="comic-cell glass-panel halftone-bg fade-in delay-3">
+            <!-- Card 4 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in delay-3">
+                <div class="cell-top-row">
                     <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                             <path d="M9 12l2 2 4-4"></path>
                         </svg>
                     </div>
-                    <div class="cell-content">
-                        <div class="brutalist-box">
-                            <h3>04. RESILIENT SYSTEMS</h3>
-                        </div>
-                        <p>We build highly secure, tailored solutions. Whether standard direct outreach or offline peer-to-peer (P2P) systems, technical resilience is uncompromising.</p>
-                    </div>
+                    <span class="meme-stamp">Zero Ghosting</span>
                 </div>
-
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>04. NO "SIR KAL PAKKA HO JAYEGA"</h3>
+                    </div>
+                    <p>No fake deadlines, no switched-off phones after advance payment, and no servers crashing on launch day. We build rock-solid systems and stay on your team long after launch.</p>
+                </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
  <!-- ==========================================================================
-         SECTION: CONTACT (MARKETING & CONVERSION FOCUSED)
-         ========================================================================== -->
-    <section id="contact" class="cta-section">
-        
-        <div class="ink-swoosh">
-            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" 
-                      d="M0,160 C320,300 420,0 720,160 C1020,320 1120,50 1440,200" 
-                      opacity="0.3"></path>
-            </svg>
-        </div>
-        
-        <div class="contact-container">
-            <div class="contact-grid">
+     SECTION: CONTACT & AUDIT REQUEST (ZYRAC)
+     ========================================================================== -->
+<section id="contact" class="cta-section">
+    
+    <div class="ink-swoosh">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" 
+                  d="M0,160 C320,300 420,0 720,160 C1020,320 1120,50 1440,200" 
+                  opacity="0.3"></path>
+        </svg>
+    </div>
+    
+    <div class="contact-container">
+        <div class="contact-grid">
+            
+            <!-- Left Column: The Pitch -->
+            <div class="contact-info fade-in">
+                <span class="cta-badge">Free Digital Audit</span>
                 
-                <!-- Left Column: The Pitch (Simple, Funny, Marketing-Driven) -->
-                <div class="contact-info fade-in">
-                    <span class="cta-badge">Let's Talk</span>
-                    
-                    <h2 class="cta-title">
-                        Ready to build something <br>
-                        <span class="caligraph-text">incredible?</span>
-                    </h2>
-                    
-                    <!-- The Marketing Hook + Funny Quote -->
-                    <p class="cta-subtitle">Let’s build a website so good it makes your competitors rethink their life choices. Drop us a message below and let's turn your vision into a reality.</p>
-                    
-                    <!-- Easy to understand Trust Markers -->
-                    <div class="contact-trust-markers">
-                        <div class="marker">
-                            <div class="marker-dot"></div>
-                            <span>Built to Convert Visitors into Clients</span>
-                        </div>
-                        <div class="marker">
-                            <div class="marker-dot"></div>
-                            <span>Custom Designs, Zero Boring Templates</span>
-                        </div>
+                <h2 class="cta-title">
+                    Transform your digital presence <br>
+                    <span class="caligraph-text">in 5 minutes.</span>
+                </h2>
+                
+                <p class="cta-subtitle">Get a customized breakdown of your website speed, booking systems, and AI automation potential. Let's make your business impossible to ignore online.</p>
+                
+                <div class="contact-trust-markers">
+                    <div class="marker">
+                        <div class="marker-dot"></div>
+                        <span>Custom Web Apps & Software Solutions</span>
+                    </div>
+                    <div class="marker">
+                        <div class="marker-dot"></div>
+                        <span>Zero Boring Templates — Built to Convert</span>
                     </div>
                 </div>
-                
-                <!-- Right Column: The Contact Card -->
-                <div class="contact-card-wrapper fade-in delay-1">
-                    <div class="glass-contact-card">
-                        
-                        <div class="card-glow-bg"></div>
-                        
-                        <div class="form-header">
-                            <h3>Start the Conversation</h3>
-                            <p>Your message goes directly to our founder's inbox.</p>
-                        </div>
-
-                       <!-- Web3Forms Routing -->
-                        <form action="https://api.web3forms.com/submit" method="POST" class="premium-form">
-                            
-                            <!-- YOUR WEB3FORMS API KEY GOES HERE -->
-                            <input type="hidden" name="access_key" value="0edbf567-d480-4cc1-8b59-837b376c799c">
-                            
-                            <!-- Form Settings & Security -->
-                            <input type="hidden" name="subject" value="New ZYRAC Project Inquiry!">
-                            <input type="hidden" name="from_name" value="ZYRAC Website">
-                            <input type="checkbox" name="botcheck" id="" style="display: none;">
-                            
-                            <!-- Plain English Input Fields -->
-                            <div class="input-grid">
-                                <div class="input-box">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" id="name" name="name" required placeholder="John Doe">
-                                </div>
-                                
-                                <div class="input-box">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" required placeholder="john@company.com">
-                                </div>
-                            </div>
-                            
-                            <div class="input-box">
-                                <label for="message">Tell us about your project</label>
-                                <textarea id="message" name="message" required placeholder="What are we building? (Don't worry, no technical jargon required...)"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn-solid-glow">
-                                <span>Send Message</span>
-                            </button>
-                            
-                        </form>
-                    </div>
-                </div>
-
             </div>
+            
+            <!-- Right Column: The Lead Gen Form Card -->
+            <div class="contact-card-wrapper fade-in delay-1">
+                <div class="glass-contact-card">
+                    
+                    <div class="card-glow-bg"></div>
+                    
+                    <div class="form-header">
+                        <h3>Request Your Free Audit</h3>
+                        <p>Fill out the details below to receive your custom review.</p>
+                    </div>
+
+                    <!-- Web3Forms Routing (Connected to Zapier / Google Sheets) -->
+                    <form action="https://api.web3forms.com/submit" method="POST" class="premium-form">
+                        
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="eaa7b969-57ea-4068-a0f6-1febd31d2ba7">
+                        
+                        <!-- Form Settings & Metadata -->
+                        <input type="hidden" name="subject" value="New ZYRAC Audit Request!">
+                        <input type="hidden" name="from_name" value="Zyrac Lead Gen Form">
+                        <input type="checkbox" name="botcheck" style="display: none;">
+                        
+                        <!-- Field 1: Business Name -->
+                        <div class="input-box">
+                            <label for="business_name">Business Name</label>
+                            <input type="text" id="business_name" name="business_name" required placeholder="e.g. City Fitness Gym">
+                        </div>
+                        
+                        <!-- Field 2: Website URL -->
+                        <div class="input-box">
+                            <label for="website">Current Website URL</label>
+                            <input type="url" id="website" name="website" required placeholder="https://yourwebsite.com">
+                        </div>
+
+                        <!-- Field 3: Biggest Digital Bottleneck (Dropdown) -->
+                        <div class="input-box">
+                            <label for="bottleneck">Biggest Digital Bottleneck</label>
+                            <select id="bottleneck" name="bottleneck" required class="custom-select-input">
+                                <option value="" disabled selected>Select your biggest bottleneck...</option>
+                                <option value="Outdated / slow website">Outdated / slow website</option>
+                                <option value="No online booking or scheduling system">No online booking or scheduling system</option>
+                                <option value="Manual customer inquiries / WhatsApp overload">Manual customer inquiries / WhatsApp overload</option>
+                                <option value="Wanting custom software or AI automation">Wanting custom software or AI automation</option>
+                            </select>
+                        </div>
+
+                        <!-- Field 4: Email Address -->
+                        <div class="input-box">
+                            <label for="email">Where should we send your audit?</label>
+                            <input type="email" id="email" name="email" required placeholder="name@yourbusiness.com">
+                        </div>
+                        
+                        <button type="submit" class="btn-solid-glow">
+                            <span>Get My Free Audit</span>
+                        </button>
+                        
+                    </form>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     
     <footer class="site-footer glass-footer">
