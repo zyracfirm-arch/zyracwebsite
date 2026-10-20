@@ -35,26 +35,143 @@
     </div>
 
    <div class="dynamic-background"></div>
+<!-- ==========================================================================
+     MASTER HEADER: APPLE PRO SPATIAL NAVBAR + ADAPTIVE INSTAGRAM PROMO BAR
+     ========================================================================== -->
+<header class="zyrac-header-shell" id="site-header">
+    
+    <!-- 1. Apple Pro Frosted Glass Navbar -->
+    <nav class="navbar glass" aria-label="Main Navigation">
+        <div class="nav-inner-container">
+            
+            <!-- Brand Logo -->
+            <a href="#home" class="logo-link" aria-label="ZYRAC Home">
+                <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
+                    <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
+                    <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
+                </svg>
+                <span class="logo-divider"></span>
+                <span class="logo-text">ZYR<span class="accent">A</span>C<span class="logo-dot">.</span></span>
+            </a>
 
-   <nav class="navbar glass">
-        <a href="#home" class="logo-link" aria-label="Go to homepage">
-            <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#1a1a1a"/>
-                <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
-                <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#1a1a1a"/>
-            </svg>
-            
-            <span class="logo-divider">|</span>
-            
-            <span class="logo-text">ZYR<span class="accent">A</span>C</span>
-        </a>
-        
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#vision">Vision</a></li>
-            <li><a href="#contact" class="btn-glass">Contact</a></li>
-        </ul>
+            <!-- Desktop & Tablet Navigation Links -->
+            <ul class="nav-links" id="nav-menu-list">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#manifesto">Our Standard</a></li>
+                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#reviews">Stories</a></li>
+                <li class="nav-cta-item">
+                    <a href="#contact" class="btn-glass">
+                        <span>Start a Build</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-nav-toggle" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="bar-top"></span>
+                <span class="bar-mid"></span>
+                <span class="bar-bot"></span>
+            </button>
+
+        </div>
     </nav>
+
+    <!-- 2. Apple-Event Style Sub-Navbar Promo Line (10 Free Websites on Instagram) -->
+    <div class="insta-giveaway-subbar" id="top-offer-banner">
+        <div class="subbar-laser-beam"></div>
+        <a href="https://www.instagram.com/zyrac__" target="_blank" rel="noopener noreferrer" class="subbar-link-wrap">
+            
+            <!-- Live Mini-Bot Status Pill -->
+            <span class="subbar-bot-pill">
+                <span class="mini-bot-eyes"><i></i><i></i></span>
+                <span class="bot-pill-text">LIVE DROP</span>
+            </span>
+
+            <!-- Desktop/Tablet Full Copy + Mobile Compact Copy (Never Clips!) -->
+            <span class="subbar-offer-text desktop-offer-copy">
+                We are building <strong>10 Custom Websites for FREE</strong> (100% custom code) — Announced on <strong>@zyrac__</strong>
+            </span>
+            <span class="subbar-offer-text mobile-offer-copy">
+                <strong>10 Free Custom Websites</strong> • Drop on <strong>@zyrac__</strong>
+            </span>
+
+            <!-- Action Pill -->
+            <span class="subbar-cta-chip">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                <span class="chip-label-full">Claim on Instagram</span>
+                <span class="chip-label-short">Claim</span>
+                <span class="chip-arrow">→</span>
+            </span>
+
+        </a>
+    </div>
+
+</header>
+
+<!-- ==========================================================================
+     3. REALISTIC 3D ZYRAC-BOT ANNOUNCER (Appears Smoothly on Scroll!)
+     ========================================================================== -->
+<div class="zyrac-floating-offer-bot" id="zyrac-offer-bot" aria-live="polite">
+    
+    <!-- Comic Glass Speech Callout Bubble -->
+    <div class="bot-speech-card" id="bot-speech-card">
+        <button class="bot-close-btn" id="close-offer-bot" aria-label="Minimize message" title="Minimize">×</button>
+        
+        <a href="https://www.instagram.com/zyrac__" target="_blank" rel="noopener noreferrer" class="bot-offer-bubble">
+            <div class="bubble-kicker-row">
+                <span class="bot-live-dot"></span>
+                <span class="bubble-kicker">ZYRAC AI // DROP ALERT</span>
+            </div>
+            <p class="bubble-main-copy">
+                We're building <strong>10 Websites for FREE</strong>. Follow <strong>@zyrac__</strong> to grab a slot!
+            </p>
+            <span class="bubble-insta-action">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                <span>Claim on @zyrac__ →</span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Realistic 3D Machined ZYRAC Robot Avatar (Eyes Track Cursor!) -->
+    <a href="https://www.instagram.com/zyrac__" target="_blank" rel="noopener noreferrer" class="mini-bot-avatar" id="mini-bot-trigger" aria-label="10 Free Websites Offer on Instagram">
+        <div class="mini-bot-aura"></div>
+        <span class="mini-bot-antenna"></span>
+        
+        <div class="mini-bot-head-3d" id="mini-bot-head">
+            <span class="mini-ear left"></span>
+            <span class="mini-ear right"></span>
+            
+            <div class="mini-bot-helmet">
+                <div class="mini-helmet-glint"></div>
+                <div class="mini-bot-visor">
+                    <div class="mini-visor-reflection"></div>
+                    <!-- Eyes Move with Mouse -->
+                    <div class="mini-visor-eyes" id="mini-bot-eyes">
+                        <span class="mini-eye"><i class="mini-pupil"></i></span>
+                        <span class="mini-eye"><i class="mini-pupil"></i></span>
+                    </div>
+                    <!-- Speaking Waveform Mouth -->
+                    <div class="mini-visor-mouth">
+                        <i></i><i></i><i></i><i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="free-10-badge">10 FREE</span>
+    </a>
+
+</div>
 
 <!-- ==========================================================================
      SECTION 1: REALISTIC AI ROBOT + COMIC SPEECH BUBBLES + EYE EXPRESSIONS
@@ -263,81 +380,7 @@
 
     </div>
 </section>
-   <!-- ==========================================================================
-         SECTION: THE METHODOLOGY (PROCESS)
-         ========================================================================== -->
-    <section id="process" class="storyboard-section">
-        <div class="storyboard-container">
-            
-            <div class="storyboard-header fade-in">
-                <span class="director-badge">Our Process</span>
-                <h2 class="storyboard-title">The <span class="caligraph-text accent">Methodology.</span></h2>
-                <p class="storyboard-lead">A clear, uncompromising approach to building your digital platform. No guesswork, no confusing jargon—just a proven system for success.</p>
-            </div>
-
-            <div class="storyboard-grid">
-                
-                <!-- Phase 01 -->
-                <div class="storyboard-panel panel-left fade-in">
-                    <div class="cinematic-bars"></div>
-                    <div class="panel-meta">
-                        <span class="scene-num">PHASE 01</span>
-                        <!-- Blueprint/Planning Icon -->
-                        <span class="camera-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                        </span>
-                    </div>
-                    <div class="panel-content">
-                        <h3 class="panel-heading">The Blueprint</h3>
-                        <div class="action-text">
-                            <span class="action-label">STRATEGY:</span>
-                            <p>Before we write a single line of code, we take the time to understand your exact business goals. We map out the perfect user journey to ensure your new website or app will actually convert visitors into paying clients.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 02 -->
-                <div class="storyboard-panel panel-right fade-in delay-1">
-                    <div class="cinematic-bars"></div>
-                    <div class="panel-meta">
-                        <span class="scene-num">PHASE 02</span>
-                        <!-- Engineering/Building Icon -->
-                        <span class="camera-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                        </span>
-                    </div>
-                    <div class="panel-content">
-                        <h3 class="panel-heading">Custom Engineering</h3>
-                        <div class="action-text">
-                            <span class="action-label">DEVELOPMENT:</span>
-                            <p>We build your platform completely from scratch. Instead of relying on slow, pre-made templates, we hand-code everything so your software is lightning-fast, highly secure, and tailored perfectly to your brand.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 03 -->
-                <div class="storyboard-panel panel-left fade-in delay-2">
-                    <div class="cinematic-bars"></div>
-                    <div class="panel-meta">
-                        <span class="scene-num">PHASE 03</span>
-                        <!-- Launch/Rocket Icon -->
-                        <span class="camera-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
-                        </span>
-                    </div>
-                    <div class="panel-content">
-                        <h3 class="panel-heading">Launch & Scale</h3>
-                        <div class="action-text">
-                            <span class="action-label">DEPLOYMENT:</span>
-                            <p>After rigorous testing to ensure perfection, we take your project live. You are handed a flawless, premium digital platform that is ready to handle heavy traffic, impress your audience, and scale as your company grows.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
+   
    <!-- ==========================================================================
      SECTION: REAL INDIAN FOUNDER STORIES (SPOTLIGHT GLASS + ROI METRICS)
      ========================================================================== -->
@@ -1516,7 +1559,6 @@
         </div>
 
     </div>
-</footer>
-    <script src="script.js"></script>
+</footer><script src="script.js"></script>
 </body>
 </html>

@@ -345,27 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /* --- F. Smooth 3D Parallax Zone (Hero Showcase & Floating Pills) --- */
-    const parallaxZone = document.getElementById('parallax-zone');
-    if (parallaxZone) {
-        const layers = parallaxZone.querySelectorAll('.parallax-layer');
-        const stageVisual = document.getElementById('zyrac-stage-visual');
-        let targetX = 0, targetY = 0;
-        let currentX = 0, currentY = 0;
-
-        parallaxZone.addEventListener('mousemove', (e) => {
-            if (window.innerWidth <= 992) return;
-            const rect = parallaxZone.getBoundingClientRect();
-            targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-            targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-        }, { passive: true });
-
-        parallaxZone.addEventListener('mouseleave', () => {
-            targetX = 0;
-            targetY = 0;
-        }, { passive: true });
-
-        function updateParallax() {
+    function updateParallax() {
             if (window.innerWidth > 992) {
                 currentX = lerp(currentX, targetX, 0.08);
                 currentY = lerp(currentY, targetY, 0.08);
@@ -376,17 +356,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const moveY = currentY * speed * 4.5;
                     layer.style.transform = `translate3d(${moveX.toFixed(2)}px, ${moveY.toFixed(2)}px, 0)`;
                 });
-
-                if (stageVisual) {
-                    const rotX = currentY * -4;
-                    const rotY = currentX * 5;
-                    stageVisual.style.transform = `rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
-                }
+            } else {
+                // Keep mobile & tablet comic bubbles locked in their exact CSS positions
+                layers.forEach(layer => {
+                    layer.style.transform = '';
+                });
             }
             requestAnimationFrame(updateParallax);
         }
-        requestAnimationFrame(updateParallax);
-    }
 
 
     /* --- G. Smooth Ease-Out Counters --- */
@@ -595,5 +572,74 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         updateAhmTime();
         setInterval(updateAhmTime, 1000);
+    }
+    /* --- L. Smooth Navbar Scroll Morph + Realistic Mini-Bot Eye Tracking --- */
+    const headerShell = document.getElementById('site-header');
+    const floatingOfferBot = document.getElementById('zyrac-offer-bot');
+    const closeOfferBotBtn = document.getElementById('close-offer-bot');
+    const miniBotHead = document.getElementById('mini-bot-head');
+    const miniBotEyes = document.getElementById('mini-bot-eyes');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navMenuList = document.getElementById('nav-menu-list');
+
+    // 1. Hardware-accelerated scroll check for Promo Bar -> Floating Bot morph
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
+                if (scrollY > 220) {
+                    if (headerShell) headerShell.classList.add('is-scrolled');
+                    if (floatingOfferBot) floatingOfferBot.classList.add('bot-visible');
+                } else {
+                    if (headerShell) headerShell.classList.remove('is-scrolled');
+                    if (floatingOfferBot) floatingOfferBot.classList.remove('bot-visible');
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    }, { passive: true });
+
+    // 2. Minimize speech bubble when clicking '×' (keeps cute 3D bot in corner)
+    if (closeOfferBotBtn && floatingOfferBot) {
+        closeOfferBotBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            floatingOfferBot.classList.add('bubble-minimized');
+        });
+    }
+
+    // 3. Real-time cursor tracking for the Floating Mini-Bot's Eyes & 3D Head
+    if (miniBotHead && miniBotEyes) {
+        window.addEventListener('mousemove', (e) => {
+            if (!floatingOfferBot || !floatingOfferBot.classList.contains('bot-visible')) return;
+            const rect = miniBotHead.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+
+            const dx = Math.max(-1, Math.min(1, (e.clientX - cx) / 250));
+            const dy = Math.max(-1, Math.min(1, (e.clientY - cy) / 250));
+
+            miniBotEyes.style.transform = `translate3d(${(dx * 5).toFixed(1)}px, ${(dy * 3.5).toFixed(1)}px, 0)`;
+            miniBotHead.style.transform = `rotateY(${(dx * 14).toFixed(1)}deg) rotateX(${(dy * -10).toFixed(1)}deg)`;
+        }, { passive: true });
+    }
+
+    // 4. Mobile Hamburger Drawer Toggle
+    if (mobileMenuBtn && navMenuList) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = navMenuList.classList.toggle('nav-open');
+            mobileMenuBtn.classList.toggle('active', isOpen);
+            mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenuList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenuList.classList.remove('nav-open');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
     }
 });

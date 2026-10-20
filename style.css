@@ -111,83 +111,1636 @@ body::after {
 h1, h2, h3, h4 { letter-spacing: -0.04em; }
 .accent { color: var(--primary-orange); }
 
-/* --- Navigation (Upgraded to Glassmorphism to float over sections) --- */
+
+/* ==========================================================================
+   PART A: APPLE PRO GLASS NAVBAR + ADAPTIVE PROMO BAR + REALISTIC 3D BOT
+   ========================================================================== */
+.zyrac-header-shell {
+    --theme-orange: var(--primary-orange, #e85d04);
+    --theme-amber: #ff9f1c;
+    --theme-text: var(--text-main, #111113);
+    --theme-muted: var(--text-muted, #52525b);
+    --apple-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+/* --- 1. Apple Pro Frosted Glass Navbar --- */
 .navbar {
+    pointer-events: auto;
+    width: 100%;
+    padding: 0.72rem 5%;
+    background: rgba(255, 255, 255, 0.76);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 
+        0 4px 24px rgba(17, 17, 19, 0.03),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.6);
+    transition: padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.zyrac-header-shell.is-scrolled .navbar {
+    padding: 0.58rem 5%;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 30px rgba(17, 17, 19, 0.06);
+}
+
+.nav-inner-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background: rgba(250, 250, 250, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    position: relative;
 }
 
 .logo-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     text-decoration: none;
-    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .logo-link:hover {
-    opacity: 0.85;
-    transform: scale(0.96); 
+    transform: scale(0.97);
 }
 
-.nav-logo-svg { height: 40px; width: auto; display: block; }
+.nav-logo-svg {
+    height: 34px;
+    width: auto;
+    display: block;
+}
 
 .logo-divider {
-    font-size: 1.6rem;
-    font-weight: 300;
-    color: var(--text-muted); 
-    margin: 0 15px; 
-    opacity: 0.5; 
-    padding-bottom: 3px; 
+    width: 1.5px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.14);
+    margin: 0 12px;
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    font-weight: 800; 
-    letter-spacing: 2px;
-    color: var(--text-main);
+    font-family: var(--apple-font);
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: var(--theme-text);
 }
 
+.logo-dot {
+    color: var(--theme-orange);
+}
+
+/* Desktop & Laptop Links */
 .nav-links {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2.1rem;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
+    font-family: var(--apple-font);
     text-decoration: none;
-    color: var(--text-main);
-    font-weight: 400;
+    color: var(--theme-muted);
+    font-weight: 600;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    letter-spacing: -0.1px;
+    transition: color 0.25s ease;
 }
 
-.nav-links a:hover { color: var(--primary-orange); }
+.nav-links a:hover {
+    color: var(--theme-orange);
+}
 
 .btn-glass {
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.56rem 1.2rem;
+    border-radius: 980px;
+    background: #111113;
+    color: #ffffff !important;
+    font-weight: 650 !important;
+    font-size: 0.86rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 20px rgba(17, 17, 19, 0.14);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-glass svg {
+    transition: transform 0.3s ease;
 }
 
 .btn-glass:hover {
-    background: var(--text-main);
-    color: #fff !important;
+    background: var(--theme-orange) !important;
+    border-color: var(--theme-orange) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(232, 93, 4, 0.28);
 }
 
+.btn-glass:hover svg {
+    transform: translateX(3px);
+}
+
+/* Mobile Menu Button */
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5px;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s ease;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 17px;
+    height: 2px;
+    background: var(--theme-text);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-toggle.active .bar-top {
+    transform: translateY(6.5px) rotate(45deg);
+}
+.mobile-nav-toggle.active .bar-mid {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.mobile-nav-toggle.active .bar-bot {
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
+
+/* --- 2. Apple-Event Style Sub-Navbar Promo Bar (10 Free Websites) --- */
+.insta-giveaway-subbar {
+    pointer-events: auto;
+    width: 100%;
+    background: linear-gradient(90deg, #0d0e12 0%, #191c26 50%, #0d0e12 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    overflow: hidden;
+    max-height: 48px;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: max-height 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.35s ease,
+                transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smoothly retracts into the navbar on scroll while the Floating Bot appears */
+.zyrac-header-shell.is-scrolled .insta-giveaway-subbar {
+    max-height: 0;
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    border-bottom: none;
+    pointer-events: none;
+}
+
+.subbar-laser-beam {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--theme-orange), #ffb703, var(--theme-orange), transparent);
+    background-size: 200% 100%;
+    animation: laserFlow 4s linear infinite;
+}
+
+@keyframes laserFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.subbar-link-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.44rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: var(--apple-font);
+    font-size: 0.8rem;
+}
+
+.subbar-bot-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.18rem 0.6rem;
+    border-radius: 980px;
+    background: rgba(232, 93, 4, 0.2);
+    border: 1px solid rgba(232, 93, 4, 0.5);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: #ffb703;
+    letter-spacing: 0.6px;
+    flex-shrink: 0;
+}
+
+.mini-bot-eyes {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.mini-bot-eyes i {
+    width: 4.5px;
+    height: 6px;
+    border-radius: 3px;
+    background: #ffb703;
+    box-shadow: 0 0 6px #e85d04;
+    animation: droneBlink 3s infinite;
+}
+
+.subbar-offer-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 450;
+    letter-spacing: -0.1px;
+    white-space: nowrap;
+}
+
+.subbar-offer-text strong {
+    color: #ffffff;
+    font-weight: 750;
+}
+
+.mobile-offer-copy,
+.chip-label-short {
+    display: none;
+}
+
+.subbar-cta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.22rem 0.75rem;
+    border-radius: 980px;
+    background: linear-gradient(90deg, #e85d04, #ff9f1c);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(232, 93, 4, 0.35);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.subbar-link-wrap:hover .subbar-cta-chip {
+    transform: translateX(3px) scale(1.03);
+}
+
+
+/* --- 3. Realistic 3D Floating ZYRAC-BOT Announcer (Appears on Scroll) --- */
+.zyrac-floating-offer-bot {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, 28px, 0) scale(0.92);
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.45s;
+    pointer-events: none;
+}
+
+.zyrac-floating-offer-bot.bot-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0) scale(1);
+    pointer-events: auto;
+}
+
+/* Speech Bubble Container (Can be minimized while keeping the 3D bot visible) */
+.bot-speech-card {
+    position: relative;
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: bottom right;
+}
+
+.zyrac-floating-offer-bot.bubble-minimized .bot-speech-card {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.85) translateX(15px);
+    width: 0;
+    overflow: hidden;
+}
+
+.bot-close-btn {
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #111113;
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bot-close-btn:hover {
+    background: var(--theme-orange);
+    transform: scale(1.08);
+}
+
+.bot-offer-bubble {
+    position: relative;
+    width: 250px;
+    padding: 0.85rem 1.05rem;
+    border-radius: 20px 20px 4px 20px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1.5px solid rgba(232, 93, 4, 0.32);
+    box-shadow: 
+        0 20px 45px rgba(17, 17, 19, 0.16),
+        0 4px 16px rgba(232, 93, 4, 0.12),
+        inset 0 1px 0 #ffffff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.bot-offer-bubble:hover {
+    transform: translateY(-3px);
+    border-color: var(--theme-orange);
+}
+
+.bubble-kicker-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bot-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2dce89;
+    box-shadow: 0 0 8px #2dce89;
+}
+
+.bubble-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.56rem;
+    font-weight: 800;
+    color: var(--theme-orange);
+    letter-spacing: 0.6px;
+}
+
+.bubble-main-copy {
+    font-family: var(--apple-font);
+    font-size: 0.8rem;
+    line-height: 1.38;
+    color: #111113;
+    margin: 0;
+    font-weight: 500;
+}
+
+.bubble-main-copy strong {
+    font-weight: 800;
+}
+
+.bubble-insta-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--theme-orange);
+    margin-top: 2px;
+}
+
+/* --- Realistic 3D Machined Mini-Robot Avatar --- */
+.mini-bot-avatar {
+    position: relative;
+    width: 66px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    perspective: 600px;
+    animation: miniBotHover 3.6s ease-in-out infinite;
+}
+
+@keyframes miniBotHover {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -6px, 0); }
+}
+
+.mini-bot-aura {
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232, 93, 4, 0.42) 0%, transparent 70%);
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.mini-bot-antenna {
+    width: 3px;
+    height: 9px;
+    background: linear-gradient(180deg, #525866, #181a20);
+    position: relative;
+    z-index: 2;
+}
+
+.mini-bot-antenna::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2dce89;
+    box-shadow: 0 0 10px #2dce89;
+}
+
+.mini-bot-head-3d {
+    position: relative;
+    z-index: 2;
+    width: 60px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.mini-ear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 18px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #3a3f4d, #14161d);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.mini-ear.left { left: -4px; }
+.mini-ear.right { right: -4px; }
+
+.mini-bot-helmet {
+    width: 100%;
+    height: 100%;
+    border-radius: 26px 26px 22px 22px;
+    background: radial-gradient(circle at 35% 20%, #4a5062 0%, #1a1d26 55%, #0a0c10 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 14px 28px rgba(0, 0, 0, 0.38),
+        inset 0 2px 6px rgba(255, 255, 255, 0.35),
+        inset 0 -4px 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    position: relative;
+}
+
+.mini-helmet-glint {
+    position: absolute;
+    top: 3px;
+    width: 45%;
+    height: 2px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+}
+
+.mini-bot-visor {
+    width: 100%;
+    height: 100%;
+    border-radius: 17px 17px 15px 15px;
+    background: radial-gradient(circle at 50% 50%, #161922 0%, #06070a 90%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 14px rgba(232, 93, 4, 0.32);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-visor-reflection {
+    position: absolute;
+    top: -35%;
+    left: -20%;
+    width: 140%;
+    height: 60%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    transform: rotate(-8deg);
+    pointer-events: none;
+}
+
+.mini-visor-eyes {
+    display: flex;
+    gap: 9px;
+    will-change: transform;
+}
+
+.mini-eye {
+    width: 10px;
+    height: 13px;
+    border-radius: 6px;
+    background: radial-gradient(circle, #ffffff 0%, #ffb703 42%, #e85d04 90%);
+    box-shadow: 0 0 10px #e85d04;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: droneBlink 3.4s infinite ease-in-out;
+}
+
+.mini-pupil {
+    width: 4px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.mini-visor-mouth {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.mini-visor-mouth i {
+    width: 2px;
+    height: 3.5px;
+    background: #ffb703;
+    border-radius: 2px;
+    animation: voiceSpeak 0.55s infinite alternate;
+}
+.mini-visor-mouth i:nth-child(2),
+.mini-visor-mouth i:nth-child(3) {
+    height: 5px;
+    animation-delay: 0.15s;
+}
+
+.free-10-badge {
+    position: absolute;
+    bottom: -2px;
+    z-index: 4;
+    padding: 2px 8px;
+    border-radius: 980px;
+    background: linear-gradient(90deg, #e85d04, #ff9f1c);
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(232, 93, 4, 0.45);
+    border: 1.5px solid #ffffff;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE ADAPTATIONS FOR NAVBAR, PROMO BAR & FLOATING BOT
+   ========================================================================== */
+
+/* Tablets & Small Laptops (992px and below) */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .subbar-link-wrap {
+        font-size: 0.76rem;
+        gap: 0.6rem;
+    }
+
+    .chip-label-full {
+        display: none;
+    }
+    .chip-label-short {
+        display: inline;
+    }
+}
+
+/* Mobile Phones (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.65rem 4%;
+    }
+
+    .nav-logo-svg {
+        height: 30px;
+    }
+
+    .logo-divider {
+        height: 18px;
+        margin: 0 10px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    /* Apple iOS Frosted Pull-Down Menu Sheet */
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(28px) saturate(190%);
+        -webkit-backdrop-filter: blur(28px) saturate(190%);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 22px;
+        padding: 1.25rem;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.4rem;
+        box-shadow: 0 24px 48px rgba(17, 17, 19, 0.14);
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, -12px, 0) scale(0.98);
+        transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links.nav-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    .nav-links li a {
+        display: flex;
+        justify-content: center;
+        padding: 0.65rem 1rem;
+        border-radius: 12px;
+        font-size: 0.96rem;
+    }
+
+    .nav-links li a:active {
+        background: rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-cta-item {
+        margin-top: 0.35rem;
+    }
+
+    .btn-glass {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1.2rem !important;
+    }
+
+    /* Mobile Promo Line: Switches to Crisp Short Copy so Nothing Ever Clips! */
+    .desktop-offer-copy {
+        display: none;
+    }
+
+    .mobile-offer-copy {
+        display: inline;
+        font-size: 0.74rem;
+    }
+
+    .bot-pill-text {
+        display: none; /* Shows just the cute glowing robot eyes pill on mobile */
+    }
+
+    .subbar-bot-pill {
+        padding: 0.22rem 0.42rem;
+    }
+
+    .subbar-link-wrap {
+        padding: 0.42rem 3.5%;
+        justify-content: space-between;
+        gap: 0.4rem;
+    }
+
+    .subbar-cta-chip {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.68rem;
+    }
+
+    /* Mobile Floating Bot Positioning */
+    .zyrac-floating-offer-bot {
+        bottom: 16px;
+        right: 14px;
+        gap: 8px;
+    }
+
+    .bot-offer-bubble {
+        width: 210px;
+        padding: 0.7rem 0.85rem;
+        border-radius: 16px 16px 4px 16px;
+    }
+
+    .bubble-main-copy {
+        font-size: 0.72rem;
+    }
+
+    .mini-bot-avatar {
+        width: 56px;
+        height: 62px;
+    }
+
+    .mini-bot-head-3d {
+        width: 50px;
+        height: 44px;
+    }
+}
+
+/* Very Small Phones (370px and below) */
+@media (max-width: 370px) {
+    .mobile-offer-copy {
+        font-size: 0.68rem;
+    }
+    .bot-offer-bubble {
+        width: 185px;
+    }
+}
+/* ==========================================================================
+   PART B: COMPLETE UPDATED FOOTER CSS (SEAMLESS ZYRAC FONT + BOTTOM MARGIN)
+   ========================================================================== */
+.site-footer.glass-footer {
+    --theme-orange: var(--primary-orange, #e85d04);
+    --theme-amber: #ff9f1c;
+    --theme-text: var(--text-main, #111113);
+    --theme-muted: var(--text-muted, #5a5a64);
+    --apple-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", sans-serif;
+
+    position: relative;
+    padding: 90px 5% 45px 5%;
+    background: linear-gradient(180deg, #f8f8fb 0%, #eeeef5 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.footer-top-glow {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--theme-orange), var(--theme-amber), transparent);
+    opacity: 0.85;
+}
+
+.footer-ambient-orb {
+    position: absolute;
+    width: 750px;
+    height: 400px;
+    bottom: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(232, 93, 4, 0.14) 0%, transparent 70%);
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- 1. Top Floating Quick-Start Banner --- */
+.footer-cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2.2rem 2.6rem;
+    margin-bottom: 4.5rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.96);
+    box-shadow: 
+        0 22px 48px -15px rgba(17, 17, 19, 0.06),
+        inset 0 1px 1px #ffffff;
+}
+
+.cta-banner-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+    max-width: 680px;
+}
+
+.live-availability-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.32rem 0.9rem;
+    border-radius: 30px;
+    background: rgba(45, 206, 137, 0.12);
+    color: #169c61;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.avail-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2dce89;
+    box-shadow: 0 0 8px #2dce89;
+    animation: pulseAvail 2s infinite ease-in-out;
+}
+
+@keyframes pulseAvail {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.banner-headline {
+    font-family: var(--apple-font);
+    font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+    font-weight: 800;
+    color: var(--theme-text);
+    letter-spacing: -0.8px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.banner-headline .caligraph-text {
+    font-size: clamp(1.85rem, 3vw, 2.65rem);
+    margin-left: 4px;
+}
+
+.banner-subtext {
+    font-size: 0.95rem;
+    color: var(--theme-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cta-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+}
+
+.whatsapp-instant-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.95rem 1.75rem;
+    border-radius: 980px;
+    background: #111113;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.94rem;
+    font-weight: 700;
+    box-shadow: 0 12px 26px rgba(17, 17, 19, 0.16);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.whatsapp-instant-btn:hover {
+    background: #25D366;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(37, 211, 102, 0.28);
+}
+
+.back-top-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--theme-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.back-top-btn:hover {
+    background: var(--theme-orange);
+    border-color: var(--theme-orange);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* --- 2. Main 4-Column Footer Grid --- */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.75fr 1fr 1fr 1.3fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+.footer-logo {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-brand .footer-logo h3 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--theme-text);
+    letter-spacing: -1.5px;
+    margin: 0 0 0.8rem 0;
+}
+
+.footer-tagline {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: var(--theme-muted);
+    max-width: 340px;
+    margin: 0 0 1.2rem 0;
+}
+
+.footer-value-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.mini-value-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--theme-text);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0.35rem 0.78rem;
+    border-radius: 20px;
+}
+
+.mini-value-tag svg {
+    color: var(--theme-orange);
+    flex-shrink: 0;
+}
+
+.footer-heading {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--theme-text);
+    margin: 0 0 1.35rem 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.footer-nav a {
+    color: var(--theme-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.28s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-bullet {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--theme-orange);
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.28s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--theme-orange);
+    transform: translateX(4px);
+}
+
+.footer-nav a:hover .nav-bullet {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hq-glass-card {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 18px;
+    padding: 1rem 1.15rem;
+    margin-bottom: 1.15rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+}
+
+.location-block {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+.radar-pin-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--theme-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.location-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.hq-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.hq-text strong {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--theme-text);
+}
+
+.hq-text span {
+    font-size: 0.74rem;
+    color: var(--theme-muted);
+    font-weight: 600;
+}
+
+.hq-live-clock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.65rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.clock-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--theme-muted);
+}
+
+.clock-readout {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--theme-orange);
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.85rem;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: #ffffff;
+    color: var(--theme-text);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.social-link svg {
+    width: 19px;
+    height: 19px;
+}
+
+.social-link:hover {
+    background: var(--theme-text);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(17, 17, 19, 0.14);
+    border-color: transparent;
+}
+
+.social-link.whatsapp-link:hover {
+    background: #25D366;
+    box-shadow: 0 12px 24px rgba(37, 211, 102, 0.28);
+}
+
+/* --- 3. Copyright Bar --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    color: var(--theme-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.footer-interactive-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--theme-text);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hint-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--theme-orange);
+    box-shadow: 0 0 8px var(--theme-orange);
+}
+
+/* --- 4. Seamless Single-Word "ZYRAC" Stage + Flying Drones + Bottom Margin --- */
+.zyrac-monolith-stage {
+    position: relative;
+    width: 100%;
+    margin: 1rem auto 0 auto;
+    padding: 4.2rem 4% 2.8rem 4%;
+    border-radius: 32px;
+    background: radial-gradient(circle at 50% 50%, #1d202b 0%, #0b0c10 90%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 25px 55px -12px rgba(17, 17, 19, 0.22),
+        inset 0 1px 1px rgba(255, 255, 255, 0.22);
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wordmark-cursor-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        460px circle at var(--wm-x, 50%) var(--wm-y, 50%),
+        rgba(232, 93, 4, 0.36),
+        rgba(255, 159, 28, 0.12) 45%,
+        transparent 75%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wordmark-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 38px 38px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Flying Drones Layer */
+.flying-drones-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.flying-bot-unit {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    will-change: transform;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.55));
+}
+
+.bot-drone-svg {
+    width: 52px;
+    height: 36px;
+    display: block;
+}
+
+.drone-eye {
+    animation: droneBlink 3.5s infinite ease-in-out;
+}
+
+@keyframes droneBlink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
+
+.bot-scan-cone {
+    width: 48px;
+    height: 55px;
+    margin-top: -4px;
+    background: linear-gradient(180deg, rgba(255, 183, 3, 0.32) 0%, rgba(232, 93, 4, 0) 100%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+    pointer-events: none;
+}
+
+.bot-scan-cone.green-cone {
+    background: linear-gradient(180deg, rgba(45, 206, 137, 0.28) 0%, rgba(45, 206, 137, 0) 100%);
+}
+
+.bot-alpha {
+    top: 15%;
+    left: -10%;
+    animation: patrolAlpha 15s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.bot-beta {
+    top: 24%;
+    right: -10%;
+    animation: patrolBeta 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 2s;
+}
+
+.bot-gamma {
+    top: 35%;
+    left: 46%;
+    animation: patrolGamma 9s ease-in-out infinite;
+}
+
+@keyframes patrolAlpha {
+    0%   { transform: translate3d(0vw, 0px, 0) rotate(6deg); }
+    25%  { transform: translate3d(32vw, -14px, 0) rotate(3deg); }
+    50%  { transform: translate3d(72vw, 8px, 0) rotate(-6deg); }
+    75%  { transform: translate3d(38vw, -10px, 0) rotate(-3deg); }
+    100% { transform: translate3d(0vw, 0px, 0) rotate(6deg); }
+}
+
+@keyframes patrolBeta {
+    0%   { transform: translate3d(0vw, 0px, 0) rotate(-5deg) scale(0.88); }
+    30%  { transform: translate3d(-35vw, 12px, 0) rotate(-2deg) scale(0.92); }
+    55%  { transform: translate3d(-75vw, -10px, 0) rotate(5deg) scale(0.88); }
+    80%  { transform: translate3d(-30vw, 6px, 0) rotate(2deg) scale(0.92); }
+    100% { transform: translate3d(0vw, 0px, 0) rotate(-5deg) scale(0.88); }
+}
+
+@keyframes patrolGamma {
+    0%, 100% { transform: translate3d(-40px, 0px, 0) rotate(-4deg) scale(0.78); }
+    50%      { transform: translate3d(45px, -16px, 0) rotate(4deg) scale(0.82); }
+}
+
+/* Seamless Natural-Kerned ZYRAC Wordmark (No Stitched Boxes) */
+.monolith-letters-row {
+    position: relative;
+    z-index: 4;
+    display: inline-flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0;
+    margin: 0 auto;
+}
+
+.monolith-char {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2.2rem 0.01em 0.2rem 0.01em;
+    outline: none;
+}
+
+.char-value-pill {
+    position: absolute;
+    top: -6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.36rem 0.85rem 0.36rem 0.45rem;
+    border-radius: 980px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #111113;
+    font-size: 0.74rem;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 16px rgba(232, 93, 4, 0.35);
+    border: 1px solid #ffffff;
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.92);
+    transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 6;
+}
+
+.pill-svg-wrap {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--theme-orange);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.char-glyph {
+    display: inline-block;
+    font-family: inherit;
+    font-size: clamp(3.8rem, 15vw, 12.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: transparent;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #d4d7e0 62%,
+        #7d8294 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.char-glyph.accent-glyph,
+.monolith-char:nth-child(4) .char-glyph {
+    background: linear-gradient(
+        180deg,
+        #ffb703 0%,
+        var(--theme-orange) 85%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.monolith-char:hover .char-glyph,
+.monolith-char:focus .char-glyph,
+.monolith-char.active-pulse .char-glyph {
+    transform: translate3d(0, -10px, 0) scale(1.04);
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffb703 45%,
+        var(--theme-orange) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 12px 28px rgba(232, 93, 4, 0.5));
+}
+
+.monolith-char:hover .char-value-pill,
+.monolith-char:focus .char-value-pill,
+.monolith-char.active-pulse .char-value-pill {
+    opacity: 1;
+    transform: translate3d(0, -4px, 0) scale(1);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Navbar, Sub-Banner, Floating Bot & Footer)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .footer-cta-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.8rem;
+    }
+
+    .cta-banner-left {
+        align-items: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-tagline {
+        max-width: 480px;
+    }
+
+    .footer-value-pills {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Navbar & Slide-Down Glass Drawer */
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 4%;
+        right: 4%;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 22px;
+        padding: 1.4rem;
+        flex-direction: column;
+        gap: 1.1rem;
+        box-shadow: 0 20px 45px rgba(17, 17, 19, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links.nav-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(8px);
+    }
+
+    /* Compact Mobile Sub-Navbar Banner */
+    .subbar-bot-pill {
+        display: none;
+    }
+
+    .subbar-link-wrap {
+        padding: 0.42rem 4%;
+        gap: 0.5rem;
+        font-size: 0.72rem;
+    }
+
+    .subbar-cta-chip {
+        padding: 0.2rem 0.55rem;
+        font-size: 0.65rem;
+    }
+
+    /* Compact Floating Offer Bot on Mobile */
+    .zyrac-floating-offer-bot {
+        bottom: 14px;
+        right: 14px;
+        gap: 8px;
+    }
+
+    .bot-offer-bubble {
+        max-width: 205px;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .bubble-main-copy {
+        font-size: 0.7rem;
+    }
+
+    .mini-bot-avatar {
+        width: 52px;
+        height: 56px;
+    }
+
+    .mini-bot-helmet {
+        width: 48px;
+        height: 40px;
+    }
+
+    /* Mobile Footer & Seamless Wordmark */
+    .site-footer.glass-footer {
+        padding: 65px 4% 28px 4%;
+    }
+
+    .footer-cta-banner {
+        padding: 1.6rem 1.25rem;
+        margin-bottom: 3rem;
+        border-radius: 22px;
+    }
+
+    .cta-banner-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .whatsapp-instant-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.2rem;
+        text-align: left;
+    }
+
+    .footer-brand,
+    .footer-hq-col {
+        grid-column: 1 / -1;
+        text-align: center;
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.85rem;
+        text-align: center;
+        padding: 1.4rem 0;
+    }
+
+    .zyrac-monolith-stage {
+        border-radius: 24px;
+        padding: 3.2rem 3% 1.8rem 3%;
+    }
+
+    .monolith-char {
+        padding-top: 1.8rem;
+    }
+
+    .char-glyph {
+        font-size: clamp(3.4rem, 16.5vw, 6.2rem);
+        letter-spacing: -0.03em;
+    }
+
+    .char-value-pill {
+        font-size: 0.6rem;
+        padding: 0.24rem 0.55rem 0.24rem 0.3rem;
+    }
+}
 /* ==========================================================================
    SECTION 1: REALISTIC AI ROBOT + COMIC SPEECH BUBBLES (ALL PLATFORMS)
    ========================================================================== */
@@ -1020,131 +2573,166 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS (Desktop, Laptop, Tablet, Mobile)
+   1. PERFECT MOBILE HERO FIX (ZERO OVERLAP ON ROBOT FACE)
    ========================================================================== */
-
-/* Tablets & Small Laptops (1024px and below) */
-@media (max-width: 1024px) {
-    .zyrac-emhance-hero {
-        padding-top: 115px;
-        min-height: auto;
-    }
-
-    .emhance-centerpiece-zone {
-        max-width: 760px;
-        height: 410px;
-    }
-
-    .ai-robot-stage {
-        transform: scale(0.88);
-        transform-origin: bottom center;
-    }
-
-    .bubble-tr { right: 0%; }
-    .bubble-ml { left: 0%; }
-    .bubble-lr { right: 0%; }
-    .bubble-bl { left: 0%; }
-}
-
-/* Mobile & Phablets (768px and below): Clean 2x2 Comic Grid Above Robot */
 @media (max-width: 768px) {
     .zyrac-emhance-hero {
-        padding: 105px 4% 0 4%;
+        padding: 95px 3.5% 0 3.5%;
         min-height: auto;
     }
 
-    /* Locked single-row font scaling so pills NEVER wrap or jump */
-    .emhance-main-heading {
-        font-size: clamp(1.65rem, 6.8vw, 2.35rem);
-        letter-spacing: -1px;
+    .emhance-cta-holder {
+        margin-bottom: 0.25rem;
     }
 
-    .emhance-word-pill {
-        border-radius: 12px;
-        padding: 0 0.42em;
-    }
-
-    .emhance-subcopy {
-        font-size: 0.92rem;
-        margin-bottom: 1.25rem;
-        padding: 0 0.25rem;
-    }
-
-    /* Stack the 4 Speech Bubbles in a Clean 2x2 Grid Above the Robot on Mobile */
+    /* Give the stage enough height for a 2x2 comic dialogue halo ABOVE the robot */
     .emhance-centerpiece-zone {
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding-top: 0.5rem;
-    }
-
-    .robot-speech-cloud {
         position: relative;
-        inset: auto;
         width: 100%;
         max-width: 440px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.55rem;
-        order: 1;
-        margin-bottom: -10px;
+        height: 410px !important;
+        margin: 0.25rem auto 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .core-luminous-halo {
+        width: 260px;
+        height: 260px;
+        bottom: -20px;
+    }
+
+    /* Place the 4 Comic Bubbles in a Staggered Arc ABOVE the Robot's Antenna & Head */
+    .robot-speech-cloud {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        pointer-events: none;
+        z-index: 6;
     }
 
     .speech-bubble {
-        position: relative !important;
+        position: absolute !important;
+        width: 48% !important;
+        max-width: 48% !important;
+        padding: 0.42rem 0.55rem !important;
+        border-radius: 13px !important;
+        gap: 6px !important;
+        background: rgba(255, 255, 255, 0.94) !important;
+        box-shadow: 0 8px 20px rgba(17, 17, 19, 0.1) !important;
+    }
+
+    /* Clean Comic Pointer Tails Aimed Downward Toward the Robot */
+    .speech-bubble::after {
+        display: block !important;
+        width: 8px !important;
+        height: 8px !important;
         top: auto !important;
+        bottom: -5px !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: 1.5px solid rgba(17, 17, 19, 0.14) !important;
+        border-bottom: 1.5px solid rgba(17, 17, 19, 0.14) !important;
+    }
+
+    /* Top Row of Comic Dialogue (Left & Right) */
+    .bubble-ml {
+        top: 2% !important;
+        left: 0% !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+    .bubble-ml::after {
+        right: 18px !important;
+        left: auto !important;
+    }
+
+    .bubble-tr {
+        top: 2% !important;
+        right: 0% !important;
+        left: auto !important;
+        bottom: auto !important;
+    }
+    .bubble-tr::after {
+        left: 18px !important;
+        right: auto !important;
+    }
+
+    /* Second Row of Comic Dialogue (Sits right above the robot's head—NEVER over its eyes!) */
+    .bubble-bl {
+        top: 24% !important;
+        left: 0% !important;
+        bottom: auto !important;
+        right: auto !important;
+    }
+    .bubble-bl::after {
+        right: 14px !important;
+        left: auto !important;
+    }
+
+    .bubble-lr {
+        top: 24% !important;
+        right: 0% !important;
         bottom: auto !important;
         left: auto !important;
+    }
+    .bubble-lr::after {
+        left: 14px !important;
         right: auto !important;
-        transform: none !important;
-        padding: 0.5rem 0.65rem;
-        border-radius: 12px;
-        gap: 7px;
-        width: 100%;
     }
 
-    .speech-bubble::after {
-        display: none; /* Clean comic card look on mobile grid */
-    }
-
+    /* Compact Typography inside Mobile Bubbles */
     .node-badge-icon {
-        width: 22px;
-        height: 22px;
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .node-badge-icon svg {
+        width: 10px !important;
+        height: 10px !important;
     }
 
     .bot-speaker-tag {
-        font-size: 0.5rem;
+        font-size: 0.45rem !important;
+        letter-spacing: 0.4px !important;
     }
 
     .node-badge-label {
-        font-size: 0.7rem;
-        white-space: normal;
-        line-height: 1.25;
+        font-size: 0.62rem !important;
+        white-space: normal !important;
+        line-height: 1.2 !important;
     }
 
+    /* Proportionally Scaled Robot Sitting Unobstructed Below the Comic Arc */
     .ai-robot-stage {
-        order: 2;
-        height: 325px;
-        transform: scale(0.78);
-        transform-origin: bottom center;
+        height: 410px !important;
+        transform: scale(0.54) !important;
+        transform-origin: bottom center !important;
+        margin-bottom: 0 !important;
     }
 }
 
-/* Compact Phones (420px and below) */
-@media (max-width: 420px) {
-    .emhance-main-heading {
-        font-size: 1.52rem;
-    }
-
-    .robot-speech-cloud {
-        grid-template-columns: 1fr;
-        max-width: 340px;
+/* Extra-Small Phones (380px and below) */
+@media (max-width: 380px) {
+    .emhance-centerpiece-zone {
+        height: 390px !important;
     }
 
     .ai-robot-stage {
-        height: 300px;
-        transform: scale(0.72);
+        transform: scale(0.48) !important;
+    }
+
+    .speech-bubble {
+        width: 49% !important;
+        max-width: 49% !important;
+        padding: 0.35rem 0.45rem !important;
+    }
+
+    .node-badge-label {
+        font-size: 0.57rem !important;
     }
 }
 /* ==========================================================================
@@ -2766,6 +4354,185 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 
 
 /* ==========================================================================
+   FOOTER: APPLE PRO DOCK + SEAMLESS "ZYRAC" MONOLITH WITH FLYING AI ROBOTS
+   ========================================================================== */
+.site-footer.glass-footer {
+    --theme-orange: var(--primary-orange, #e85d04);
+    --theme-amber: #ff9f1c;
+    --theme-text: var(--text-main, #111113);
+    --theme-muted: var(--text-muted, #5a5a64);
+    --apple-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", sans-serif;
+
+    position: relative;
+    /* Generous bottom padding (45px) so the dark ZYRAC stage floats cleanly with margin */
+    padding: 90px 5% 45px 5%;
+    background: linear-gradient(180deg, #f8f8fb 0%, #eeeef5 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.footer-top-glow {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--theme-orange), var(--theme-amber), transparent);
+    opacity: 0.85;
+}
+
+.footer-ambient-orb {
+    position: absolute;
+    width: 750px;
+    height: 400px;
+    bottom: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(232, 93, 4, 0.14) 0%, transparent 70%);
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   1. TOP FLOATING QUICK-START BANNER
+   ========================================================================== */
+.footer-cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2.2rem 2.6rem;
+    margin-bottom: 4.5rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.96);
+    box-shadow: 
+        0 22px 48px -15px rgba(17, 17, 19, 0.06),
+        inset 0 1px 1px #ffffff;
+}
+
+.cta-banner-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+    max-width: 680px;
+}
+
+.live-availability-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.32rem 0.9rem;
+    border-radius: 30px;
+    background: rgba(45, 206, 137, 0.12);
+    color: #169c61;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.avail-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2dce89;
+    box-shadow: 0 0 8px #2dce89;
+    animation: pulseAvail 2s infinite ease-in-out;
+}
+
+@keyframes pulseAvail {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.banner-headline {
+    font-family: var(--apple-font);
+    font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+    font-weight: 800;
+    color: var(--theme-text);
+    letter-spacing: -0.8px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.banner-headline .caligraph-text {
+    font-size: clamp(1.85rem, 3vw, 2.65rem);
+    margin-left: 4px;
+}
+
+.banner-subtext {
+    font-size: 0.95rem;
+    color: var(--theme-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cta-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+}
+
+.whatsapp-instant-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.95rem 1.75rem;
+    border-radius: 980px;
+    background: #111113;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.94rem;
+    font-weight: 700;
+    box-shadow: 0 12px 26px rgba(17, 17, 19, 0.16);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.whatsapp-instant-btn:hover {
+    background: #25D366;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(37, 211, 102, 0.28);
+}
+
+.back-top-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--theme-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.back-top-btn:hover {
+    background: var(--theme-orange);
+    border-color: var(--theme-orange);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================================================
    2. MAIN 4-COLUMN FOOTER GRID
    ========================================================================== */
 .footer-grid {
@@ -2783,7 +4550,7 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 .footer-brand .footer-logo h3 {
     font-family: var(--apple-font);
     font-size: 2.4rem;
-    font-weight: 800;
+    font-weight: 900;
     color: var(--theme-text);
     letter-spacing: -1.5px;
     margin: 0 0 0.8rem 0;
@@ -3024,25 +4791,27 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 
 
 /* ==========================================================================
-   4. APPLE PRO 3D "ZYRAC" MONOLITH STAGE + FLYING AI DRONES
+   4. SEAMLESS "ZYRAC" MONOLITH STAGE + FLYING AI ROBOTS (FLOATING CARD)
    ========================================================================== */
 .zyrac-monolith-stage {
     position: relative;
     width: 100%;
-    margin-top: 0.5rem;
-    padding: 3.4rem 3% 0 3%;
-    border-radius: 34px 34px 0 0;
-    background: radial-gradient(circle at 50% 100%, #1c1f29 0%, #0a0b0e 88%);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-bottom: none;
+    margin: 1rem auto 0 auto;
+    padding: 4.2rem 4% 2.8rem 4%;
+    border-radius: 32px;
+    background: radial-gradient(circle at 50% 50%, #1d202b 0%, #0b0c10 90%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: 
-        0 -20px 50px rgba(17, 17, 19, 0.09),
-        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+        0 25px 55px -12px rgba(17, 17, 19, 0.22),
+        inset 0 1px 1px rgba(255, 255, 255, 0.22);
     overflow: hidden;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Mouse-Tracking Radial Spotlight Inside the Dark Stage */
 .wordmark-cursor-glow {
     position: absolute;
     inset: 0;
@@ -3056,7 +4825,6 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     z-index: 1;
 }
 
-/* Architectural Grid Overlay Inside Stage */
 .wordmark-grid-lines {
     position: absolute;
     inset: 0;
@@ -3101,7 +4869,6 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     95% { transform: scaleY(0.1); }
 }
 
-/* Downward Laser Scan Cone Under Each Flying Robot */
 .bot-scan-cone {
     width: 48px;
     height: 55px;
@@ -3115,21 +4882,20 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     background: linear-gradient(180deg, rgba(45, 206, 137, 0.28) 0%, rgba(45, 206, 137, 0) 100%);
 }
 
-/* Smooth 60FPS Patrol Paths for the 3 Flying Robots */
 .bot-alpha {
-    top: 18%;
+    top: 16%;
     left: -10%;
     animation: patrolAlpha 15s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .bot-beta {
-    top: 26%;
+    top: 24%;
     right: -10%;
     animation: patrolBeta 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 2s;
 }
 
 .bot-gamma {
-    top: 38%;
+    top: 34%;
     left: 46%;
     animation: patrolGamma 9s ease-in-out infinite;
 }
@@ -3155,33 +4921,33 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     50%      { transform: translate3d(45px, -16px, 0) rotate(4deg) scale(0.82); }
 }
 
-
-/* --- FOREGROUND LAYER: Apple Pro Display Typography & SVG Value Pills --- */
+/* --- FOREGROUND LAYER: Seamless Single-Word ZYRAC Typography --- */
 .monolith-letters-row {
     position: relative;
     z-index: 4;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: end;
-    text-align: center;
-    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0;
+    width: auto;
+    margin: 0 auto;
 }
 
 .monolith-char {
     position: relative;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     cursor: pointer;
-    padding-top: 2rem;
+    padding: 2.2rem 0.01em 0.2rem 0.01em;
     outline: none;
 }
 
-/* Pure SVG Floating Value Pill Above Each Letter (No Emojis) */
+/* Floating SVG Value Pill Above Each Letter */
 .char-value-pill {
     position: absolute;
-    top: -4px;
+    top: -6px;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -3197,7 +4963,7 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     letter-spacing: -0.2px;
     white-space: nowrap;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 16px rgba(232, 93, 4, 0.35);
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 1px solid #ffffff;
     opacity: 0;
     transform: translate3d(0, 14px, 0) scale(0.92);
     transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
@@ -3218,59 +4984,55 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     flex-shrink: 0;
 }
 
-/* Apple Pro Display Font Glyph */
+/* Seamless, Un-Stitched ZYRAC Brand Font Glyph */
 .char-glyph {
-    display: block;
-    font-family: var(--apple-font);
-    font-size: clamp(4.4rem, 17vw, 15.2rem);
-    font-weight: 800;
-    line-height: 0.8;
-    letter-spacing: -0.055em;
+    display: inline-block;
+    font-family: inherit;
+    font-size: clamp(3.8rem, 15vw, 12.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
     color: transparent;
-    /* Apple Titanium Brushed Glass Gradient */
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.95) 0%,
-        rgba(215, 220, 232, 0.42) 52%,
-        rgba(255, 255, 255, 0.06) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.25);
-    transform: translate3d(0, 8%, 0);
-    transition: transform 0.48s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.48s cubic-bezier(0.16, 1, 0.3, 1),
-                -webkit-text-stroke 0.35s ease;
-    will-change: transform;
-}
-
-.char-glyph.accent-glyph {
-    background: linear-gradient(
-        180deg,
-        #ffcf56 0%,
-        var(--theme-orange) 65%,
-        rgba(232, 93, 4, 0.2) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-stroke: 1.2px rgba(255, 183, 3, 0.5);
-}
-
-/* Smooth 60FPS Hover / Active State */
-.monolith-char:hover .char-glyph,
-.monolith-char:focus .char-glyph,
-.monolith-char.active-pulse .char-glyph {
-    transform: translate3d(0, -5%, 0) scale(1.04);
     background: linear-gradient(
         180deg,
         #ffffff 0%,
-        #ffb703 48%,
+        #d4d7e0 62%,
+        #7d8294 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+/* Signature Orange Accent on 'R' & 'A' */
+.char-glyph.accent-glyph,
+.monolith-char:nth-child(4) .char-glyph {
+    background: linear-gradient(
+        180deg,
+        #ffb703 0%,
+        var(--theme-orange) 85%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Smooth 3D Lift on Hover / Tap / Auto-Wave */
+.monolith-char:hover .char-glyph,
+.monolith-char:focus .char-glyph,
+.monolith-char.active-pulse .char-glyph {
+    transform: translate3d(0, -10px, 0) scale(1.04);
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffb703 45%,
         var(--theme-orange) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-stroke: 1.5px #ffffff;
-    filter: drop-shadow(0 -14px 30px rgba(232, 93, 4, 0.55));
+    filter: drop-shadow(0 12px 28px rgba(232, 93, 4, 0.5));
 }
 
 .monolith-char:hover .char-value-pill,
@@ -3322,7 +5084,7 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 /* Mobile Phones (768px and below) */
 @media (max-width: 768px) {
     .site-footer.glass-footer {
-        padding: 65px 4% 0 4%;
+        padding: 65px 4% 28px 4%;
     }
 
     .footer-cta-banner {
@@ -3341,7 +5103,6 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
         justify-content: center;
     }
 
-    /* Clean 2-Column Navigation on Mobile */
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 2rem 1.2rem;
@@ -3366,10 +5127,18 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
         padding: 1.4rem 0;
     }
 
-    /* Mobile Scaling for the 3D Wordmark + Flying Robots */
     .zyrac-monolith-stage {
-        border-radius: 24px 24px 0 0;
-        padding: 2.8rem 2% 0 2%;
+        border-radius: 24px;
+        padding: 3.2rem 3% 1.8rem 3%;
+    }
+
+    .monolith-char {
+        padding-top: 1.8rem;
+    }
+
+    .char-glyph {
+        font-size: clamp(3.4rem, 16.5vw, 6.2rem);
+        letter-spacing: -0.03em;
     }
 
     .bot-drone-svg {
@@ -3401,7 +5170,6 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 
 /* Compact Phones (420px and below) */
 @media (max-width: 420px) {
-    /* Prevent edge clipping on Z and C pills on tiny screens */
     .monolith-char:first-child .char-value-pill {
         left: 0;
     }
