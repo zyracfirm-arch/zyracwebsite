@@ -57,179 +57,206 @@
     </nav>
 
 <!-- ==========================================================================
-     SECTION 1: EMHANCE-STYLE HERO WITH 3D APPLE STUDIO SHOWCASE (NO SCARY FACE)
+     SECTION 1: REALISTIC AI ROBOT + COMIC SPEECH BUBBLES + EYE EXPRESSIONS
      ========================================================================== -->
-<section id="home" class="emhance-hero">
+<section id="home" class="zyrac-emhance-hero">
     
-    <!-- Smooth Multi-Stop Atmospheric Aura (Your Brand Orange + Warm Cream Palette) -->
-    <div class="emhance-aura-bg">
+    <!-- Multi-Layered Atmospheric Radial Aura -->
+    <div class="emhance-aura-stage">
+        <div class="aura-top-vignette"></div>
+        <div class="aura-center-bloom"></div>
+        <div class="aura-side-wings"></div>
         <canvas id="hero-canvas" class="interactive-canvas"></canvas>
     </div>
 
-    <div class="emhance-hero-container">
+    <div class="emhance-stage-wrapper">
         
-        <!-- TOP CENTER: Split-Pill Morphing Headline + Subtitle + Black Pill CTA -->
-        <div class="emhance-copy-stack fade-in">
-            <h1 class="emhance-title">
-                <span class="title-top-line">Custom Code for</span>
-                <span class="title-pill-row">
-                    <span class="morph-glass-pill" id="morph-pill-1">paisa vasool</span>
-                    <span class="morph-glass-pill accent-pill-text" id="morph-pill-2">conversions</span>
+        <!-- TOP CENTER: Smooth Width-Morphing Glass Pills + Simple Pitch -->
+        <div class="emhance-header-block fade-in">
+            
+            <h1 class="emhance-main-heading">
+                <span class="heading-top-line">We build fast</span>
+                
+                <!-- Locked Single-Row Track (Zero Vertical Jumping on Mobile) -->
+                <span class="emhance-pill-pair" id="morph-pill-track">
+                    <span class="emhance-word-pill" id="morph-pill-1">
+                        <span class="pill-inner-text">paisa vasool</span>
+                    </span>
+                    <span class="emhance-word-pill pill-accent" id="morph-pill-2">
+                        <span class="pill-inner-text">websites</span>
+                    </span>
                 </span>
             </h1>
 
-            <p class="emhance-subtitle">
-                Meet <strong>ZYRAC</strong> — the zero-"Jugaad" engineering studio for founders tired of slow templates and <em>"Sir 5 minute mein deploy ho raha hai"</em> excuses.
+            <p class="emhance-subcopy">
+                Custom Websites, Web Apps, and Mobile Apps built from scratch to bring you more clients—with zero templates and no <em>"Sir kal pakka ho jayega"</em> excuses.
             </p>
 
-            <div class="emhance-cta-row">
-                <a href="#contact" class="emhance-black-btn">
-                    <span>Start Your Build</span>
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Hovering this button triggers the Robot's Excited Eyes + Laser Scan! -->
+            <div class="emhance-cta-holder">
+                <a href="#contact" class="emhance-solid-cta" id="hero-build-cta">
+                    <span>Start your build</span>
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 </a>
             </div>
+
         </div>
 
-        <!-- BOTTOM CENTER: 3D Apple Studio Device Showcase + 4 Floating Callout Pills -->
-        <div class="emhance-portrait-stage fade-in delay-1" id="parallax-zone">
+        <!-- BOTTOM CENTER: Realistic AI Robot + 4 Comic Speech Bubbles -->
+        <div class="emhance-centerpiece-zone fade-in delay-1" id="parallax-zone">
             
-            <!-- Bright Luminous Halo Behind the 3D Devices -->
-            <div class="portrait-halo-glow"></div>
+            <!-- Bright Luminous Halo Behind the Robot -->
+            <div class="core-luminous-halo"></div>
 
-            <!-- CENTERPIECE: 3D Interactive MacBook Pro + Floating iPhone Mockup -->
-            <div class="studio-device-showcase" id="zyrac-stage-visual">
+            <!-- 4 COMIC SPEECH BUBBLES (Robot Talking to the Client) -->
+            <div class="robot-speech-cloud">
                 
-                <!-- Sleek Dark-Glass MacBook Pro Frame -->
-                <div class="macbook-pro-frame">
-                    <div class="macbook-screen">
-                        <!-- Top Camera Notch & macOS Bar -->
-                        <div class="macbook-top-bar">
-                            <div class="mac-dots"><span></span><span></span><span></span></div>
-                            <div class="macbook-notch"></div>
-                            <span class="mac-url-pill">
-                                <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                </svg>
-                                yourbrand.com • 0.38s
-                            </span>
-                        </div>
+                <!-- Bubble 1: Top Right -->
+                <div class="emhance-floating-node speech-bubble bubble-tr parallax-layer active-node" data-speed="2.5" data-node-index="0">
+                    <span class="node-badge-icon">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </span>
+                    <div class="speech-copy">
+                        <small class="bot-speaker-tag">ZYRAC BOT SAYS:</small>
+                        <span class="node-badge-label">"Opens in 0.4s—faster than 2-min noodles!"</span>
+                    </div>
+                </div>
 
-                        <!-- Inside the Screen: Live High-Converting Flagship UI Preview -->
-                        <div class="screen-live-ui">
+                <!-- Bubble 2: Mid Left -->
+                <div class="emhance-floating-node speech-bubble bubble-ml parallax-layer" data-speed="3.5" data-node-index="1">
+                    <span class="node-badge-icon">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                    </span>
+                    <div class="speech-copy">
+                        <small class="bot-speaker-tag">REALITY CHECK:</small>
+                        <span class="node-badge-label">"No ₹2,000 'Chacha Ka Ladka' templates here."</span>
+                    </div>
+                </div>
+
+                <!-- Bubble 3: Lower Right -->
+                <div class="emhance-floating-node speech-bubble bubble-lr parallax-layer" data-speed="3" data-node-index="2">
+                    <span class="node-badge-icon">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <polyline points="9 12 11 14 15 10"></polyline>
+                        </svg>
+                    </span>
+                    <div class="speech-copy">
+                        <small class="bot-speaker-tag">PROMISE:</small>
+                        <span class="node-badge-label">"Zero 'Sir 5 min mein deploy ho raha hai' lies."</span>
+                    </div>
+                </div>
+
+                <!-- Bubble 4: Bottom Left -->
+                <div class="emhance-floating-node speech-bubble bubble-bl parallax-layer" data-speed="4" data-node-index="3">
+                    <span class="node-badge-icon">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </span>
+                    <div class="speech-copy">
+                        <small class="bot-speaker-tag">OWNERSHIP:</small>
+                        <span class="node-badge-label">"100% yours. Zero monthly hostage fees!"</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- THE REALISTIC AI ROBOT FIGURE (Eyes Track Mouse & React to CTA Hover) -->
+            <div class="ai-robot-stage" id="zyrac-ai-bot">
+                
+                <!-- 1. Articulated Robot Head -->
+                <div class="robot-head-assembly" id="bot-head">
+                    <!-- Top Telemetry Antenna -->
+                    <div class="robot-antenna">
+                        <span class="antenna-tip"></span>
+                    </div>
+
+                    <!-- Side Acoustic/Gyro Ears -->
+                    <div class="robot-ear ear-left">
+                        <span class="ear-led"></span>
+                    </div>
+                    <div class="robot-ear ear-right">
+                        <span class="ear-led"></span>
+                    </div>
+
+                    <!-- Machined Ceramic & Space-Black Titanium Helmet -->
+                    <div class="robot-helmet">
+                        <div class="helmet-brow-ridge"></div>
+                        <div class="helmet-crown-glint"></div>
+                        <span class="helmet-sensor-dot"></span>
+
+                        <!-- Curved 3D OLED Glass Visor -->
+                        <div class="robot-visor-glass" id="bot-visor">
+                            <div class="visor-scanline"></div>
+                            <div class="visor-reflection"></div>
                             
-                            <!-- Left Mini Showcase: Visual Product / SaaS Hero -->
-                            <div class="ui-preview-left">
-                                <span class="ui-mini-badge">100% ASLI CODE</span>
-                                <h3>Built to Make Clients Pay Instantly.</h3>
-                                <p>Zero WordPress bloat. Pure custom speed.</p>
-                                <div class="ui-mini-cta-row">
-                                    <span class="ui-fake-btn">Buy Now →</span>
-                                    <span class="ui-speed-tag">99.9% Uptime</span>
+                            <!-- Horizontal Laser Scanner Beam (Activates on CTA Hover) -->
+                            <div class="visor-laser-beam"></div>
+
+                            <!-- Dual Glowing Optical Eyes (Follow Mouse & Change Expression) -->
+                            <div class="robot-eyes-track" id="bot-eyes-group">
+                                <div class="robot-eye" id="bot-eye-left">
+                                    <div class="eye-iris-ring"></div>
+                                    <div class="eye-pupil"></div>
+                                    <div class="eye-glint"></div>
+                                </div>
+                                <div class="robot-eye" id="bot-eye-right">
+                                    <div class="eye-iris-ring"></div>
+                                    <div class="eye-pupil"></div>
+                                    <div class="eye-glint"></div>
                                 </div>
                             </div>
 
-                            <!-- Right Mini Showcase: Live Revenue & Speed Ring -->
-                            <div class="ui-preview-right">
-                                <div class="speed-gauge-card">
-                                    <div class="gauge-circle">
-                                        <svg viewBox="0 0 36 36" class="circular-chart">
-                                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                            <path class="circle-progress" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        </svg>
-                                        <span class="gauge-num">100</span>
-                                    </div>
-                                    <div class="gauge-copy">
-                                        <strong>Google Speed</strong>
-                                        <span>Maza Aa Gaya Tier</span>
-                                    </div>
-                                </div>
-
-                                <!-- Live Counters (Preserves your JS IDs!) -->
-                                <div class="mini-stats-grid">
-                                    <div class="mini-stat-box">
-                                        <span class="mini-label">Builds Shipped</span>
-                                        <strong class="mini-val" id="counter-deployments">214</strong>
-                                    </div>
-                                    <div class="mini-stat-box">
-                                        <span class="mini-label">Leads Driven</span>
-                                        <strong class="mini-val" id="counter-requests">8,420</strong>
-                                    </div>
-                                </div>
+                            <!-- Animated Voice Waveform Mouth (Makes Robot Look Like It's Speaking the Pills!) -->
+                            <div class="robot-voice-mouth" id="bot-mouth">
+                                <span></span><span></span><span></span><span></span><span></span>
                             </div>
-
                         </div>
-                    </div>
-                    <!-- MacBook Aluminum Base Lip -->
-                    <div class="macbook-base">
-                        <div class="macbook-groove"></div>
                     </div>
                 </div>
 
-                <!-- Floating iPhone 16 Pro Overlay (Right Side of Laptop) -->
-                <div class="iphone-pro-floating parallax-layer" data-speed="2">
-                    <div class="iphone-dynamic-island"></div>
-                    <div class="iphone-screen-content">
-                        <div class="upi-success-badge">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
+                <!-- 2. Multi-Piston Hydraulic Neck -->
+                <div class="robot-neck">
+                    <div class="neck-piston left-piston"></div>
+                    <div class="neck-piston right-piston"></div>
+                    <div class="neck-ring"></div>
+                    <div class="neck-ring"></div>
+                </div>
+
+                <!-- 3. Realistic Machined Shoulders & Chest Core -->
+                <div class="robot-torso-bust">
+                    <div class="shoulder-joint joint-l"></div>
+                    <div class="shoulder-joint joint-r"></div>
+                    <div class="clavicle-seam"></div>
+
+                    <!-- Chest Core Telemetry Module (Preserves Your JS Counter IDs!) -->
+                    <div class="robot-chest-core">
+                        <div class="chest-arc-glow"></div>
+                        <span class="chest-kicker">ZYRAC AI CORE // LIVE STATS</span>
+                        <div class="chest-counters-row">
+                            <div class="chest-stat">
+                                <small>PROJECTS LAUNCHED</small>
+                                <strong id="counter-deployments">214</strong>
+                            </div>
+                            <span class="chest-divider"></span>
+                            <div class="chest-stat">
+                                <small>CLIENT LEADS</small>
+                                <strong id="counter-requests">8,420</strong>
+                            </div>
                         </div>
-                        <span class="iphone-kicker">DIRECT SALE</span>
-                        <strong class="iphone-amount">₹48,500</strong>
-                        <span class="iphone-sub">0% Middleman Cut</span>
-                        <div class="iphone-pulse-bar"></div>
                     </div>
                 </div>
 
-            </div>
-
-            <!-- 4 Floating Glass Callout Pills Around the 3D Showcase (Exact Video Positions) -->
-            
-            <!-- 1. Top-Right Pill -->
-            <div class="emhance-callout pill-top-right parallax-layer" data-speed="2.5">
-                <span class="callout-icon-circle">
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
-                </span>
-                <span class="callout-text">0.4s Speed (Zero Buffering)</span>
-            </div>
-
-            <!-- 2. Mid-Left Pill -->
-            <div class="emhance-callout pill-mid-left parallax-layer" data-speed="3.5">
-                <span class="callout-icon-circle">
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                </span>
-                <span class="callout-text">No "Sir Kal Ho Jayega"</span>
-            </div>
-
-            <!-- 3. Lower-Right Pill -->
-            <div class="emhance-callout pill-low-right parallax-layer" data-speed="3">
-                <span class="callout-icon-circle">
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                </span>
-                <span class="callout-text">No "Chacha Ka Ladka" Bugs</span>
-            </div>
-
-            <!-- 4. Bottom-Left Pill -->
-            <div class="emhance-callout pill-bottom-left parallax-layer" data-speed="4">
-                <span class="callout-icon-circle">
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        <polyline points="9 12 11 14 15 10"></polyline>
-                    </svg>
-                </span>
-                <span class="callout-text">No ₹500 Copied Themes</span>
             </div>
 
         </div>
@@ -319,11 +346,11 @@
     <!-- Ambient Background Depth -->
     <div class="reviews-ambient-glow glow-1"></div>
     <div class="reviews-ambient-glow glow-2"></div>
-
+///
     <div class="global-container">
         
         <div class="section-header fade-in">
-            <span class="premium-badge">Asli Results • Zero Fake Hype</span>
+            <span class="premium-badge">Asli Results • Zero Fake Hype</spa/n>/
             <h2 class="section-title">Backed by <span class="caligraph-text accent">Founders.</span></h2>
             <p class="section-subtitle">What happens when ambitious Indian brands ditch slow templates, 30% aggregator commissions, and "kal ho jayega" developers.</p>
             
@@ -1211,75 +1238,285 @@
 </section>
 
     
-    <footer class="site-footer glass-footer">
+   <!-- ==========================================================================
+     FOOTER: APPLE PRO GLASS DOCK + 3D "ZYRAC" STAGE WITH FLYING AI DRONES
+     ========================================================================== -->
+<footer class="site-footer glass-footer" id="footer">
+    
+    <!-- Top Horizon Laser Line & Ambient Glow -->
+    <div class="footer-top-glow"></div>
+    <div class="footer-ambient-orb"></div>
+
+    <div class="footer-container">
         
-        <div class="footer-top-glow"></div>
-        
-        <div class="footer-container">
-            <div class="footer-grid">
-                
-                <div class="footer-brand fade-in">
-                    <a href="#home" class="footer-logo">
-                        <h3>ZYR<span class="accent">A</span>C</h3>
-                    </a>
-                    <p class="footer-tagline">
-                        Engineering premium digital spaces. <br> 
-                        <span class="caligraph-text small">Clarity, performance, and striking design.</span>
-                    </p>
-                </div>
-
-                <div class="footer-nav fade-in delay-1">
-                    <h4 class="footer-heading">Platform</h4>
-                    <ul>
-                        <li><a href="#home">The Vision</a></li>
-                        <li><a href="#tech">Architecture</a></li>
-                        <li><a href="#manifesto">Our Standard</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-nav fade-in delay-2">
-                    <h4 class="footer-heading">Headquarters</h4>
-                    <div class="location-block">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="location-icon">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <p>Ahmedabad, Gujarat<br>India</p>
-                    </div>
-                </div>
-
-                <div class="footer-socials fade-in delay-3">
-                    <h4 class="footer-heading">Connect</h4>
-                    <div class="social-icons">
-                        
-                        <a href="https://www.linkedin.com/in/faiz-mansuri9773423956" aria-label="LinkedIn" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        
-                        <a href="https://www.instagram.com/zyrac__" aria-label="Instagram" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                        
-                        <a href="https://wa.me/919773423956?text=Hi%20Faiz,%20I'm%20interested%20in%20working%20with%20ZYRAC!" target="_blank" aria-label="WhatsApp" class="social-link glow-trail">
-    <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-    </svg>
-</a>
-                        
-                    </div>
-                </div>
-
+        <!-- 1. TOP QUICK-START CARD (Simple, High-Value Pitch for Clients) -->
+        <div class="footer-cta-banner fade-in">
+            <div class="cta-banner-left">
+                <span class="live-availability-pill">
+                    <span class="avail-dot"></span>
+                    <span>Taking On New Projects</span>
+                </span>
+                <h3 class="banner-headline">
+                    Want a fast website that actually brings clients? <span class="caligraph-text accent">Let's Talk.</span>
+                </h3>
+                <p class="banner-subtext">
+                    No confusing tech talk. Message Faiz directly on WhatsApp and get a clear plan for your business in 15 minutes.
+                </p>
             </div>
-            
-            <div class="footer-bottom fade-in delay-2">
-                <p>&copy; 2026 ZYRAC. All rights reserved.</p>
-                <div class="footer-legal">
-                    <span class="caligraph-text small">Your Best Digital Self.</span>
-                </div>
+            <div class="cta-banner-actions">
+                <a href="https://wa.me/919773423956?text=Hi%20Faiz,%20I%20want%20to%20discuss%20a%20website/app%20for%20my%20business!" target="_blank" rel="noopener noreferrer" class="whatsapp-instant-btn">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span>Message on WhatsApp</span>
+                </a>
+                <a href="#home" class="back-top-btn" aria-label="Scroll back to top" title="Back to Top">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                    </svg>
+                </a>
             </div>
         </div>
-    </footer>
 
+        <!-- 2. SIMPLE, EASY-TO-UNDERSTAND 4-COLUMN GRID -->
+        <div class="footer-grid">
+            
+            <!-- Column 1: Plain-English Value Proposition (SVG Checkmarks, No Emojis) -->
+            <div class="footer-brand fade-in">
+                <a href="#home" class="footer-logo">
+                    <h3>ZYR<span class="accent">A</span>C<span class="logo-dot">.</span></h3>
+                </a>
+                <p class="footer-tagline">
+                    We build custom Websites, Web Apps, and Mobile Apps that load fast, look world-class, and turn visitors into paying customers.
+                </p>
+                <div class="footer-value-pills">
+                    <span class="mini-value-tag">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Zero Templates
+                    </span>
+                    <span class="mini-value-tag">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        100% Your Code
+                    </span>
+                    <span class="mini-value-tag">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        No Monthly Fees
+                    </span>
+                </div>
+            </div>
+
+            <!-- Column 2: What We Build -->
+            <div class="footer-nav fade-in delay-1">
+                <h4 class="footer-heading">What We Build</h4>
+                <ul>
+                    <li><a href="#services"><span class="nav-bullet"></span>Our Services</a></li>
+                    <li><a href="#audience"><span class="nav-bullet"></span>Who We Help</a></li>
+                    <li><a href="#portfolio"><span class="nav-bullet"></span>Past Projects</a></li>
+                    <li><a href="#manifesto"><span class="nav-bullet"></span>Why Choose Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Direct Proof -->
+            <div class="footer-nav fade-in delay-2">
+                <h4 class="footer-heading">Direct Proof</h4>
+                <ul>
+                    <li><a href="#home"><span class="nav-bullet"></span>Home</a></li>
+                    <li><a href="#founder"><span class="nav-bullet"></span>Meet Faiz (Founder)</a></li>
+                    <li><a href="#reviews"><span class="nav-bullet"></span>Client Stories</a></li>
+                    <li><a href="#contact"><span class="nav-bullet"></span>Start a Project</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Location & Direct Socials -->
+            <div class="footer-hq-col fade-in delay-3">
+                <h4 class="footer-heading">Our Studio</h4>
+                
+                <div class="hq-glass-card">
+                    <div class="location-block">
+                        <div class="radar-pin-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="location-icon">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="hq-text">
+                            <strong>Ahmedabad, Gujarat</strong>
+                            <span>Working with clients worldwide</span>
+                        </div>
+                    </div>
+                    <div class="hq-live-clock">
+                        <span class="clock-label">AHMEDABAD TIME</span>
+                        <span class="clock-readout" id="ahm-live-time">IST // LIVE</span>
+                    </div>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/faiz-mansuri9773423956" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/zyrac__" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link" title="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    
+                    <a href="https://wa.me/919773423956?text=Hi%20Faiz,%20I'm%20interested%20in%20working%20with%20ZYRAC!" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link whatsapp-link" title="Direct WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- 3. COPYRIGHT & INTERACTION HINT BAR -->
+        <div class="footer-bottom fade-in delay-2">
+            <p>&copy; 2026 ZYRAC. Built from scratch by Faiz Mansuri.</p>
+            <div class="footer-interactive-hint">
+                <span class="hint-dot"></span>
+                <span>Hover or tap the letters below to inspect our architecture</span>
+            </div>
+        </div>
+
+        <!-- 4. APPLE PRO 3D "ZYRAC" MONOLITH STAGE + FLYING AI DRONES -->
+        <div class="zyrac-monolith-stage" id="interactive-wordmark">
+            
+            <!-- Dynamic Cursor Spotlight & Precision Grid -->
+            <div class="wordmark-cursor-glow"></div>
+            <div class="wordmark-grid-lines"></div>
+
+            <!-- BACKGROUND LAYER: 3 Autonomous Flying AI Robots Behind the Giant Letters -->
+            <div class="flying-drones-layer" aria-hidden="true">
+                
+                <!-- Flying Robot 1 (Left-to-Right Patrol + Laser Scan) -->
+                <div class="flying-bot-unit bot-alpha">
+                    <div class="bot-jet-trail"></div>
+                    <svg class="bot-drone-svg" viewBox="0 0 64 44" fill="none">
+                        <!-- Hover Thrusters -->
+                        <ellipse cx="16" cy="36" rx="7" ry="2.5" fill="rgba(232,93,4,0.55)" />
+                        <ellipse cx="48" cy="36" rx="7" ry="2.5" fill="rgba(232,93,4,0.55)" />
+                        <!-- Machined Drone Body -->
+                        <rect x="10" y="10" width="44" height="24" rx="12" fill="#1e222d" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+                        <!-- OLED Visor -->
+                        <rect x="16" y="15" width="32" height="13" rx="6.5" fill="#090b10" stroke="rgba(255,255,255,0.2)"/>
+                        <!-- Glowing Optical Eyes -->
+                        <circle class="drone-eye" cx="25" cy="21.5" r="3" fill="#ffb703"/>
+                        <circle class="drone-eye" cx="39" cy="21.5" r="3" fill="#ffb703"/>
+                        <!-- Top Antenna -->
+                        <line x1="32" y1="10" x2="32" y2="4" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+                        <circle cx="32" cy="3" r="2" fill="#2dce89"/>
+                    </svg>
+                    <div class="bot-scan-cone"></div>
+                </div>
+
+                <!-- Flying Robot 2 (Right-to-Left High Altitude Patrol) -->
+                <div class="flying-bot-unit bot-beta">
+                    <div class="bot-jet-trail"></div>
+                    <svg class="bot-drone-svg" viewBox="0 0 64 44" fill="none">
+                        <ellipse cx="16" cy="36" rx="7" ry="2.5" fill="rgba(45,206,137,0.5)" />
+                        <ellipse cx="48" cy="36" rx="7" ry="2.5" fill="rgba(45,206,137,0.5)" />
+                        <rect x="10" y="10" width="44" height="24" rx="12" fill="#252936" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+                        <rect x="16" y="15" width="32" height="13" rx="6.5" fill="#090b10" stroke="rgba(255,255,255,0.2)"/>
+                        <circle class="drone-eye" cx="25" cy="21.5" r="3" fill="#2dce89"/>
+                        <circle class="drone-eye" cx="39" cy="21.5" r="3" fill="#2dce89"/>
+                        <line x1="32" y1="10" x2="32" y2="4" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+                        <circle cx="32" cy="3" r="2" fill="#e85d04"/>
+                    </svg>
+                    <div class="bot-scan-cone green-cone"></div>
+                </div>
+
+                <!-- Flying Robot 3 (Center Figure-8 Hover Scout) -->
+                <div class="flying-bot-unit bot-gamma">
+                    <svg class="bot-drone-svg" viewBox="0 0 64 44" fill="none">
+                        <ellipse cx="32" cy="37" rx="10" ry="2.5" fill="rgba(255,183,3,0.55)" />
+                        <rect x="12" y="10" width="40" height="24" rx="12" fill="#1b1f2a" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+                        <rect x="18" y="15" width="28" height="13" rx="6.5" fill="#080a0e"/>
+                        <circle class="drone-eye" cx="26" cy="21.5" r="2.8" fill="#e85d04"/>
+                        <circle class="drone-eye" cx="38" cy="21.5" r="2.8" fill="#e85d04"/>
+                    </svg>
+                </div>
+
+            </div>
+
+            <!-- FOREGROUND LAYER: Apple Pro Display Font Letters + Pure SVG Hover Badges -->
+            <div class="monolith-letters-row">
+                
+                <!-- Letter Z -->
+                <div class="monolith-char" tabindex="0">
+                    <span class="char-value-pill">
+                        <span class="pill-svg-wrap">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </span>
+                        <span>0.4s Instant Load</span>
+                    </span>
+                    <span class="char-glyph" data-char="Z">Z</span>
+                </div>
+
+                <!-- Letter Y -->
+                <div class="monolith-char" tabindex="0">
+                    <span class="char-value-pill">
+                        <span class="pill-svg-wrap">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </span>
+                        <span>Zero Templates</span>
+                    </span>
+                    <span class="char-glyph" data-char="Y">Y</span>
+                </div>
+
+                <!-- Letter R -->
+                <div class="monolith-char active-pulse" tabindex="0">
+                    <span class="char-value-pill">
+                        <span class="pill-svg-wrap">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>100% Paisa Vasool</span>
+                    </span>
+                    <span class="char-glyph accent-glyph" data-char="R">R</span>
+                </div>
+
+                <!-- Letter A -->
+                <div class="monolith-char" tabindex="0">
+                    <span class="char-value-pill">
+                        <span class="pill-svg-wrap">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 11 14 15 10"></polyline>
+                            </svg>
+                        </span>
+                        <span>Full Ownership</span>
+                    </span>
+                    <span class="char-glyph" data-char="A">A</span>
+                </div>
+
+                <!-- Letter C -->
+                <div class="monolith-char" tabindex="0">
+                    <span class="char-value-pill">
+                        <span class="pill-svg-wrap">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </span>
+                        <span>1-on-1 Direct Build</span>
+                    </span>
+                    <span class="char-glyph" data-char="C">C</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>

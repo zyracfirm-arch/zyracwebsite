@@ -81,52 +81,166 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    /* --- C. Split-Pill Headline Rotator (Emhance-Style Hero) --- */
-    const morphPill1 = document.getElementById('morph-pill-1') || document.getElementById('pill-word-1');
-    const morphPill2 = document.getElementById('morph-pill-2') || document.getElementById('pill-word-2');
+/* --- C. SMOOTH WIDTH-MORPHING SPLIT PILLS + COMIC BUBBLE SYNC --- */
+    const morphPill1 = document.getElementById('morph-pill-1');
+    const morphPill2 = document.getElementById('morph-pill-2');
+    const diagnosticNodes = document.querySelectorAll('.emhance-floating-node');
 
     if (morphPill1 && morphPill2) {
+        const textSpan1 = morphPill1.querySelector('.pill-inner-text') || morphPill1;
+        const textSpan2 = morphPill2.querySelector('.pill-inner-text') || morphPill2;
+
         const headlinePairs = [
-            ["paisa vasool", "conversions"],
-            ["zero doglapan", "architecture"],
-            ["Diwali traffic", "survival"],
-            ["sub-second", "load speed"],
-            ["direct buyer", "onboarding"]
+            ["paisa vasool", "websites"],
+            ["zero doglapan", "web apps"],
+            ["Diwali traffic", "stores"],
+            ["sub-second", "mobile apps"]
         ];
         let currentPair = 0;
 
+        function setSmoothPillWidth(pillEl, textEl, newText) {
+            const currentWidth = pillEl.offsetWidth;
+            pillEl.style.width = `${currentWidth}px`;
+            textEl.textContent = newText;
+
+            pillEl.style.width = 'auto';
+            const targetWidth = pillEl.offsetWidth;
+
+            pillEl.style.width = `${currentWidth}px`;
+            void pillEl.offsetWidth;
+            pillEl.style.width = `${targetWidth}px`;
+        }
+
+        window.addEventListener('resize', () => {
+            morphPill1.style.width = 'auto';
+            morphPill2.style.width = 'auto';
+        }, { passive: true });
+
         setInterval(() => {
-            morphPill1.classList.add('pill-fade-out', 'switching-out');
-            morphPill2.classList.add('pill-fade-out', 'switching-out');
+            morphPill1.classList.add('is-changing');
+            morphPill2.classList.add('is-changing');
 
             setTimeout(() => {
                 currentPair = (currentPair + 1) % headlinePairs.length;
-                morphPill1.textContent = headlinePairs[currentPair][0];
-                morphPill2.textContent = headlinePairs[currentPair][1];
+                setSmoothPillWidth(morphPill1, textSpan1, headlinePairs[currentPair][0]);
+                setSmoothPillWidth(morphPill2, textSpan2, headlinePairs[currentPair][1]);
 
-                morphPill1.classList.remove('pill-fade-out', 'switching-out');
-                morphPill2.classList.remove('pill-fade-out', 'switching-out');
-            }, 280);
+                morphPill1.classList.remove('is-changing');
+                morphPill2.classList.remove('is-changing');
+
+                // Highlight the matching comic speech bubble around the robot
+                if (diagnosticNodes.length > 0) {
+                    diagnosticNodes.forEach(n => n.classList.remove('active-node'));
+                    const activeNode = diagnosticNodes[currentPair % diagnosticNodes.length];
+                    if (activeNode) activeNode.classList.add('active-node');
+                }
+            }, 230);
         }, 2800);
     }
 
 
-    /* --- D. Interactive Pixel Matrix Lens (If Silhouette Exists) --- */
-    const scannerBox = document.getElementById('pixel-scanner-box');
-    const pixelLens = document.getElementById('pixel-lens');
+    /* --- D. REALISTIC AI ROBOT: MOUSE-TRACKING EYES, CTA EXCITED SQUINT & BLINK --- */
+    const aiBotStage = document.getElementById('zyrac-ai-bot');
+    const botHead = document.getElementById('bot-head');
+    const botEyesGroup = document.getElementById('bot-eyes-group');
+    const botEyeLeft = document.getElementById('bot-eye-left');
+    const botEyeRight = document.getElementById('bot-eye-right');
+    const buildCtaBtn = document.getElementById('hero-build-cta') || document.querySelector('.emhance-solid-cta');
 
-    if (scannerBox && pixelLens) {
-        scannerBox.addEventListener('mousemove', (e) => {
-            const rect = scannerBox.getBoundingClientRect();
-            const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
-            const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
-            pixelLens.style.setProperty('--scan-x', `${xPercent.toFixed(1)}%`);
-            pixelLens.style.setProperty('--scan-y', `${yPercent.toFixed(1)}%`);
+    if (aiBotStage && botHead && botEyesGroup && botEyeLeft && botEyeRight) {
+        const leftPupil = botEyeLeft.querySelector('.eye-pupil');
+        const rightPupil = botEyeRight.querySelector('.eye-pupil');
+
+        let lookTargetX = 0, lookTargetY = 0;
+        let lookCurrentX = 0, lookCurrentY = 0;
+        let lastInteractionTime = Date.now();
+
+        // 1. Trigger Excited Happy Eyes + Laser Scan when hovering "Start your build" CTA
+        if (buildCtaBtn) {
+            buildCtaBtn.addEventListener('mouseenter', () => {
+                aiBotStage.classList.add('cta-excited');
+            });
+            buildCtaBtn.addEventListener('mouseleave', () => {
+                aiBotStage.classList.remove('cta-excited');
+            });
+        }
+
+        // 2. Track mouse anywhere on the screen
+        window.addEventListener('mousemove', (e) => {
+            lastInteractionTime = Date.now();
+            const headRect = botHead.getBoundingClientRect();
+            const headCenterX = headRect.left + headRect.width / 2;
+            const headCenterY = headRect.top + headRect.height / 2;
+
+            const dx = (e.clientX - headCenterX) / (window.innerWidth * 0.45);
+            const dy = (e.clientY - headCenterY) / (window.innerHeight * 0.45);
+
+            lookTargetX = Math.max(-1, Math.min(1, dx));
+            lookTargetY = Math.max(-1, Math.min(1, dy));
         }, { passive: true });
+
+        // 3. Track touch on mobile screens
+        window.addEventListener('touchmove', (e) => {
+            if (!e.touches || !e.touches[0]) return;
+            lastInteractionTime = Date.now();
+            const touch = e.touches[0];
+            const headRect = botHead.getBoundingClientRect();
+            const headCenterX = headRect.left + headRect.width / 2;
+            const headCenterY = headRect.top + headRect.height / 2;
+
+            const dx = (touch.clientX - headCenterX) / (window.innerWidth * 0.45);
+            const dy = (touch.clientY - headCenterY) / (window.innerHeight * 0.45);
+
+            lookTargetX = Math.max(-1, Math.min(1, dx));
+            lookTargetY = Math.max(-1, Math.min(1, dy));
+        }, { passive: true });
+
+        // 4. 60FPS Smooth Gaze & 3D Head Rotation Loop
+        function animateRobotGaze() {
+            if (Date.now() - lastInteractionTime > 3000) {
+                const t = Date.now() * 0.0016;
+                lookTargetX = Math.sin(t) * 0.65;
+                lookTargetY = Math.cos(t * 0.75) * 0.25;
+            }
+
+            lookCurrentX = lerp(lookCurrentX, lookTargetX, 0.12);
+            lookCurrentY = lerp(lookCurrentY, lookTargetY, 0.12);
+
+            const eyeMoveX = lookCurrentX * 18;
+            const eyeMoveY = lookCurrentY * 10;
+            botEyesGroup.style.transform = `translate3d(${eyeMoveX.toFixed(2)}px, ${eyeMoveY.toFixed(2)}px, 0)`;
+
+            const pupilX = lookCurrentX * 6;
+            const pupilY = lookCurrentY * 4;
+            if (leftPupil && rightPupil) {
+                leftPupil.style.transform = `translate3d(${pupilX.toFixed(2)}px, ${pupilY.toFixed(2)}px, 0)`;
+                rightPupil.style.transform = `translate3d(${pupilX.toFixed(2)}px, ${pupilY.toFixed(2)}px, 0)`;
+            }
+
+            const headRotateY = lookCurrentX * 14;
+            const headRotateX = lookCurrentY * -10;
+            const headTiltZ = lookCurrentX * 3;
+            botHead.style.transform = `rotateX(${headRotateX.toFixed(2)}deg) rotateY(${headRotateY.toFixed(2)}deg) rotateZ(${headTiltZ.toFixed(2)}deg)`;
+
+            requestAnimationFrame(animateRobotGaze);
+        }
+        requestAnimationFrame(animateRobotGaze);
+
+        // 5. Natural Blinking Every 2.5 to 5 Seconds
+        function triggerNaturalBlink() {
+            if (!aiBotStage.classList.contains('cta-excited')) {
+                botEyeLeft.classList.add('is-blinking');
+                botEyeRight.classList.add('is-blinking');
+
+                setTimeout(() => {
+                    botEyeLeft.classList.remove('is-blinking');
+                    botEyeRight.classList.remove('is-blinking');
+                }, 140);
+            }
+            setTimeout(triggerNaturalBlink, 2400 + Math.random() * 2600);
+        }
+        setTimeout(triggerNaturalBlink, 2000);
     }
-
-
     /* --- E. Live Node Network Canvas (Hero Background) --- */
     const canvas = document.getElementById('hero-canvas');
     if (canvas && canvas.parentElement) {
@@ -379,6 +493,107 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }, { passive: true });
+        /* --- Split-Pill Headline Rotator + 3D Laptop Tilt --- */
+    const morphPill1 = document.getElementById('morph-pill-1');
+    const morphPill2 = document.getElementById('morph-pill-2');
+
+    if (morphPill1 && morphPill2) {
+        const headlinePairs = [
+            ["paisa vasool", "conversions"],
+            ["zero doglapan", "architecture"],
+            ["Diwali traffic", "survival"],
+            ["sub-second", "load speed"],
+            ["direct buyer", "onboarding"]
+        ];
+        let currentPair = 0;
+
+        setInterval(() => {
+            morphPill1.classList.add('pill-fade-out');
+            morphPill2.classList.add('pill-fade-out');
+
+            setTimeout(() => {
+                currentPair = (currentPair + 1) % headlinePairs.length;
+                morphPill1.textContent = headlinePairs[currentPair][0];
+                morphPill2.textContent = headlinePairs[currentPair][1];
+
+                morphPill1.classList.remove('pill-fade-out');
+                morphPill2.classList.remove('pill-fade-out');
+            }, 280);
+        }, 2800);
+    }
+    }
+    
+/* --- J. Interactive 3D "ZYRAC" Footer Wordmark + Smooth 60FPS Spotlight --- */
+    const wordmarkStage = document.getElementById('interactive-wordmark');
+    if (wordmarkStage) {
+        const chars = wordmarkStage.querySelectorAll('.monolith-char');
+        let isUserHoveringStage = false;
+        let autoWaveIndex = 2; // Starts on 'R'
+        let spotTargetX = wordmarkStage.offsetWidth / 2;
+        let spotTargetY = wordmarkStage.offsetHeight / 2;
+        let spotCurrentX = spotTargetX;
+        let spotCurrentY = spotTargetY;
+
+        wordmarkStage.addEventListener('mousemove', (e) => {
+            isUserHoveringStage = true;
+            const rect = wordmarkStage.getBoundingClientRect();
+            spotTargetX = e.clientX - rect.left;
+            spotTargetY = e.clientY - rect.top;
+        }, { passive: true });
+
+        wordmarkStage.addEventListener('mouseleave', () => {
+            isUserHoveringStage = false;
+        }, { passive: true });
+
+        // Smooth 60fps interpolated spotlight tracking
+        function animateWordmarkSpotlight() {
+            spotCurrentX = lerp(spotCurrentX, spotTargetX, 0.12);
+            spotCurrentY = lerp(spotCurrentY, spotTargetY, 0.12);
+            wordmarkStage.style.setProperty('--wm-x', `${spotCurrentX.toFixed(1)}px`);
+            wordmarkStage.style.setProperty('--wm-y', `${spotCurrentY.toFixed(1)}px`);
+            requestAnimationFrame(animateWordmarkSpotlight);
+        }
+        requestAnimationFrame(animateWordmarkSpotlight);
+
+        // Highlight individual letter on hover or mobile tap
+        chars.forEach((charEl, idx) => {
+            charEl.addEventListener('mouseenter', () => {
+                chars.forEach(c => c.classList.remove('active-pulse'));
+                charEl.classList.add('active-pulse');
+                autoWaveIndex = idx;
+            });
+            charEl.addEventListener('touchstart', () => {
+                isUserHoveringStage = true;
+                chars.forEach(c => c.classList.remove('active-pulse'));
+                charEl.classList.add('active-pulse');
+                autoWaveIndex = idx;
+            }, { passive: true });
+        });
+
+        // Automatic Wave Cycle every 2.2 seconds when user isn't hovering
+        setInterval(() => {
+            if (!isUserHoveringStage && chars.length > 0) {
+                chars.forEach(c => c.classList.remove('active-pulse'));
+                autoWaveIndex = (autoWaveIndex + 1) % chars.length;
+                chars[autoWaveIndex].classList.add('active-pulse');
+            }
+        }, 2200);
     }
 
+    /* --- K. Live Ahmedabad HQ Studio Clock --- */
+    const ahmClock = document.getElementById('ahm-live-time');
+    if (ahmClock) {
+        function updateAhmTime() {
+            const now = new Date();
+            ahmClock.textContent = `${now.toLocaleTimeString('en-IN', {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            })} IST`;
+        }
+        updateAhmTime();
+        setInterval(updateAhmTime, 1000);
+    }
 });
