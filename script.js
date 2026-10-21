@@ -3,37 +3,75 @@
 // ==========================================================================
 document.body.classList.add('locked');
 
-// Linear interpolation helper for ultra-smooth 60fps physics
 const lerp = (start, end, factor) => start + (end - start) * factor;
 
-// Bulletproof Preloader Exit Function (Can only run once)
 let preloaderDismissed = false;
 function dismissPreloader() {
     if (preloaderDismissed) return;
     preloaderDismissed = true;
 
-    // Trigger the liquid curtain raise effect in CSS
     document.body.classList.add('site-loaded');
-    
-    // Unlock the scrollbar so the user can navigate
     document.body.classList.remove('locked');
     
-    // Remove the preloader from the DOM after CSS transition finishes
     setTimeout(() => {
         const preloader = document.getElementById('premium-preloader');
-        if (preloader) {
-            preloader.remove();
-        }
-    }, 1200);
+        if (preloader) preloader.remove();
+    }, 1150);
 }
 
-// Normal unlock on window load (after 2.2s animation)
-window.addEventListener('load', () => {
-    setTimeout(dismissPreloader, 2200);
-});
+// Animate Percentage (0% -> 100%) & Rotate Fresh Hinglish Meme Lines
+(function initMemePreloader() {
+    const statusText = document.getElementById('preloader-status-text');
+    const percentNum = document.getElementById('preloader-percent-num');
+    const barFill = document.getElementById('preloader-bar-fill');
 
-// FAILSAFE: Force unlock after 3.2 seconds even if a local image path is missing
-setTimeout(dismissPreloader, 3200);
+    const memeLines = [
+        "Ruko zara... Sabar karo...",
+        "Deleting ₹500 WordPress templates...",
+        "Skipping any excuses...",
+        "Paisa Vasool experience ready!"
+    ];
+
+    let startTime = null;
+    const totalDuration = 1950; // Smooth 1.95s build-up
+    let lastStage = 0;
+
+    function tickPreloader(timestamp) {
+        if (preloaderDismissed) return;
+        if (!startTime) startTime = timestamp;
+
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / totalDuration, 1);
+        // Smooth ease-out curve
+        const eased = 1 - Math.pow(1 - progress, 2.6);
+        const pct = Math.floor(eased * 100);
+
+        if (percentNum) percentNum.textContent = `${pct}%`;
+        if (barFill) barFill.style.width = `${pct}%`;
+
+        // Switch meme text smoothly at 28%, 58%, and 86%
+        const stage = pct > 86 ? 3 : pct > 58 ? 2 : pct > 28 ? 1 : 0;
+        if (stage !== lastStage && statusText) {
+            lastStage = stage;
+            statusText.classList.add('text-swap');
+            setTimeout(() => {
+                statusText.textContent = memeLines[stage];
+                statusText.classList.remove('text-swap');
+            }, 140);
+        }
+
+        if (progress < 1) {
+            requestAnimationFrame(tickPreloader);
+        } else {
+            setTimeout(dismissPreloader, 250);
+        }
+    }
+
+    requestAnimationFrame(tickPreloader);
+})();
+
+// Failsafe: Force unlock after 2.8 seconds no matter what
+setTimeout(dismissPreloader, 2800);
 
 
 // ==========================================================================
@@ -475,12 +513,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const morphPill2 = document.getElementById('morph-pill-2');
 
     if (morphPill1 && morphPill2) {
-        const headlinePairs = [
-            ["paisa vasool", "conversions"],
-            ["zero doglapan", "architecture"],
-            ["Diwali traffic", "survival"],
-            ["sub-second", "load speed"],
-            ["direct buyer", "onboarding"]
+       const headlinePairs = [
+            ["fast", "speed"],
+            ["zero", "bloat"],
+            ["pure", "code"],
+            ["real", " ROI"],
+            ["best", " SaaS"]
         ];
         let currentPair = 0;
 
@@ -689,130 +727,125 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- N. Web3Forms Lead Submission Handler --- */
-    const leadForm = document.getElementById('zyrac-lead-form');
-    const auditCardShell = document.getElementById('audit-card-shell');
-    const formStatusMsg = document.getElementById('form-status-msg');
-    const formProgressBar = document.getElementById('form-progress-bar');
-    const formProgressLabel = document.getElementById('form-progress-label');
-    const resetAuditBtn = document.getElementById('send-another-audit');
+    const web3Form = document.getElementById('zyrac-web3-form');
+    const auditCard = document.getElementById('zyrac-audit-card');
+    const painPills = document.querySelectorAll('.z-pain-pill');
+    const hiddenPainInput = document.getElementById('z_bottleneck');
+    const barFill = document.getElementById('zform-bar-fill');
+    const meterText = document.getElementById('zform-meter-text');
+    const feedbackBox = document.getElementById('z-form-feedback');
+    const resetBtn = document.getElementById('z-reset-btn');
 
-    if (leadForm) {
-        const businessInput = document.getElementById('business_name');
-        const websiteInput = document.getElementById('website');
-        const bottleneckSelect = document.getElementById('bottleneck');
-        const emailInput = document.getElementById('email');
-        const chips = document.querySelectorAll('.b-chip');
+    if (!web3Form) return;
 
-        // Sync Chips with Select
-        chips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                chips.forEach(c => c.classList.remove('active-chip'));
-                chip.classList.add('active-chip');
-                if (bottleneckSelect) {
-                    bottleneckSelect.value = chip.getAttribute('data-val');
-                    updateProgress();
-                }
-            });
+    const bizInput = document.getElementById('z_business');
+    const webInput = document.getElementById('z_website');
+    const contactInput = document.getElementById('z_contact');
+
+    // 1. 1-Tap Meme Pain-Point Pill Selection
+    painPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            painPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            if (hiddenPainInput) {
+                hiddenPainInput.value = pill.getAttribute('data-pain');
+            }
+            const validPain = document.getElementById('valid-pain');
+            if (validPain) validPain.classList.add('show-valid');
+            updateLiveMeter();
         });
+    });
 
-        if (bottleneckSelect) {
-            bottleneckSelect.addEventListener('change', () => {
-                chips.forEach(c => {
-                    c.classList.toggle('active-chip', c.getAttribute('data-val') === bottleneckSelect.value);
-                });
-                updateProgress();
-            });
-        }
+    // 2. Live Progress Bar & Green "Done" Badges
+    function updateLiveMeter() {
+        let score = 25; // Pain point is pre-selected
+        const hasBiz = bizInput && bizInput.value.trim().length > 1;
+        const hasWeb = webInput && webInput.value.trim().length > 2;
+        const hasContact = contactInput && contactInput.value.trim().length > 4;
 
-        function updateProgress() {
-            let completed = 0;
-            const hasBiz = businessInput && businessInput.value.trim().length > 1;
-            const hasBot = bottleneckSelect && bottleneckSelect.value !== '';
-            const hasEmail = emailInput && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+        if (hasBiz) score += 35;
+        if (hasContact) score += 40;
 
-            if (hasBiz) completed += 33;
-            if (hasBot) completed += 33;
-            if (hasEmail) completed += 34;
+        const toggleBadge = (id, state) => {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('show-valid', Boolean(state));
+        };
 
-            const setCheck = (id, isValid) => {
-                const el = document.getElementById(id);
-                if (el) el.classList.toggle('valid', Boolean(isValid));
-            };
+        toggleBadge('valid-biz', hasBiz);
+        toggleBadge('valid-web', hasWeb);
+        toggleBadge('valid-contact', hasContact);
 
-            setCheck('check-business', hasBiz);
-            setCheck('check-website', Boolean(websiteInput && websiteInput.value.trim().length > 2));
-            setCheck('check-bottleneck', hasBot);
-            setCheck('check-email', hasEmail);
-
-            if (formProgressBar) formProgressBar.style.width = `${Math.max(15, completed)}%`;
-            if (formProgressLabel) {
-                formProgressLabel.textContent = completed === 100 ? '100% Ready' : `${completed}% Done`;
-            }
-        }
-
-        [businessInput, websiteInput, emailInput].forEach(input => {
-            if (input) input.addEventListener('input', updateProgress);
-        });
-
-        leadForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            if (formStatusMsg) {
-                formStatusMsg.className = 'form-status-msg';
-                formStatusMsg.textContent = '';
-            }
-
-            if (!businessInput.value.trim() || !bottleneckSelect.value || !emailInput.value.trim()) {
-                if (formStatusMsg) {
-                    formStatusMsg.className = 'form-status-msg error';
-                    formStatusMsg.textContent = 'Please fill in your Business Name, Problem, and Email!';
-                }
-                return;
-            }
-
-            const submitBtn = document.getElementById('zyrac-submit-btn');
-            const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
-            if (submitBtn) submitBtn.disabled = true;
-            if (btnText) btnText.textContent = 'Sending to Faiz...';
-
-            const formData = new FormData(leadForm);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-
-            try {
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                });
-                const result = await response.json();
-                if (result.success) {
-                    if (auditCardShell) auditCardShell.classList.add('submitted-success');
-                    leadForm.reset();
-                    chips.forEach(c => c.classList.remove('active-chip'));
-                    updateProgress();
-                } else {
-                    throw new Error(result.message || 'Submission failed');
-                }
-            } catch (err) {
-                if (formStatusMsg) {
-                    formStatusMsg.className = 'form-status-msg error';
-                    formStatusMsg.textContent = 'Oops! Network issue. Tap WhatsApp below to message us directly.';
-                }
-            } finally {
-                if (submitBtn) submitBtn.disabled = false;
-                if (btnText) btnText.textContent = 'Get My Free Audit';
-            }
-        });
-
-        if (resetAuditBtn && auditCardShell) {
-            resetAuditBtn.addEventListener('click', () => {
-                auditCardShell.classList.remove('submitted-success');
-            });
+        if (barFill) barFill.style.width = `${score}%`;
+        if (meterText) {
+            meterText.textContent = score === 100 ? '100% Ready — Bhejo!' : `${score}% Complete`;
         }
     }
 
+    [bizInput, webInput, contactInput].forEach(inp => {
+        if (inp) inp.addEventListener('input', updateLiveMeter);
+    });
+
+    // 3. Submit Directly to Web3Forms -> Instant Gmail Notification
+    web3Form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (feedbackBox) {
+            feedbackBox.className = 'z-form-feedback';
+            feedbackBox.textContent = '';
+        }
+
+        if (!bizInput.value.trim() || !contactInput.value.trim()) {
+            if (feedbackBox) {
+                feedbackBox.className = 'z-form-feedback is-error';
+                feedbackBox.textContent = 'Boss, Business Naam aur Email/WhatsApp zaroori hai!';
+            }
+            return;
+        }
+
+        const submitBtn = document.getElementById('z-submit-btn');
+        const btnLabel = submitBtn ? submitBtn.querySelector('.z-btn-label') : null;
+        if (submitBtn) submitBtn.disabled = true;
+        if (btnLabel) btnLabel.textContent = 'Sending to Faiz...';
+
+        const formData = new FormData(web3Form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+
+            const result = await response.json();
+
+            if (response.status === 200 && result.success) {
+                if (auditCard) auditCard.classList.add('is-sent');
+                web3Form.reset();
+                updateLiveMeter();
+            } else {
+                if (feedbackBox) {
+                    feedbackBox.className = 'z-form-feedback is-error';
+                    feedbackBox.textContent = result.message || 'Make sure your Web3Forms Access Key is added!';
+                }
+            }
+        } catch (error) {
+            if (feedbackBox) {
+                feedbackBox.className = 'z-form-feedback is-error';
+                feedbackBox.textContent = 'Network glitch! Niche green WhatsApp button dabao, seedha baat karte hain.';
+            }
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+            if (btnLabel) btnLabel.textContent = 'Bhejo Meri Audit Request';
+        }
+    });
+
+    if (resetBtn && auditCard) {
+        resetBtn.addEventListener('click', () => {
+            auditCard.classList.remove('is-sent');
+        });
+    }
 });
