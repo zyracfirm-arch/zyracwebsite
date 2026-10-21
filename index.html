@@ -1,78 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZYRAC | Your Best Digital Self</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ==========================================================================
+         1. PRIMARY SEO META TAGS (Fixes "No information is available" in Google)
+         ========================================================================== -->
+    <title>ZYRAC — Custom Web, SaaS &amp; App Engineering Studio | Build Your Best Digital Self</title>
+    <meta name="title" content="ZYRAC — Custom Web, SaaS & App Engineering Studio | Build Your Best Digital Self">
+    <meta name="description" content="ZYRAC (zyrac.in) is a premier custom software, SaaS, web app, and mobile app engineering studio founded by Faiz Mansuri in Ahmedabad, India. Zero templates, 0.4s load speeds, and 100% custom code built to win clients.">
+    <meta name="keywords" content="ZYRAC, zyrac.in, Zyrac India, Zyrac Studio, Faiz Mansuri, custom web development India, SaaS development studio Ahmedabad, custom web apps, mobile app development, zero template websites, high converting websites">
+    <meta name="author" content="Faiz Mansuri — ZYRAC">
+    
+    <!-- Explicitly allow Google to index everything and show large rich snippets -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL (Locks authority to https://www.zyrac.in/) -->
+    <link rel="canonical" href="https://www.zyrac.in/">
+
+    <!-- Theme Color for Mobile Browser Address Bars -->
+    <meta name="theme-color" content="#111113">
+    <meta name="msapplication-TileColor" content="#E85D04">
+
+    <!-- ==========================================================================
+         2. BROWSER TAB SVG LOGO FAVICON (Works Immediately + Google Search Icon)
+         ========================================================================== -->
+    <!-- Instant Inline SVG Favicon (Shows your exact ZYRAC Black & Orange Logo on Browser Tab!) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ffffff'/%3E%3Cpath d='M16,12 L86,12 L77,36 L16,36 Z' fill='%23111113'/%3E%3Cpath d='M16,41 L82,41 L73,53 L86,53 L86,61 L25,61 L34,49 L16,49 Z' fill='%23E85D04'/%3E%3Cpath d='M25,66 L86,66 L86,88 L16,88 Z' fill='%23111113'/%3E%3C/svg%3E">
+    
+    <!-- Root SVG Favicon for Google Search Bot (Save favicon.svg in your root folder too!) -->
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+
+    <!-- ==========================================================================
+         3. OPEN GRAPH / WHATSAPP / LINKEDIN / INSTAGRAM SHARE CARDS
+         ========================================================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ZYRAC">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:url" content="https://www.zyrac.in/">
+    <meta property="og:title" content="ZYRAC | Custom Websites, SaaS & Mobile Apps Built to Win Clients">
+    <meta property="og:description" content="Ditch slow templates and middlemen. ZYRAC engineers sub-second custom websites, SaaS platforms, and mobile apps with 100% direct code ownership.">
+    <meta property="og:image" content="https://www.zyrac.in/og-banner.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ZYRAC — Build Your Best Digital Self">
+
+    <!-- Twitter / X Large Summary Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.zyrac.in/">
+    <meta name="twitter:title" content="ZYRAC | Custom Websites, SaaS & Mobile Apps">
+    <meta name="twitter:description" content="Zero templates. Sub-second speed. 100% custom web and app engineering by ZYRAC.">
+    <meta name="twitter:image" content="https://www.zyrac.in/og-banner.jpg">
+
+    <!-- ==========================================================================
+         4. PERFORMANCE FONTS & STYLESHEET
+         ========================================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- ==========================================================================
+         5. GOOGLE RICH RESULTS JSON-LD SCHEMA (Forces Google to Rank "ZYRAC" #1)
+         ========================================================================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.zyrac.in/#website",
+          "url": "https://www.zyrac.in/",
+          "name": "ZYRAC",
+          "alternateName": ["ZYRAC Studio", "ZYRAC India", "zyrac.in"],
+          "description": "Custom Web, SaaS & Mobile App Engineering Studio. Build Your Best Digital Self.",
+          "publisher": {
+            "@id": "https://www.zyrac.in/#organization"
+          },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": ["Organization", "ProfessionalService"],
+          "@id": "https://www.zyrac.in/#organization",
+          "name": "ZYRAC",
+          "alternateName": "ZYRAC Engineering Studio",
+          "url": "https://www.zyrac.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.zyrac.in/favicon.svg",
+            "width": 512,
+            "height": 512
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "Faiz Mansuri",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "url": "https://www.linkedin.com/in/faiz-mansuri9773423956"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9773423956",
+            "contactType": "sales",
+            "areaServed": ["IN", "US", "GB", "AE", "Global"],
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "priceRange": "₹₹₹",
+          "sameAs": [
+            "https://www.instagram.com/zyrac__",
+            "https://www.linkedin.com/in/faiz-mansuri9773423956"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.zyrac.in/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What does ZYRAC build?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ZYRAC engineers 100% custom websites, enterprise SaaS dashboards, direct-to-consumer web apps, and native mobile applications from scratch with zero templates and zero monthly platform fees."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who founded ZYRAC?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ZYRAC was founded by Faiz Mansuri in Ahmedabad, Gujarat, India, partnering with ambitious founders and brands worldwide."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-    <div id="premium-preloader" class="preloader-overlay">
-        <div class="preloader-content">
+    <!-- ==========================================================================
+     1. UPGRADED CINEMATIC PRELOADER (3D ORBITAL CORE + LIVE TELEMETRY)
+     ========================================================================== -->
+<div id="premium-preloader" class="preloader-overlay">
+    <div class="preloader-ambient-glow"></div>
+
+    <div class="preloader-content">
+        
+        <!-- 3D Orbital Ring + SVG Drawing Emblem -->
+        <div class="preloader-logo-stage">
+            <span class="preloader-orbit-ring ring-outer"></span>
+            <span class="preloader-orbit-ring ring-inner"></span>
             
-           <div class="preloader-logo">
+            <div class="preloader-logo">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                     <path class="draw-shape shape-light" d="M10,0 L90,0 L80,30 L10,30 Z" />
                     <path class="draw-shape shape-accent" d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" />
                     <path class="draw-shape shape-light" d="M20,65 L90,65 L90,95 L10,95 Z" />
                 </svg>
             </div>
+        </div>
 
-            <div class="preloader-brand">
-                <span class="char" style="--char-index: 1;">Z</span>
-                <span class="char" style="--char-index: 2;">Y</span>
-                <span class="char" style="--char-index: 3;">R</span>
-                <span class="char" style="--char-index: 4;">A</span>
-                <span class="char" style="--char-index: 5;">C</span>
-            </div>
-            
+        <!-- Cinematic Tracking Brand Name -->
+        <div class="preloader-brand">
+            <span class="char" style="--char-index: 1;">Z</span>
+            <span class="char" style="--char-index: 2;">Y</span>
+            <span class="char" style="--char-index: 3;">R</span>
+            <span class="char accent-char" style="--char-index: 4;">A</span>
+            <span class="char" style="--char-index: 5;">C</span>
+            <span class="char dot-char" style="--char-index: 6;">.</span>
+        </div>
+        
+        <!-- Fiber-Optic Progress Bar + Live System Status -->
+        <div class="preloader-telemetry-box">
             <div class="micro-loader">
                 <div class="micro-progress"></div>
             </div>
-
+            <div class="preloader-status-row">
+                <span class="preloader-sys-tag" id="preloader-status-text">INITIALIZING ZYRAC ENGINE</span>
+                <span class="preloader-percent" id="preloader-percent-num">100%</span>
+            </div>
         </div>
+
     </div>
+</div>
 
    <div class="dynamic-background"></div>
 <!-- ==========================================================================
-     MASTER HEADER: APPLE PRO SPATIAL NAVBAR + ADAPTIVE INSTAGRAM PROMO BAR
+     MASTER HEADER: KINETIC LOGO + SLIDING PILL NAVBAR + PROMO BAR
      ========================================================================== -->
 <header class="zyrac-header-shell" id="site-header">
     
-    <!-- 1. Apple Pro Frosted Glass Navbar -->
+    <!-- 1. Apple Dynamic-Island Style Glass Navbar -->
     <nav class="navbar glass" aria-label="Main Navigation">
         <div class="nav-inner-container">
             
-            <!-- Brand Logo -->
-            <a href="#home" class="logo-link" aria-label="ZYRAC Home">
-                <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
-                    <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
-                    <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
-                </svg>
+            <!-- Multi-Stage Kinetic Animated Brand Logo -->
+            <a href="#home" class="logo-link" id="zyrac-kinetic-logo" aria-label="ZYRAC Home">
+                <div class="logo-emblem-box">
+                    <span class="logo-orbit-ring"></span>
+                    <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#e85d04"/>
+                                <stop offset="50%" stop-color="#ffb703"/>
+                                <stop offset="100%" stop-color="#e85d04"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Top Blade -->
+                        <path class="logo-blade blade-top" d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
+                        <!-- Center Energy Core -->
+                        <path class="logo-blade blade-mid" d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="url(#boltGrad)"/>
+                        <!-- Bottom Blade -->
+                        <path class="logo-blade blade-bot" d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
+                    </svg>
+                </div>
+                
                 <span class="logo-divider"></span>
-                <span class="logo-text">ZYR<span class="accent">A</span>C<span class="logo-dot">.</span></span>
+                
+                <span class="logo-text">
+                    <span class="char-z">Z</span><span class="char-y">Y</span><span class="char-r">R</span><span class="accent char-a">A</span><span class="char-c">C</span><span class="logo-dot">.</span>
+                </span>
             </a>
 
-            <!-- Desktop & Tablet Navigation Links -->
-            <ul class="nav-links" id="nav-menu-list">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#manifesto">Our Standard</a></li>
-                <li><a href="#portfolio">Work</a></li>
-                <li><a href="#reviews">Stories</a></li>
-                <li class="nav-cta-item">
-                    <a href="#contact" class="btn-glass">
-                        <span>Start a Build</span>
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+            <!-- Center Interactive Pill Track with Sliding Hover Indicator -->
+            <div class="nav-pill-dock">
+                <span class="nav-sliding-indicator" id="nav-hover-pill"></span>
+                <ul class="nav-links" id="nav-menu-list">
+                    <li><a href="#home" class="nav-item-link">Home</a></li>
+                    <li><a href="#services" class="nav-item-link">Services</a></li>
+                    <li><a href="#manifesto" class="nav-item-link">Standard</a></li>
+                    <li><a href="#portfolio" class="nav-item-link">Work</a></li>
+                    <li><a href="#reviews" class="nav-item-link">Stories</a></li>
+                    <li class="nav-cta-item">
+                        <a href="#contact" class="btn-glass">
+                            <span>Start a Build</span>
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-            <!-- Mobile Hamburger Toggle -->
+            <!-- Mobile Hamburger Button -->
             <button class="mobile-nav-toggle" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
                 <span class="bar-top"></span>
                 <span class="bar-mid"></span>
@@ -82,18 +262,16 @@
         </div>
     </nav>
 
-    <!-- 2. Apple-Event Style Sub-Navbar Promo Line (10 Free Websites on Instagram) -->
+    <!-- 2. Sub-Navbar Instagram Promo Bar (10 Free Websites) -->
     <div class="insta-giveaway-subbar" id="top-offer-banner">
         <div class="subbar-laser-beam"></div>
         <a href="https://www.instagram.com/zyrac__" target="_blank" rel="noopener noreferrer" class="subbar-link-wrap">
             
-            <!-- Live Mini-Bot Status Pill -->
             <span class="subbar-bot-pill">
                 <span class="mini-bot-eyes"><i></i><i></i></span>
-                <span class="bot-pill-text">LIVE DROP</span>
+                <span class="bot-pill-text">ZYRAC DROP</span>
             </span>
 
-            <!-- Desktop/Tablet Full Copy + Mobile Compact Copy (Never Clips!) -->
             <span class="subbar-offer-text desktop-offer-copy">
                 We are building <strong>10 Custom Websites for FREE</strong> (100% custom code) — Announced on <strong>@zyrac__</strong>
             </span>
@@ -101,7 +279,6 @@
                 <strong>10 Free Custom Websites</strong> • Drop on <strong>@zyrac__</strong>
             </span>
 
-            <!-- Action Pill -->
             <span class="subbar-cta-chip">
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
@@ -115,6 +292,64 @@
     </div>
 
 </header>
+
+<!-- ==========================================================================
+     3. FIXED FLOATING ZYRAC-BOT (10 FREE BADGE SITS BELOW CHIN — NEVER ON FACE!)
+     ========================================================================== -->
+<div class="zyrac-floating-offer-bot" id="zyrac-offer-bot" aria-live="polite">
+    
+    <!-- Comic Glass Speech Callout Bubble -->
+    <div class="bot-speech-card" id="bot-speech-card">
+        <button class="bot-close-btn" id="close-offer-bot" aria-label="Minimize message" title="Minimize">×</button>
+        
+        <a href="https://www.instagram.com/zyrac__" target="_blank" rel="noopener noreferrer" class="bot-offer-bubble">
+            <div class="bubble-kicker-row">
+                <span class="bot-live-dot"></span>
+                <span class="bubble-kicker">ZYRAC AI // DROP ALERT</span>
+            </div>
+            <p class="bubble-main-copy">
+                We're building <strong>10 Websites for FREE</strong>. Follow <strong>@zyrac__</strong> to grab a slot!
+            </p>
+            <span class="bubble-insta-action">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                <span>Claim on @zyrac__ →</span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Realistic 3D Machined ZYRAC Robot Avatar (Badge Docked Cleanly Under Chin!) -->
+    <a href="https://www.instagram.com/zyrac__" target="_blank" rel="noopener noreferrer" class="mini-bot-avatar" id="mini-bot-trigger" aria-label="10 Free Websites Offer on Instagram">
+        <div class="mini-bot-aura"></div>
+        <span class="mini-bot-antenna"></span>
+        
+        <div class="mini-bot-head-3d" id="mini-bot-head">
+            <span class="mini-ear left"></span>
+            <span class="mini-ear right"></span>
+            
+            <div class="mini-bot-helmet">
+                <div class="mini-helmet-glint"></div>
+                <div class="mini-bot-visor">
+                    <div class="mini-visor-reflection"></div>
+                    <!-- Glowing Eyes Track Cursor -->
+                    <div class="mini-visor-eyes" id="mini-bot-eyes">
+                        <span class="mini-eye"><i class="mini-pupil"></i></span>
+                        <span class="mini-eye"><i class="mini-pupil"></i></span>
+                    </div>
+                    <!-- Speaking Waveform Mouth -->
+                    <div class="mini-visor-mouth">
+                        <i></i><i></i><i></i><i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single-Line Chest Collar Badge (Never Overlaps the Visor!) -->
+        <span class="free-10-badge">10 FREE</span>
+    </a>
+
+</div>
 
 <!-- ==========================================================================
      3. REALISTIC 3D ZYRAC-BOT ANNOUNCER (Appears Smoothly on Scroll!)
@@ -380,6 +615,102 @@
 
     </div>
 </section>
+<!-- ==========================================================================
+     SECTION: THE ZYRAC STANDARD (WITTY, SARCASTIC & CLIENT-WINNING)
+     ========================================================================== -->
+<section id="manifesto" class="comic-manifesto">
+    <div class="manifesto-wrapper">
+        
+        <div class="manifesto-header fade-in">
+            <span class="comic-badge">ZERO HYPE • SEEDHI BAAT</span>
+            <h2 class="comic-title">THE <span class="glitch-text accent" data-text="ZYRAC">ZYRAC</span> REALITY CHECK.</h2>
+            <p class="manifesto-sub">Why smart founders hire us after getting ghosted by their "cheap cousin's agency."</p>
+        </div>
+
+        <div class="comic-grid">
+            
+            <!-- Card 1 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in">
+                <div class="cell-top-row">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <line x1="22" y1="12" x2="18" y2="12"></line>
+                            <line x1="6" y1="12" x2="2" y2="12"></line>
+                            <line x1="12" y1="6" x2="12" y2="2"></line>
+                            <line x1="12" y1="22" x2="12" y2="18"></line>
+                        </svg>
+                    </div>
+                    <span class="meme-stamp">Paisa Vasool UI</span>
+                </div>
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>01. NO "CHACHA KA LADKA" DESIGN</h3>
+                    </div>
+                    <p>Your neighbour's nephew can make a website for ₹2,000—and it will look like a 2000 page. We build clean, high-converting platforms that actually make rich clients take out their credit cards.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in delay-1">
+                <div class="cell-top-row">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                            <polyline points="13 2 13 9 22 9 11 22 11 15 2 15 13 2"></polyline>
+                        </svg>
+                    </div>
+                    <span class="meme-stamp">0% Buffering</span>
+                </div>
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>02. FASTER THAN INSTANT NOODLES</h3>
+                    </div>
+                    <p>2-minute noodles take 10 minutes, and slow websites lose 90% of your customers. Our custom code loads in under a second—even when your buyer is sitting on patchy 4G inside an elevator.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in delay-2">
+                <div class="cell-top-row">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <span class="meme-stamp">Asli Custom Code</span>
+                </div>
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>03. CTRL+C &amp; CTRL+V IS BANNED</h3>
+                    </div>
+                    <p>Other agencies charge ₹1 Lakh just to install a $29 template that 500 other shops are already using. We write 100% original code from scratch. You own the code, the keys, and the flex.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="comic-cell glass-panel halftone-bg fade-in delay-3">
+                <div class="cell-top-row">
+                    <div class="cell-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <span class="meme-stamp">Zero Ghosting</span>
+                </div>
+                <div class="cell-content">
+                    <div class="brutalist-box">
+                        <h3>04. NO "SIR KAL PAKKA HO JAYEGA"</h3>
+                    </div>
+                    <p>No fake deadlines, no switched-off phones after advance payment, and no servers crashing on launch day. We build rock-solid systems and stay on your team long after launch.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
    
    <!-- ==========================================================================
      SECTION: REAL INDIAN FOUNDER STORIES (SPOTLIGHT GLASS + ROI METRICS)
@@ -389,7 +720,6 @@
     <!-- Ambient Background Depth -->
     <div class="reviews-ambient-glow glow-1"></div>
     <div class="reviews-ambient-glow glow-2"></div>
-///
     <div class="global-container">
         
         <div class="section-header fade-in">
@@ -577,196 +907,393 @@
         </div>
     </div>
 </section>
+
 <!-- ==========================================================================
-         SECTION: TARGET AUDIENCE (WHO WE HELP)
-         ========================================================================== -->
-<!-- ==========================================================================
-         SECTION: TARGET AUDIENCE (WHO WE HELP)
-         ========================================================================== -->
-    <section id="audience" class="audience-section">
-        <div class="audience-container">
-            
-            <div class="section-header fade-in">
-                <span class="section-badge">The Right Fit</span>
-                <h2 class="section-title">Who We <span class="caligraph-text accent">Help.</span></h2>
-                <p class="section-subtitle">We partner with businesses ready to upgrade their digital presence and scale.</p>
-            </div>
-
-            <div class="premium-bento-grid">
-                
-                <!-- Large Bento Box: Focus on Direct Sales & Established Brands -->
-                <div class="premium-bento-box bento-large fade-in">
-                    <div class="bento-glow-mesh"></div>
-                    
-                    <div class="bento-content-wrapper">
-                        
-                        <div class="bento-text-content">
-                            <div class="bento-icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                            <h3 class="bento-title">Direct to Your <br><span class="accent">Customers.</span></h3>
-                            <p class="bento-text">
-                                We build premium platforms that connect you straight to your buyers. Whether you sell services or software, we make it easy for customers to say <strong>yes</strong>.
-                            </p>
-                            <div class="highlight-panel">
-                                <p class="bento-text">
-                                    <strong>No middlemen. No confusing journeys.</strong> Just a custom platform built to drive sales and deliver value.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <!-- Visualizer Graphic -->
-                        <div class="bento-visualizer">
-                            <div class="data-radar">
-                                <div class="radar-ring r1"></div>
-                                <div class="radar-ring r2"></div>
-                                <div class="radar-ring r3"></div>
-                                <div class="core-node">CONNECT</div>
-                                <div class="particle p1"></div>
-                                <div class="particle p2"></div>
-                                <div class="particle p3"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Medium Bento Box: Focus on Startups & Growing Companies -->
-                <div class="premium-bento-box bento-medium fade-in delay-1">
-                    <div class="bento-bg-pattern"></div>
-                    <div class="bento-content-vertical">
-                        <div class="bento-icon-wrapper">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                <polyline points="2 17 12 22 22 17"></polyline>
-                                <polyline points="2 12 17 22 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="bento-title">Growing <br>Companies.</h3>
-                        <p class="bento-text">
-                            Outgrown basic templates? We help startups scale with custom, high-performance websites that instantly build trust and outshine competitors.
-                        </p>
-                        <div class="tech-metrics">
-                            <span class="metric-pill">Fast Loading</span>
-                            <span class="metric-pill">Custom UI/UX</span>
-                            <span class="metric-pill">Scalable</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="vault-section">
+     2. SECTION 4: SELECTED WORK (LIVE INTERACTIVE MINI-APPS • POWERED BY ZYRAC)
+     ========================================================================== -->
+<section id="portfolio" class="vault-section">
     <div class="vault-container">
         
+        <!-- Section Header + Interactive Prev/Next Controls -->
         <div class="vault-header fade-in">
-            <span class="vault-badge">Case Studies</span>
+            <div class="vault-badge">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span>Production Case Studies</span>
+            </div>
             <h2 class="vault-title">Selected <span class="caligraph-text accent">Work.</span></h2>
             <p class="vault-subtitle">Custom websites, web apps, and software built from scratch to help businesses scale, stand out, and dominate their market.</p>
         </div>
 
-        <div class="vault-scroll-wrapper fade-in delay-1">
+        <!-- Horizontal Interactive Track -->
+        <div class="vault-scroll-wrapper fade-in delay-1" id="vault-scroll-container">
             <div class="vault-track">
                 
-                <!-- Project 1: Dashboard/SaaS -->
-                <div class="vault-card glass-panel">
+                <!-- ==========================================================
+                     CARD 1: VANGUARD DASHBOARD (Live Animated SaaS Analytics)
+                     ========================================================== -->
+                <article class="vault-card glass-panel">
                     <div class="card-image-placeholder pattern-grid">
-                        <div class="ui-wireframe-dashboard">
-                            <div class="ui-header"></div>
-                            <div class="ui-sidebar"></div>
-                            <div class="ui-chart"></div>
+                        <span class="tech-tag">
+                            <span class="live-dot-green"></span>
+                            Custom Platform
+                        </span>
+
+                        <!-- Live Working SaaS Dashboard UI -->
+                        <div class="live-ui-window ui-saas-window">
+                            <div class="ui-win-topbar">
+                                <div class="win-dots"><span></span><span></span><span></span></div>
+                                <span class="win-url">vanguard.zyrac.app</span>
+                                <span class="win-status-pill">+38.4%</span>
+                            </div>
+                            <div class="ui-saas-body">
+                                <div class="ui-saas-sidebar">
+                                    <span class="side-nav-item active"></span>
+                                    <span class="side-nav-item"></span>
+                                    <span class="side-nav-item"></span>
+                                    <span class="side-nav-bottom"></span>
+                                </div>
+                                <div class="ui-saas-main">
+                                    <div class="saas-kpi-row">
+                                        <div class="kpi-mini-box">
+                                            <small>AUTOMATED TASKS</small>
+                                            <strong>14,820</strong>
+                                        </div>
+                                        <div class="kpi-mini-box highlight">
+                                            <small>TIME SAVED</small>
+                                            <strong>320 hrs</strong>
+                                        </div>
+                                    </div>
+                                    <!-- Animated SVG Bar Chart + Trend Line -->
+                                    <div class="saas-live-chart">
+                                        <span class="bar b1"></span>
+                                        <span class="bar b2"></span>
+                                        <span class="bar b3"></span>
+                                        <span class="bar b4"></span>
+                                        <span class="bar b5"></span>
+                                        <span class="bar b6"></span>
+                                        <span class="bar b7"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <span class="tech-tag">Custom Platform</span>
                     </div>
+
                     <div class="vault-card-content">
-                        <span class="project-type">Enterprise SaaS</span>
+                        <div class="project-meta-top">
+                            <span class="project-type">Enterprise SaaS</span>
+                            <span class="project-impact-pill">Saves 300+ hrs/mo</span>
+                        </div>
                         <h3 class="project-title">Vanguard Dashboard</h3>
                         <p class="project-desc">A secure, custom-built web platform designed to organize and process complex business data smoothly, saving the client hundreds of hours a month.</p>
-                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
-                    </div>
-                </div>
-
-                <!-- Project 2: WebApp / Portal -->
-                <div class="vault-card glass-panel">
-                    <div class="card-image-placeholder pattern-dots">
-                        <div class="ui-wireframe-portal">
-                            <div class="ui-card"></div>
-                            <div class="ui-card"></div>
-                            <div class="ui-card"></div>
+                        
+                        <!-- Powered by ZYRAC Architectural Stamp (Replaces View Project Link) -->
+                        <div class="powered-by-zyrac">
+                            <div class="powered-left">
+                                <span class="zyrac-emblem-mini">
+                                    <svg viewBox="0 0 100 100" width="14" height="14">
+                                        <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
+                                        <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
+                                        <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
+                                    </svg>
+                                </span>
+                                <span class="powered-text">Powered by <strong>ZYRAC</strong></span>
+                            </div>
+                            <span class="verified-arch-badge">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                100% Custom
+                            </span>
                         </div>
-                        <span class="tech-tag">Web App</span>
                     </div>
+                </article>
+
+                <!-- ==========================================================
+                     CARD 2: GROWTH CONNECT (Live Direct-Sales Checkout Portal)
+                     ========================================================== -->
+                <article class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-dots">
+                        <span class="tech-tag">
+                            <span class="live-dot-green"></span>
+                            Web App
+                        </span>
+
+                        <!-- Live Working Direct Sales & Checkout Portal UI -->
+                        <div class="live-ui-window ui-portal-stage">
+                            <div class="portal-tier-card side-card">
+                                <span class="tier-pill">Starter</span>
+                                <div class="tier-line"></div>
+                                <div class="tier-line short"></div>
+                            </div>
+
+                            <!-- Center Active Conversion Card -->
+                            <div class="portal-tier-card active-portal-card">
+                                <div class="portal-verified-icon">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <span class="portal-kicker">DIRECT ADMISSION</span>
+                                <strong class="portal-price">₹24,500</strong>
+                                <span class="portal-sub">0% Middleman Cut</span>
+                                <div class="portal-pay-btn">Instant Enrolled</div>
+                            </div>
+
+                            <div class="portal-tier-card side-card">
+                                <span class="tier-pill">Pro</span>
+                                <div class="tier-line"></div>
+                                <div class="tier-line short"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="vault-card-content">
-                        <span class="project-type">Direct Sales Portal</span>
+                        <div class="project-meta-top">
+                            <span class="project-type">Direct Sales Portal</span>
+                            <span class="project-impact-pill">0% Aggregator Cut</span>
+                        </div>
                         <h3 class="project-title">Growth Connect</h3>
                         <p class="project-desc">A high-converting portal that allows a premium education brand to sell directly to parents, completely bypassing third-party fees and restrictions.</p>
-                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Premium Website -->
-                <div class="vault-card glass-panel">
-                    <div class="card-image-placeholder pattern-lines">
-                        <div class="ui-wireframe-hero">
-                            <div class="ui-text-block"></div>
-                            <div class="ui-button"></div>
+                        
+                        <div class="powered-by-zyrac">
+                            <div class="powered-left">
+                                <span class="zyrac-emblem-mini">
+                                    <svg viewBox="0 0 100 100" width="14" height="14">
+                                        <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
+                                        <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
+                                        <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
+                                    </svg>
+                                </span>
+                                <span class="powered-text">Powered by <strong>ZYRAC</strong></span>
+                            </div>
+                            <span class="verified-arch-badge">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Direct Checkout
+                            </span>
                         </div>
-                        <span class="tech-tag">Premium Website</span>
                     </div>
+                </article>
+
+                <!-- ==========================================================
+                     CARD 3: AURA CONSULTING (Live 100-Score Flagship Website)
+                     ========================================================== -->
+                <article class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-lines">
+                        <span class="tech-tag">
+                            <span class="live-dot-green"></span>
+                            Premium Website
+                        </span>
+
+                        <!-- Live Working Corporate Flagship Preview -->
+                        <div class="live-ui-window ui-web-flagship">
+                            <div class="ui-win-topbar">
+                                <div class="win-dots"><span></span><span></span><span></span></div>
+                                <span class="win-url">auraconsulting.global</span>
+                                <span class="win-speed-badge">100/100</span>
+                            </div>
+                            <div class="web-hero-sim">
+                                <div class="web-sim-left">
+                                    <span class="sim-kicker">GLOBAL ADVISORY</span>
+                                    <h4>Authority Built Without Templates.</h4>
+                                    <div class="sim-cta-pill">Book Executive Call</div>
+                                </div>
+                                <div class="web-sim-gauge">
+                                    <svg viewBox="0 0 36 36" class="sim-ring-svg">
+                                        <path class="sim-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path class="sim-ring-fill" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    </svg>
+                                    <span class="sim-ring-val">0.3s</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="vault-card-content">
-                        <span class="project-type">Corporate Site</span>
+                        <div class="project-meta-top">
+                            <span class="project-type">Corporate Site</span>
+                            <span class="project-impact-pill">0.38s Load Speed</span>
+                        </div>
                         <h3 class="project-title">Aura Consulting</h3>
                         <p class="project-desc">A stunning, fast-loading website built without templates. Designed to instantly build trust and authority for a top-tier consulting firm.</p>
-                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Mobile App -->
-                <div class="vault-card glass-panel">
-                    <div class="card-image-placeholder pattern-waves">
-                        <div class="ui-wireframe-mobile">
-                            <div class="ui-mobile-screen"></div>
+                        
+                        <div class="powered-by-zyrac">
+                            <div class="powered-left">
+                                <span class="zyrac-emblem-mini">
+                                    <svg viewBox="0 0 100 100" width="14" height="14">
+                                        <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
+                                        <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
+                                        <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
+                                    </svg>
+                                </span>
+                                <span class="powered-text">Powered by <strong>ZYRAC</strong></span>
+                            </div>
+                            <span class="verified-arch-badge">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Zero Templates
+                            </span>
                         </div>
-                        <span class="tech-tag">Mobile App</span>
                     </div>
+                </article>
+
+                <!-- ==========================================================
+                     CARD 4: NEXUS ENGAGEMENT (Live iPhone App UI)
+                     ========================================================== -->
+                <article class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-waves">
+                        <span class="tech-tag">
+                            <span class="live-dot-green"></span>
+                            Mobile App
+                        </span>
+
+                        <!-- Live Working iOS / Android Mobile App Frame -->
+                        <div class="live-ui-phone">
+                            <div class="phone-dynamic-island">
+                                <span class="island-led"></span>
+                            </div>
+                            <div class="phone-app-body">
+                                <div class="app-greeting-row">
+                                    <div>
+                                        <small>NEXUS VIP</small>
+                                        <strong>Live Client Feed</strong>
+                                    </div>
+                                    <span class="app-pulse-badge">ACTIVE</span>
+                                </div>
+
+                                <!-- Animated Push Notification Stack -->
+                                <div class="app-notif-stack">
+                                    <div class="app-notif-card n-card-1">
+                                        <span class="notif-dot orange"></span>
+                                        <div class="notif-lines">
+                                            <strong>Milestone Approved</strong>
+                                            <span>Just now • Instant Sync</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-notif-card n-card-2">
+                                        <span class="notif-dot green"></span>
+                                        <div class="notif-lines">
+                                            <strong>Daily Active Retention</strong>
+                                            <span>98.4% Client Engagement</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="app-bottom-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="vault-card-content">
-                        <span class="project-type">Client Application</span>
+                        <div class="project-meta-top">
+                            <span class="project-type">Client Application</span>
+                            <span class="project-impact-pill">iOS &amp; Android</span>
+                        </div>
                         <h3 class="project-title">Nexus Engagement</h3>
                         <p class="project-desc">A seamless, easy-to-use mobile app designed to keep corporate clients connected, updated, and engaged with the brand every single day.</p>
-                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
-                    </div>
-                </div>
-
-                <!-- Project 5: Backend / Systems -->
-                <div class="vault-card glass-panel">
-                    <div class="card-image-placeholder pattern-circuit">
-                        <div class="ui-wireframe-server">
-                            <div class="ui-rack"></div>
-                            <div class="ui-rack"></div>
-                            <div class="ui-rack active"></div>
+                        
+                        <div class="powered-by-zyrac">
+                            <div class="powered-left">
+                                <span class="zyrac-emblem-mini">
+                                    <svg viewBox="0 0 100 100" width="14" height="14">
+                                        <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
+                                        <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
+                                        <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
+                                    </svg>
+                                </span>
+                                <span class="powered-text">Powered by <strong>ZYRAC</strong></span>
+                            </div>
+                            <span class="verified-arch-badge">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Native Speed
+                            </span>
                         </div>
-                        <span class="tech-tag">Custom Software</span>
                     </div>
+                </article>
+
+                <!-- ==========================================================
+                     CARD 5: TRAFFIC ENGINE (Live High-Concurrency Server Cluster)
+                     ========================================================== -->
+                <article class="vault-card glass-panel">
+                    <div class="card-image-placeholder pattern-circuit">
+                        <span class="tech-tag">
+                            <span class="live-dot-green"></span>
+                            Custom Software
+                        </span>
+
+                        <!-- Live Working Server Rack & Load Balancer Telemetry -->
+                        <div class="live-ui-server-stack">
+                            <div class="server-blade-unit">
+                                <span class="blade-led green"></span>
+                                <span class="blade-name">NODE-01 // MUMBAI</span>
+                                <div class="blade-load-bar"><span style="width: 78%"></span></div>
+                                <span class="blade-ms">0.2ms</span>
+                            </div>
+
+                            <div class="server-blade-unit active-blade">
+                                <span class="blade-led orange"></span>
+                                <span class="blade-name">AUTO-SCALER // LIVE</span>
+                                <div class="blade-load-bar orange-bar"><span style="width: 94%"></span></div>
+                                <span class="blade-ms">99.99%</span>
+                            </div>
+
+                            <div class="server-blade-unit">
+                                <span class="blade-led green"></span>
+                                <span class="blade-name">NODE-02 // DELHI</span>
+                                <div class="blade-load-bar"><span style="width: 64%"></span></div>
+                                <span class="blade-ms">0.3ms</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="vault-card-content">
-                        <span class="project-type">Backend Infrastructure</span>
+                        <div class="project-meta-top">
+                            <span class="project-type">Backend Infrastructure</span>
+                            <span class="project-impact-pill">Zero Crash Guarantee</span>
+                        </div>
                         <h3 class="project-title">Traffic Engine</h3>
                         <p class="project-desc">Powerful, custom backend software built to keep the client's platforms fast, secure, and crash-free even during massive spikes in traffic.</p>
-                        <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+                        
+                        <div class="powered-by-zyrac">
+                            <div class="powered-left">
+                                <span class="zyrac-emblem-mini">
+                                    <svg viewBox="0 0 100 100" width="14" height="14">
+                                        <path d="M10,0 L90,0 L80,30 L10,30 Z" fill="#111113"/>
+                                        <path d="M10,35 L85,35 L75,50 L90,50 L90,60 L20,60 L30,45 L10,45 Z" fill="#E85D04"/>
+                                        <path d="M20,65 L90,65 L90,95 L10,95 Z" fill="#111113"/>
+                                    </svg>
+                                </span>
+                                <span class="powered-text">Powered by <strong>ZYRAC</strong></span>
+                            </div>
+                            <span class="verified-arch-badge">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Auto-Scaling
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </article>
 
             </div>
         </div>
         
-        <div class="scroll-instruction">
-            <span class="swipe-icon">←</span> Swipe to view projects <span class="swipe-icon">→</span>
+        <!-- Pure SVG Interactive Navigation Bar (No Text Arrows / Emojis) -->
+        <div class="vault-footer-controls">
+            <button class="vault-nav-btn" id="vault-prev-btn" aria-label="Scroll Left">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+            <div class="scroll-instruction">
+                <span>Drag or swipe to inspect architectures</span>
+            </div>
+            <button class="vault-nav-btn" id="vault-next-btn" aria-label="Scroll Right">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
         </div>
 
     </div>
@@ -1081,198 +1608,190 @@
 
     </div>
 </section>
-<!-- ==========================================================================
-     SECTION: THE ZYRAC STANDARD (WITTY, SARCASTIC & CLIENT-WINNING)
-     ========================================================================== -->
-<section id="manifesto" class="comic-manifesto">
-    <div class="manifesto-wrapper">
-        
-        <div class="manifesto-header fade-in">
-            <span class="comic-badge">ZERO HYPE • SEEDHI BAAT</span>
-            <h2 class="comic-title">THE <span class="glitch-text accent" data-text="ZYRAC">ZYRAC</span> REALITY CHECK.</h2>
-            <p class="manifesto-sub">Why smart founders hire us after getting ghosted by their "cheap cousin's agency."</p>
-        </div>
-
-        <div class="comic-grid">
-            
-            <!-- Card 1 -->
-            <div class="comic-cell glass-panel halftone-bg fade-in">
-                <div class="cell-top-row">
-                    <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="4"></circle>
-                            <line x1="22" y1="12" x2="18" y2="12"></line>
-                            <line x1="6" y1="12" x2="2" y2="12"></line>
-                            <line x1="12" y1="6" x2="12" y2="2"></line>
-                            <line x1="12" y1="22" x2="12" y2="18"></line>
-                        </svg>
-                    </div>
-                    <span class="meme-stamp">Paisa Vasool UI</span>
-                </div>
-                <div class="cell-content">
-                    <div class="brutalist-box">
-                        <h3>01. NO "CHACHA KA LADKA" DESIGN</h3>
-                    </div>
-                    <p>Your neighbour's nephew can make a website for ₹2,000—and it will look like a 2000 page. We build clean, high-converting platforms that actually make rich clients take out their credit cards.</p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="comic-cell glass-panel halftone-bg fade-in delay-1">
-                <div class="cell-top-row">
-                    <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                            <polyline points="13 2 13 9 22 9 11 22 11 15 2 15 13 2"></polyline>
-                        </svg>
-                    </div>
-                    <span class="meme-stamp">0% Buffering</span>
-                </div>
-                <div class="cell-content">
-                    <div class="brutalist-box">
-                        <h3>02. FASTER THAN INSTANT NOODLES</h3>
-                    </div>
-                    <p>2-minute noodles take 10 minutes, and slow websites lose 90% of your customers. Our custom code loads in under a second—even when your buyer is sitting on patchy 4G inside an elevator.</p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="comic-cell glass-panel halftone-bg fade-in delay-2">
-                <div class="cell-top-row">
-                    <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                        </svg>
-                    </div>
-                    <span class="meme-stamp">Asli Custom Code</span>
-                </div>
-                <div class="cell-content">
-                    <div class="brutalist-box">
-                        <h3>03. CTRL+C &amp; CTRL+V IS BANNED</h3>
-                    </div>
-                    <p>Other agencies charge ₹1 Lakh just to install a $29 template that 500 other shops are already using. We write 100% original code from scratch. You own the code, the keys, and the flex.</p>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="comic-cell glass-panel halftone-bg fade-in delay-3">
-                <div class="cell-top-row">
-                    <div class="cell-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            <path d="M9 12l2 2 4-4"></path>
-                        </svg>
-                    </div>
-                    <span class="meme-stamp">Zero Ghosting</span>
-                </div>
-                <div class="cell-content">
-                    <div class="brutalist-box">
-                        <h3>04. NO "SIR KAL PAKKA HO JAYEGA"</h3>
-                    </div>
-                    <p>No fake deadlines, no switched-off phones after advance payment, and no servers crashing on launch day. We build rock-solid systems and stay on your team long after launch.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
 
  <!-- ==========================================================================
-     SECTION: CONTACT & AUDIT REQUEST (ZYRAC)
+     SECTION: CONTACT & AUDIT REQUEST (HINGLISH MEME STYLE + WEB3FORMS)
      ========================================================================== -->
 <section id="contact" class="cta-section">
     
+    <!-- Animated Background Energy Wave -->
     <div class="ink-swoosh">
         <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="none" stroke="var(--primary-orange)" stroke-width="2" stroke-linecap="round" 
+            <path class="animated-wave-path" fill="none" stroke="var(--primary-orange, #e85d04)" stroke-width="2.2" stroke-linecap="round" 
                   d="M0,160 C320,300 420,0 720,160 C1020,320 1120,50 1440,200" 
-                  opacity="0.3"></path>
+                  opacity="0.35"></path>
         </svg>
     </div>
     
     <div class="contact-container">
         <div class="contact-grid">
             
-            <!-- Left Column: The Pitch -->
+            <!-- LEFT COLUMN: Hinglish Meme Copy + Trust Markers -->
             <div class="contact-info fade-in">
-                <span class="cta-badge">Free Digital Audit</span>
+                <div class="cta-badge">
+                    <span class="badge-live-dot"></span>
+                    <span>No "Sir Kal Ho Jayega" Guarantee</span>
+                </div>
                 
                 <h2 class="cta-title">
-                    Transform your digital presence <br>
-                    <span class="caligraph-text">in 5 minutes.</span>
+                    Band karo slow templates ka drama. <br>
+                    <span class="caligraph-text accent">Let's build asli code.</span>
                 </h2>
                 
-                <p class="cta-subtitle">Get a customized breakdown of your website speed, booking systems, and AI automation potential. Let's make your business impossible to ignore online.</p>
+                <p class="cta-subtitle">
+                    Tired of agencies ghosting you after the advance? Let Faiz Mansuri and ZYRAC engineer a high-speed custom platform that makes your competitors look like <em>"Chacha ka ladka"</em> projects.
+                </p>
                 
                 <div class="contact-trust-markers">
-                    <div class="marker">
-                        <div class="marker-dot"></div>
-                        <span>Custom Web Apps & Software Solutions</span>
+                    <div class="marker-card">
+                        <div class="marker-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <div class="marker-copy">
+                            <strong>0.38s Sub-Second Speed</strong>
+                            <span>Faster than 2-min Maggi noodles!</span>
+                        </div>
                     </div>
-                    <div class="marker">
-                        <div class="marker-dot"></div>
-                        <span>Zero Boring Templates — Built to Convert</span>
+
+                    <div class="marker-card">
+                        <div class="marker-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 11 14 15 10"></polyline>
+                            </svg>
+                        </div>
+                        <div class="marker-copy">
+                            <strong>100% Direct Ownership</strong>
+                            <span>No monthly hostage fees. Pure paisa vasool ROI.</span>
+                        </div>
                     </div>
+                </div>
+
+                <!-- WhatsApp Quick Action Strip -->
+                <div class="instant-wa-strip">
+                    <span>Direct chat zaroori hai?</span>
+                    <a href="https://wa.me/919773423956?text=Hi%20Faiz,%20mujhe%20apne%20business%20ke%20liye%20ek%20custom%20website%20banwani%20hai!" target="_blank" rel="noopener noreferrer" class="wa-inline-link">
+                        <span>WhatsApp Faiz Now</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
                 </div>
             </div>
             
-            <!-- Right Column: The Lead Gen Form Card -->
+            <!-- RIGHT COLUMN: Web3Forms Lead Gen Form Card -->
             <div class="contact-card-wrapper fade-in delay-1">
-                <div class="glass-contact-card">
+                <div class="glass-contact-card" id="audit-card-shell">
                     
                     <div class="card-glow-bg"></div>
                     
                     <div class="form-header">
-                        <h3>Request Your Free Audit</h3>
-                        <p>Fill out the details below to receive your custom review.</p>
+                        <div class="form-header-top">
+                            <h3>Claim Your Free Audit</h3>
+                            <span class="form-step-pill" id="form-progress-label">30s Setup</span>
+                        </div>
+                        <p>Fill details below—straight to Faiz's inbox via Web3Forms.</p>
+                        <div class="form-progress-track">
+                            <div class="form-progress-fill" id="form-progress-bar"></div>
+                        </div>
                     </div>
 
-                    <!-- Web3Forms Routing (Connected to Zapier / Google Sheets) -->
-                    <form action="https://api.web3forms.com/submit" method="POST" class="premium-form">
+                    <!-- ==========================================================
+                         WEB3FORMS INTEGRATION (Direct Email Delivery)
+                         ========================================================== -->
+                    <form action="https://api.web3forms.com/submit" method="POST" id="zyrac-lead-form" class="premium-form">
                         
-                        <!-- Web3Forms Access Key -->
+                        <!-- REPLACE WITH YOUR FREE ACCESS KEY FROM web3forms.com -->
                         <input type="hidden" name="access_key" value="eaa7b969-57ea-4068-a0f6-1febd31d2ba7">
-                        
-                        <!-- Form Settings & Metadata -->
-                        <input type="hidden" name="subject" value="New ZYRAC Audit Request!">
-                        <input type="hidden" name="from_name" value="Zyrac Lead Gen Form">
-                        <input type="checkbox" name="botcheck" style="display: none;">
-                        
+                        <input type="hidden" name="subject" value="🚀 New ZYRAC Lead from Website Audit Form!">
+                        <input type="hidden" name="from_name" value="ZYRAC Studio Lead Bot">
+
+                        <!-- HONEYPOT SPAM TRAP -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                         <!-- Field 1: Business Name -->
                         <div class="input-box">
-                            <label for="business_name">Business Name</label>
-                            <input type="text" id="business_name" name="business_name" required placeholder="e.g. City Fitness Gym">
+                            <label for="business_name">
+                                <span>Business / Brand Name *</span>
+                                <span class="field-check" id="check-business">✓</span>
+                            </label>
+                            <div class="input-field-wrap">
+                                <input type="text" id="business_name" name="business_name" required maxlength="100" placeholder="e.g. Bombay Sneaker Co. or City Gym">
+                            </div>
                         </div>
                         
-                        <!-- Field 2: Website URL -->
+                        <!-- Field 2: Website or Instagram -->
                         <div class="input-box">
-                            <label for="website">Current Website URL</label>
-                            <input type="url" id="website" name="website" required placeholder="https://yourwebsite.com">
+                            <label for="website">
+                                <span>Current Website or Insta Handle (Optional)</span>
+                                <span class="field-check" id="check-website">✓</span>
+                            </label>
+                            <div class="input-field-wrap">
+                                <input type="text" id="website" name="website" maxlength="255" placeholder="e.g. yourbrand.com or @yourinsta">
+                            </div>
                         </div>
 
-                        <!-- Field 3: Biggest Digital Bottleneck (Dropdown) -->
+                        <!-- Field 3: Biggest Bottleneck -->
                         <div class="input-box">
-                            <label for="bottleneck">Biggest Digital Bottleneck</label>
+                            <label for="bottleneck">
+                                <span>Biggest Digital Problem *</span>
+                                <span class="field-check" id="check-bottleneck">✓</span>
+                            </label>
+                            
+                            <!-- Interactive Quick-Select Chips -->
+                            <div class="bottleneck-chips-grid" id="bottleneck-chips">
+                                <button type="button" class="b-chip" data-val="Slow / Outdated Site">Slow / Outdated Site </button>
+                                <button type="button" class="b-chip" data-val="Need Direct Booking / Store">Need Direct Store </button>
+                                <button type="button" class="b-chip" data-val="WhatsApp Chaos">WhatsApp Chaos </button>
+                                <button type="button" class="b-chip" data-val="Custom SaaS / App Idea">Custom SaaS App</button>
+                            </div>
+
                             <select id="bottleneck" name="bottleneck" required class="custom-select-input">
-                                <option value="" disabled selected>Select your biggest bottleneck...</option>
-                                <option value="Outdated / slow website">Outdated / slow website</option>
-                                <option value="No online booking or scheduling system">No online booking or scheduling system</option>
-                                <option value="Manual customer inquiries / WhatsApp overload">Manual customer inquiries / WhatsApp overload</option>
-                                <option value="Wanting custom software or AI automation">Wanting custom software or AI automation</option>
+                                <option value="" disabled selected>Select or tap a chip above...</option>
+                                <option value="Slow / Outdated Site">Slow / Outdated Site</option>
+                                <option value="Need Direct Booking / Store">Need Direct Booking / Store</option>
+                                <option value="WhatsApp Chaos">WhatsApp Chaos</option>
+                                <option value="Custom SaaS / App Idea">Custom SaaS / App Idea</option>
                             </select>
                         </div>
 
                         <!-- Field 4: Email Address -->
                         <div class="input-box">
-                            <label for="email">Where should we send your audit?</label>
-                            <input type="email" id="email" name="email" required placeholder="name@yourbusiness.com">
+                            <label for="email">
+                                <span>Where to send your audit? (Email) *</span>
+                                <span class="field-check" id="check-email">✓</span>
+                            </label>
+                            <div class="input-field-wrap">
+                                <input type="email" id="email" name="email" required maxlength="150" placeholder="founder@yourbusiness.com">
+                            </div>
                         </div>
+
+                        <div id="form-status-msg" class="form-status-msg" aria-live="polite"></div>
                         
-                        <button type="submit" class="btn-solid-glow">
-                            <span>Get My Free Audit</span>
+                        <button type="submit" class="btn-solid-glow" id="zyrac-submit-btn">
+                            <span class="btn-text">Get My Free Audit</span>
+                            <span class="btn-arrow-icon">
+                                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </span>
                         </button>
                         
                     </form>
+
+                    <!-- Success State Overlay -->
+                    <div class="audit-success-state" id="audit-success-box" aria-hidden="true">
+                        <div class="success-ring-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Bole toh ekdum solid!</h4>
+                        <p>Your audit request landed straight in Faiz's inbox. We will inspect your architecture and reply within 2 hours.</p>
+                        <button type="button" class="reset-audit-btn" id="send-another-audit">Send Another Request</button>
+                    </div>
+
                 </div>
             </div>
 

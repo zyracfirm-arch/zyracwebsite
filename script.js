@@ -573,7 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateAhmTime();
         setInterval(updateAhmTime, 1000);
     }
-    /* --- L. Smooth Navbar Scroll Morph + Realistic Mini-Bot Eye Tracking --- */
+    /* --- L. Sliding Navbar Hover Pill + Scroll Morph + Mini-Bot Eye Tracking --- */
     const headerShell = document.getElementById('site-header');
     const floatingOfferBot = document.getElementById('zyrac-offer-bot');
     const closeOfferBotBtn = document.getElementById('close-offer-bot');
@@ -581,8 +581,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const miniBotEyes = document.getElementById('mini-bot-eyes');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navMenuList = document.getElementById('nav-menu-list');
+    const navHoverPill = document.getElementById('nav-hover-pill');
+    const navItemLinks = document.querySelectorAll('.nav-item-link');
 
-    // 1. Hardware-accelerated scroll check for Promo Bar -> Floating Bot morph
+    // 1. Sliding Apple Glass Pill Indicator on Desktop Navbar Hover
+    if (navHoverPill && navItemLinks.length > 0) {
+        navItemLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                if (window.innerWidth <= 768) return;
+                const dockRect = link.closest('.nav-pill-dock').getBoundingClientRect();
+                const linkRect = link.getBoundingClientRect();
+                const offsetLeft = linkRect.left - dockRect.left;
+
+                navHoverPill.style.width = `${linkRect.width}px`;
+                navHoverPill.style.transform = `translate3d(${offsetLeft}px, 0, 0)`;
+                navHoverPill.style.opacity = '1';
+            });
+        });
+
+        const pillDock = document.querySelector('.nav-pill-dock');
+        if (pillDock) {
+            pillDock.addEventListener('mouseleave', () => {
+                navHoverPill.style.opacity = '0';
+            });
+        }
+    }
+
+    // 2. Hardware-accelerated scroll check for Promo Bar -> Floating Bot morph
     let scrollTicking = false;
     window.addEventListener('scroll', () => {
         if (!scrollTicking) {
@@ -601,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
-    // 2. Minimize speech bubble when clicking '×' (keeps cute 3D bot in corner)
+    // 3. Minimize speech bubble when clicking '×' (keeps cute 3D bot visible)
     if (closeOfferBotBtn && floatingOfferBot) {
         closeOfferBotBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -610,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Real-time cursor tracking for the Floating Mini-Bot's Eyes & 3D Head
+    // 4. Real-time cursor tracking for the Floating Mini-Bot's Eyes & 3D Head
     if (miniBotHead && miniBotEyes) {
         window.addEventListener('mousemove', (e) => {
             if (!floatingOfferBot || !floatingOfferBot.classList.contains('bot-visible')) return;
@@ -626,7 +651,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // 4. Mobile Hamburger Drawer Toggle
+    // 5. Mobile Hamburger Drawer Toggle
     if (mobileMenuBtn && navMenuList) {
         mobileMenuBtn.addEventListener('click', () => {
             const isOpen = navMenuList.classList.toggle('nav-open');
@@ -642,4 +667,152 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+    /* --- M. Portfolio Horizontal Slider Prev/Next SVG Buttons --- */
+    const vaultScrollContainer = document.getElementById('vault-scroll-container');
+    const vaultPrevBtn = document.getElementById('vault-prev-btn');
+    const vaultNextBtn = document.getElementById('vault-next-btn');
+
+    if (vaultScrollContainer && vaultPrevBtn && vaultNextBtn) {
+        const getScrollStep = () => {
+            const card = vaultScrollContainer.querySelector('.vault-card');
+            return card ? card.offsetWidth + 32 : 380;
+        };
+
+        vaultPrevBtn.addEventListener('click', () => {
+            vaultScrollContainer.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+
+        vaultNextBtn.addEventListener('click', () => {
+            vaultScrollContainer.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+    }
+
+    /* --- N. Web3Forms Lead Submission Handler --- */
+    const leadForm = document.getElementById('zyrac-lead-form');
+    const auditCardShell = document.getElementById('audit-card-shell');
+    const formStatusMsg = document.getElementById('form-status-msg');
+    const formProgressBar = document.getElementById('form-progress-bar');
+    const formProgressLabel = document.getElementById('form-progress-label');
+    const resetAuditBtn = document.getElementById('send-another-audit');
+
+    if (leadForm) {
+        const businessInput = document.getElementById('business_name');
+        const websiteInput = document.getElementById('website');
+        const bottleneckSelect = document.getElementById('bottleneck');
+        const emailInput = document.getElementById('email');
+        const chips = document.querySelectorAll('.b-chip');
+
+        // Sync Chips with Select
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active-chip'));
+                chip.classList.add('active-chip');
+                if (bottleneckSelect) {
+                    bottleneckSelect.value = chip.getAttribute('data-val');
+                    updateProgress();
+                }
+            });
+        });
+
+        if (bottleneckSelect) {
+            bottleneckSelect.addEventListener('change', () => {
+                chips.forEach(c => {
+                    c.classList.toggle('active-chip', c.getAttribute('data-val') === bottleneckSelect.value);
+                });
+                updateProgress();
+            });
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            const hasBiz = businessInput && businessInput.value.trim().length > 1;
+            const hasBot = bottleneckSelect && bottleneckSelect.value !== '';
+            const hasEmail = emailInput && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+
+            if (hasBiz) completed += 33;
+            if (hasBot) completed += 33;
+            if (hasEmail) completed += 34;
+
+            const setCheck = (id, isValid) => {
+                const el = document.getElementById(id);
+                if (el) el.classList.toggle('valid', Boolean(isValid));
+            };
+
+            setCheck('check-business', hasBiz);
+            setCheck('check-website', Boolean(websiteInput && websiteInput.value.trim().length > 2));
+            setCheck('check-bottleneck', hasBot);
+            setCheck('check-email', hasEmail);
+
+            if (formProgressBar) formProgressBar.style.width = `${Math.max(15, completed)}%`;
+            if (formProgressLabel) {
+                formProgressLabel.textContent = completed === 100 ? '100% Ready' : `${completed}% Done`;
+            }
+        }
+
+        [businessInput, websiteInput, emailInput].forEach(input => {
+            if (input) input.addEventListener('input', updateProgress);
+        });
+
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (formStatusMsg) {
+                formStatusMsg.className = 'form-status-msg';
+                formStatusMsg.textContent = '';
+            }
+
+            if (!businessInput.value.trim() || !bottleneckSelect.value || !emailInput.value.trim()) {
+                if (formStatusMsg) {
+                    formStatusMsg.className = 'form-status-msg error';
+                    formStatusMsg.textContent = 'Please fill in your Business Name, Problem, and Email!';
+                }
+                return;
+            }
+
+            const submitBtn = document.getElementById('zyrac-submit-btn');
+            const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+            if (submitBtn) submitBtn.disabled = true;
+            if (btnText) btnText.textContent = 'Sending to Faiz...';
+
+            const formData = new FormData(leadForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+                const result = await response.json();
+                if (result.success) {
+                    if (auditCardShell) auditCardShell.classList.add('submitted-success');
+                    leadForm.reset();
+                    chips.forEach(c => c.classList.remove('active-chip'));
+                    updateProgress();
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (err) {
+                if (formStatusMsg) {
+                    formStatusMsg.className = 'form-status-msg error';
+                    formStatusMsg.textContent = 'Oops! Network issue. Tap WhatsApp below to message us directly.';
+                }
+            } finally {
+                if (submitBtn) submitBtn.disabled = false;
+                if (btnText) btnText.textContent = 'Get My Free Audit';
+            }
+        });
+
+        if (resetAuditBtn && auditCardShell) {
+            resetAuditBtn.addEventListener('click', () => {
+                auditCardShell.classList.remove('submitted-success');
+            });
+        }
+    }
+
 });
