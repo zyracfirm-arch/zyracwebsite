@@ -113,22 +113,20 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 
 
 /* ==========================================================================
-   PART A: MULTI-PHASE KINETIC LOGO + SLIDING PILL NAVBAR + FIXED 3D BOT
+   PART A: APPLE PRO GLASS NAVBAR + GLITCH-FREE 60FPS FLYING ZYRAC-BOT
    ========================================================================== */
 .zyrac-header-shell {
     --theme-orange: var(--primary-orange, #e85d04);
     --theme-amber: #ff9f1c;
     --theme-text: var(--text-main, #111113);
     --theme-muted: var(--text-muted, #52525b);
-    --apple-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+    --apple-font: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    display: flex;
-    flex-direction: column;
     pointer-events: none;
 }
 
@@ -136,18 +134,20 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 .navbar {
     pointer-events: auto;
     width: 100%;
-    padding: 0.7rem 5%;
-    background: rgba(255, 255, 255, 0.78);
+    padding: 0.72rem 5%;
+    background: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(28px) saturate(190%);
     -webkit-backdrop-filter: blur(28px) saturate(190%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 4px 24px rgba(17, 17, 19, 0.03);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.35s ease,
+                box-shadow 0.35s ease;
 }
 
 .zyrac-header-shell.is-scrolled .navbar {
-    padding: 0.55rem 5%;
-    background: rgba(255, 255, 255, 0.9);
+    padding: 0.56rem 5%;
+    background: rgba(255, 255, 255, 0.94);
     box-shadow: 0 10px 30px rgba(17, 17, 19, 0.06);
 }
 
@@ -161,7 +161,7 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     position: relative;
 }
 
-/* --- CONTINUOUS MULTI-STAGE KINETIC LOGO ANIMATION --- */
+/* --- Multi-Stage Kinetic Animated Logo --- */
 .logo-link {
     display: inline-flex;
     align-items: center;
@@ -179,7 +179,6 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     justify-content: center;
 }
 
-/* Continuous Orbiting Energy Ring Around Logo */
 .logo-orbit-ring {
     position: absolute;
     inset: -4px;
@@ -206,59 +205,33 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     animation: logoFloatCycle 5s ease-in-out infinite;
 }
 
-/* Multi-stage continuous blade choreography */
-.blade-top {
-    transform-origin: center;
-    animation: bladeTopShift 4.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-}
-
-.blade-mid {
-    transform-origin: center;
-    animation: bladeMidPulse 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 6px rgba(232, 93, 4, 0.45));
-}
-
-.blade-bot {
-    transform-origin: center;
-    animation: bladeBotShift 4.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-}
+.blade-top { transform-origin: center; animation: bladeTopShift 4.5s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+.blade-mid { transform-origin: center; animation: bladeMidPulse 3s ease-in-out infinite; filter: drop-shadow(0 0 6px rgba(232, 93, 4, 0.45)); }
+.blade-bot { transform-origin: center; animation: bladeBotShift 4.5s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
 
 @keyframes bladeTopShift {
     0%, 70%, 100% { transform: translate3d(0, 0, 0); }
     82% { transform: translate3d(5px, -3px, 0); }
     92% { transform: translate3d(-2px, 0, 0); }
 }
-
 @keyframes bladeBotShift {
     0%, 70%, 100% { transform: translate3d(0, 0, 0); }
     82% { transform: translate3d(-5px, 3px, 0); }
     92% { transform: translate3d(2px, 0, 0); }
 }
-
 @keyframes bladeMidPulse {
     0%, 100% { transform: scaleX(1); }
     50% { transform: scaleX(1.08); }
 }
-
 @keyframes logoFloatCycle {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-3deg); }
     75% { transform: rotate(3deg); }
 }
 
-/* Interactive Hover Explosion on Logo */
-.logo-link:hover .blade-top {
-    transform: translate3d(7px, -5px, 0) rotate(-4deg) !important;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.logo-link:hover .blade-mid {
-    transform: scale(1.14) !important;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.logo-link:hover .blade-bot {
-    transform: translate3d(-7px, 5px, 0) rotate(-4deg) !important;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
+.logo-link:hover .blade-top { transform: translate3d(7px, -5px, 0) rotate(-4deg) !important; transition: transform 0.3s ease; }
+.logo-link:hover .blade-mid { transform: scale(1.14) !important; transition: transform 0.3s ease; }
+.logo-link:hover .blade-bot { transform: translate3d(-7px, 5px, 0) rotate(-4deg) !important; transition: transform 0.3s ease; }
 
 .logo-divider {
     width: 1.5px;
@@ -279,10 +252,9 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 
 .logo-text span {
     display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Continuous wave shimmer on ZYRAC letters */
 .logo-text .char-a {
     color: var(--theme-orange);
     animation: charAShimmer 3.5s ease-in-out infinite;
@@ -293,23 +265,16 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     90% { transform: translateY(-3px) scale(1.08); }
 }
 
-.logo-link:hover .logo-text span:nth-child(odd) {
-    transform: translateY(-2px);
-}
-.logo-link:hover .logo-text span:nth-child(even) {
-    transform: translateY(2px);
-}
+.logo-link:hover .logo-text span:nth-child(odd) { transform: translateY(-2px); }
+.logo-link:hover .logo-text span:nth-child(even) { transform: translateY(2px); }
+.logo-dot { color: var(--theme-orange); }
 
-.logo-dot {
-    color: var(--theme-orange);
-}
-
-/* --- Center Interactive Pill Dock with Sliding Hover Pill --- */
+/* --- Center Interactive Pill Dock --- */
 .nav-pill-dock {
     position: relative;
     display: flex;
     align-items: center;
-    background: rgba(244, 244, 248, 0.72);
+    background: rgba(244, 244, 248, 0.78);
     border: 1px solid rgba(0, 0, 0, 0.06);
     padding: 0.32rem 0.4rem;
     border-radius: 980px;
@@ -356,14 +321,8 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     transition: color 0.25s ease;
 }
 
-.nav-item-link:hover,
-.nav-item-link.active-link {
-    color: var(--theme-text);
-}
-
-.nav-cta-item {
-    margin-left: 0.4rem;
-}
+.nav-item-link:hover { color: var(--theme-text); }
+.nav-cta-item { margin-left: 0.4rem; }
 
 .btn-glass {
     display: inline-flex;
@@ -388,19 +347,13 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     box-shadow: 0 0 8px #2dce89;
 }
 
-.btn-glass svg {
-    transition: transform 0.3s ease;
-}
-
+.btn-glass svg { transition: transform 0.3s ease; }
 .btn-glass:hover {
     background: var(--theme-orange) !important;
     transform: translateY(-1.5px);
     box-shadow: 0 12px 24px rgba(232, 93, 4, 0.28);
 }
-
-.btn-glass:hover svg {
-    transform: translateX(3px);
-}
+.btn-glass:hover svg { transform: translateX(3px); }
 
 /* Mobile Menu Button */
 .mobile-nav-toggle {
@@ -432,165 +385,72 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
 .mobile-nav-toggle.active .bar-bot { transform: translateY(-6.5px) rotate(-45deg); }
 
 
-/* --- 2. Sub-Navbar Promo Bar (10 Free Websites) --- */
-.insta-giveaway-subbar {
-    pointer-events: auto;
-    width: 100%;
-    background: linear-gradient(90deg, #0d0e12 0%, #191c26 50%, #0d0e12 100%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    position: relative;
-    overflow: hidden;
-    max-height: 48px;
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: max-height 0.48s cubic-bezier(0.16, 1, 0.3, 1),
-                opacity 0.35s ease,
-                transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* ==========================================================================
+   2. 60FPS PHYSICS-DRIVEN FLYING ZYRAC-BOT (ZERO GLITCHING / ZERO REFLOW)
+   ========================================================================== */
+.zyrac-roaming-bot {
+    --theme-orange: var(--primary-orange, #e85d04);
+    --apple-font: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 
-.zyrac-header-shell.is-scrolled .insta-giveaway-subbar {
-    max-height: 0;
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-    border-bottom: none;
-    pointer-events: none;
-}
-
-.subbar-laser-beam {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    height: 1.5px;
-    background: linear-gradient(90deg, transparent, var(--theme-orange), #ffb703, var(--theme-orange), transparent);
-    background-size: 200% 100%;
-    animation: laserFlow 4s linear infinite;
+    width: 68px;
+    height: 82px;
+    z-index: 998;
+    pointer-events: none;
+    /* Driven by 60fps requestAnimationFrame JS physics — NO competing CSS transition! */
+    transform: translate3d(24px, 75vh, 0) rotate(0deg);
+    will-change: transform;
 }
 
-@keyframes laserFlow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-}
-
-.subbar-link-wrap {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0.42rem 5%;
+/* Gentle Hover Bobbing Separated onto Inner Child so it Never Fights X/Y Flight! */
+.bot-hover-float {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    text-decoration: none !important;
-    color: #ffffff !important;
-    font-family: var(--apple-font);
-    font-size: 0.8rem;
+    animation: smoothHoverBob 3s ease-in-out infinite;
 }
 
-.subbar-bot-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0.18rem 0.6rem;
-    border-radius: 980px;
-    background: rgba(232, 93, 4, 0.2);
-    border: 1px solid rgba(232, 93, 4, 0.5);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.62rem;
-    font-weight: 800;
-    color: #ffb703;
-    letter-spacing: 0.6px;
-    flex-shrink: 0;
+@keyframes smoothHoverBob {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -6px, 0); }
 }
 
-.mini-bot-eyes {
-    display: inline-flex;
-    gap: 3px;
-}
-
-.mini-bot-eyes i {
-    width: 4.5px;
-    height: 6px;
-    border-radius: 3px;
-    background: #ffb703;
-    box-shadow: 0 0 6px #e85d04;
-    animation: droneBlink 3s infinite;
-}
-
-.subbar-offer-text {
-    color: rgba(255, 255, 255, 0.92);
-    font-weight: 450;
-    white-space: nowrap;
-}
-
-.subbar-offer-text strong {
-    color: #ffffff;
-    font-weight: 750;
-}
-
-.mobile-offer-copy,
-.chip-label-short {
-    display: none;
-}
-
-.subbar-cta-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 0.22rem 0.75rem;
-    border-radius: 980px;
-    background: linear-gradient(90deg, #e85d04, #ff9f1c);
-    color: #ffffff;
-    font-size: 0.72rem;
-    font-weight: 700;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(232, 93, 4, 0.35);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.subbar-link-wrap:hover .subbar-cta-chip {
-    transform: translateX(3px) scale(1.03);
-}
-
-
-/* ==========================================================================
-   3. FIXED FLOATING ZYRAC-BOT (ZERO FACE GLITCH ON MOBILE & DESKTOP!)
-   ========================================================================== */
-.zyrac-floating-offer-bot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translate3d(0, 28px, 0) scale(0.92);
-    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-                visibility 0.45s;
-    pointer-events: none;
-}
-
-.zyrac-floating-offer-bot.bot-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translate3d(0, 0, 0) scale(1);
+/* 
+   THE FIX FOR GLITCHING:
+   The speech bubble is position: absolute relative to the 68px robot!
+   Opening, closing, or switching sides NEVER changes the robot's width or position!
+*/
+.roaming-speech-card {
+    position: absolute;
+    bottom: 12px;
+    right: calc(100% + 12px); /* Default when bot is on the right side of screen */
+    width: 245px;
     pointer-events: auto;
-}
-
-.bot-speech-card {
-    position: relative;
-    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
     transform-origin: bottom right;
+    transition: opacity 0.28s ease,
+                transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.zyrac-floating-offer-bot.bubble-minimized .bot-speech-card {
+/* When bot lands on the LEFT side of the screen, bubble appears on its RIGHT */
+.zyrac-roaming-bot.side-left .roaming-speech-card {
+    right: auto;
+    left: calc(100% + 12px);
+    transform-origin: bottom left;
+}
+
+/* Retracts cleanly before takeoff and pops open after landing */
+.zyrac-roaming-bot.is-flying .roaming-speech-card,
+.zyrac-roaming-bot.bubble-minimized .roaming-speech-card {
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.85) translateX(15px);
-    width: 0;
-    overflow: hidden;
+    transform: scale(0.82) translate3d(0, 8px, 0);
 }
 
 .bot-close-btn {
@@ -612,31 +472,60 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     justify-content: center;
     z-index: 6;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.zyrac-roaming-bot.side-left .bot-close-btn {
+    left: auto;
+    right: -8px;
+}
+
+.bot-close-btn:hover {
+    background: var(--theme-orange);
+    transform: scale(1.1);
 }
 
 .bot-offer-bubble {
     position: relative;
-    width: 245px;
-    padding: 0.85rem 1rem;
+    width: 100%;
+    padding: 0.82rem 1rem;
     border-radius: 18px 18px 4px 18px;
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1.5px solid rgba(232, 93, 4, 0.35);
+    border: 1.5px solid rgba(232, 93, 4, 0.4);
     box-shadow: 
-        0 20px 45px rgba(17, 17, 19, 0.16),
-        0 4px 16px rgba(232, 93, 4, 0.12);
+        0 20px 45px rgba(17, 17, 19, 0.18),
+        0 4px 16px rgba(232, 93, 4, 0.14);
     text-decoration: none !important;
     color: #111113 !important;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
+    box-sizing: border-box;
 }
 
-/* Force Brand Orange Instead of Default Browser Blue Link Color */
+.zyrac-roaming-bot.side-left .bot-offer-bubble {
+    border-radius: 18px 18px 18px 4px;
+}
+
+.bubble-kicker-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bot-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2dce89;
+    box-shadow: 0 0 8px #2dce89;
+}
+
 .bubble-kicker {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.56rem;
+    font-size: 0.54rem;
     font-weight: 800;
     color: #e85d04 !important;
     letter-spacing: 0.6px;
@@ -651,6 +540,10 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     font-weight: 500;
 }
 
+.bubble-main-copy strong {
+    font-weight: 800;
+}
+
 .bubble-insta-action {
     display: inline-flex;
     align-items: center;
@@ -661,29 +554,25 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     margin-top: 2px;
 }
 
-/* --- THE FIX FOR THE BOT FACE: Vertical Flex Stack (Head Above, Badge Below Chin!) --- */
+/* --- 3D Flying Robot Avatar + Jet Thrusters --- */
 .mini-bot-avatar {
+    pointer-events: auto;
     position: relative;
+    width: 68px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     text-decoration: none !important;
     flex-shrink: 0;
-    animation: miniBotHover 3.6s ease-in-out infinite;
     cursor: pointer;
-}
-
-@keyframes miniBotHover {
-    0%, 100% { transform: translate3d(0, 0, 0); }
-    50% { transform: translate3d(0, -5px, 0); }
 }
 
 .mini-bot-aura {
     position: absolute;
-    inset: 0;
+    inset: -4px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(232, 93, 4, 0.38) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(232, 93, 4, 0.42) 0%, transparent 70%);
     filter: blur(10px);
     z-index: 0;
 }
@@ -812,27 +701,55 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
     animation: voiceSpeak 0.55s infinite alternate;
 }
 
-/* 
-   THE FIX: Docked cleanly BELOW the robot's chin (margin-top: -5px)
-   with white-space: nowrap so it NEVER wraps onto 2 lines or covers the face!
-*/
-.free-10-badge {
-    position: relative !important;
-    bottom: auto !important;
-    margin-top: -5px;
+/* Updated Single-Line Collar Badge Under Chin: "NEW OFFER SOON" */
+.bot-status-collar {
+    position: relative;
+    margin-top: -4px;
     z-index: 4;
-    padding: 2px 8px;
+    padding: 2px 7px;
     border-radius: 980px;
-    background: linear-gradient(90deg, #e85d04, #ff9f1c);
-    color: #ffffff !important;
+    background: linear-gradient(90deg, #111113, #262936);
+    color: #ffb703 !important;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.52rem;
+    font-size: 0.44rem;
     font-weight: 900;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     line-height: 1.2;
     white-space: nowrap !important;
-    box-shadow: 0 4px 10px rgba(232, 93, 4, 0.45);
-    border: 1.5px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 183, 3, 0.55);
+}
+
+/* Dual Jet Thruster Flames Underneath Bot */
+.bot-jet-thrusters {
+    display: flex;
+    gap: 10px;
+    margin-top: -1px;
+    z-index: 1;
+}
+
+.thruster-flame {
+    width: 6px;
+    height: 9px;
+    border-radius: 0 0 8px 8px;
+    background: linear-gradient(180deg, #ffffff 0%, #ffb703 45%, #e85d04 100%);
+    box-shadow: 0 4px 12px #e85d04;
+    opacity: 0.55;
+    transform-origin: top center;
+    transition: height 0.25s ease, opacity 0.25s ease;
+    animation: thrusterIdle 0.28s infinite alternate;
+}
+
+/* Thrusters flare up while the bot is flying! */
+.zyrac-roaming-bot.is-flying .thruster-flame {
+    height: 22px;
+    opacity: 1;
+    box-shadow: 0 6px 18px #ffb703, 0 0 25px #e85d04;
+}
+
+@keyframes thrusterIdle {
+    0% { transform: scaleY(0.82); }
+    100% { transform: scaleY(1.18); }
 }
 
 
@@ -845,9 +762,6 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
         padding: 0.45rem 0.75rem;
         font-size: 0.84rem;
     }
-
-    .chip-label-full { display: none; }
-    .chip-label-short { display: inline; }
 }
 
 @media (max-width: 768px) {
@@ -871,7 +785,6 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
         display: none;
     }
 
-    /* Apple iOS Frosted Pull-Down Menu Sheet */
     .nav-links {
         position: absolute;
         top: calc(100% + 8px);
@@ -919,43 +832,40 @@ h1, h2, h3, h4 { letter-spacing: -0.04em; }
         padding: 0.75rem 1.2rem !important;
     }
 
-    /* Mobile Promo Line */
-    .desktop-offer-copy { display: none; }
-    .mobile-offer-copy { display: inline; font-size: 0.72rem; }
-    .bot-pill-text { display: none; }
-    .subbar-bot-pill { padding: 0.2rem 0.4rem; }
-
-    .subbar-link-wrap {
-        padding: 0.4rem 3.5%;
-        justify-content: space-between;
-        gap: 0.35rem;
+    /* Mobile Roaming Bot Sizing */
+    .zyrac-roaming-bot {
+        width: 58px;
+        height: 74px;
     }
 
-    /* Mobile Floating Bot (Compact & Unobstructed Face!) */
-    .zyrac-floating-offer-bot {
-        bottom: 14px;
-        right: 12px;
-        gap: 8px;
+    .roaming-speech-card {
+        width: 200px;
+        bottom: 8px;
+        right: calc(100% + 8px);
+    }
+
+    .zyrac-roaming-bot.side-left .roaming-speech-card {
+        right: auto;
+        left: calc(100% + 8px);
     }
 
     .bot-offer-bubble {
-        width: 205px;
-        padding: 0.68rem 0.85rem;
+        padding: 0.65rem 0.8rem;
     }
 
     .bubble-main-copy {
-        font-size: 0.72rem;
+        font-size: 0.7rem;
+        line-height: 1.32;
     }
 
     .mini-bot-head-3d {
-        width: 50px;
-        height: 42px;
+        width: 48px;
+        height: 40px;
     }
 
-    .free-10-badge {
-        font-size: 0.48rem;
-        padding: 2px 6px;
-        margin-top: -4px;
+    .bot-status-collar {
+        font-size: 0.4rem;
+        padding: 2px 5px;
     }
 }
 /* ==========================================================================

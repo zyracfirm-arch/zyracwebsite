@@ -611,10 +611,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateAhmTime();
         setInterval(updateAhmTime, 1000);
     }
-    /* --- L. Sliding Navbar Hover Pill + Scroll Morph + Mini-Bot Eye Tracking --- */
+    /* --- L. 60FPS Physics-Driven Roaming ZYRAC-Bot + Navbar Controls --- */
     const headerShell = document.getElementById('site-header');
-    const floatingOfferBot = document.getElementById('zyrac-offer-bot');
+    const roamingBot = document.getElementById('zyrac-roaming-bot');
     const closeOfferBotBtn = document.getElementById('close-offer-bot');
+    const roamingBotCopy = document.getElementById('roaming-bot-copy');
+    const roamingBotKicker = document.getElementById('roaming-bot-kicker');
     const miniBotHead = document.getElementById('mini-bot-head');
     const miniBotEyes = document.getElementById('mini-bot-eyes');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -622,7 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navHoverPill = document.getElementById('nav-hover-pill');
     const navItemLinks = document.querySelectorAll('.nav-item-link');
 
-    // 1. Sliding Apple Glass Pill Indicator on Desktop Navbar Hover
+    // 1. Sliding Apple Glass Pill Indicator on Desktop Navbar
     if (navHoverPill && navItemLinks.length > 0) {
         navItemLinks.forEach(link => {
             link.addEventListener('mouseenter', () => {
@@ -645,44 +647,195 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. Hardware-accelerated scroll check for Promo Bar -> Floating Bot morph
-    let scrollTicking = false;
+    // 2. Navbar Subtle Shadow on Scroll
     window.addEventListener('scroll', () => {
-        if (!scrollTicking) {
-            window.requestAnimationFrame(() => {
-                const scrollY = window.scrollY;
-                if (scrollY > 220) {
-                    if (headerShell) headerShell.classList.add('is-scrolled');
-                    if (floatingOfferBot) floatingOfferBot.classList.add('bot-visible');
-                } else {
-                    if (headerShell) headerShell.classList.remove('is-scrolled');
-                    if (floatingOfferBot) floatingOfferBot.classList.remove('bot-visible');
-                }
-                scrollTicking = false;
-            });
-            scrollTicking = true;
+        if (headerShell) {
+            headerShell.classList.toggle('is-scrolled', window.scrollY > 40);
         }
     }, { passive: true });
 
-    // 3. Minimize speech bubble when clicking '×' (keeps cute 3D bot visible)
-    if (closeOfferBotBtn && floatingOfferBot) {
-        closeOfferBotBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            floatingOfferBot.classList.add('bubble-minimized');
-        });
+    // 3. 60FPS Glitch-Free Autonomous Flight Engine for ZYRAC-Bot
+    if (roamingBot) {
+        let isHoveringBot = false;
+        let isFlying = false;
+        let currentSpotIdx = 0;
+        let currentMsgIdx = 0;
+
+        // Updated "New Offer Available Soon" Hinglish Announcements
+        const upcomingOfferAnnouncements = [
+            {
+                kicker: "ZYRAC BOT // LIVE PATROL",
+                text: "Ruko zara! A massive <strong>New Offer is Available Soon</strong>. Follow <strong>@zyrac__</strong> so you don't miss the drop!"
+            },
+            {
+                kicker: "SECRET DROP BREWING",
+                text: "Kuch bada aane wala hai! <strong>New Offer Available Soon</strong> for founders on <strong>@zyrac__</strong>!"
+            },
+            {
+                kicker: "PAISA VASOOL ALERT",
+                text: "Zero templates, 100% custom code—and our <strong>New Offer is Available Soon</strong>! Stay locked on <strong>@zyrac__</strong>."
+            },
+            {
+                kicker: "INSIDER UPDATE",
+                text: "Wait for it boss! <strong>New Offer Available Soon</strong>. Follow <strong>@zyrac__</strong> on Instagram for early access!"
+            }
+        ];
+
+        // Calculate Safe Robot Coordinates (Robot body is 68px wide, Bubble opens inward!)
+        function getRobotWaypoints() {
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+            const isMobile = vw <= 768;
+
+            const botW = isMobile ? 58 : 68;
+            const botH = isMobile ? 74 : 82;
+            const pad = isMobile ? 14 : 26;
+
+            const leftX = pad;
+            const rightX = Math.max(pad, vw - botW - pad);
+
+            if (isMobile) {
+                return [
+                    { x: rightX, y: vh - botH - 18, side: 'side-right' },
+                    { x: leftX,  y: vh - botH - 18, side: 'side-left'  },
+                    { x: rightX, y: 84,             side: 'side-right' },
+                    { x: leftX,  y: 84,             side: 'side-left'  }
+                ];
+            } else {
+                return [
+                    { x: rightX, y: vh - botH - 28, side: 'side-right' },
+                    { x: leftX,  y: vh * 0.56,      side: 'side-left'  },
+                    { x: rightX, y: 96,             side: 'side-right' },
+                    { x: leftX,  y: vh - botH - 28, side: 'side-left'  },
+                    { x: rightX, y: vh * 0.46,      side: 'side-right' },
+                    { x: leftX,  y: 96,             side: 'side-left'  }
+                ];
+            }
+        }
+
+        let waypoints = getRobotWaypoints();
+        let botPos = { x: waypoints[0].x, y: waypoints[0].y };
+
+        function applyBotTransform(x, y, tiltDeg) {
+            roamingBot.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) rotate(${tiltDeg.toFixed(2)}deg)`;
+        }
+
+        // Initial placement at Bottom-Right
+        applyBotTransform(botPos.x, botPos.y, 0);
+
+        window.addEventListener('resize', () => {
+            waypoints = getRobotWaypoints();
+            if (!isFlying) {
+                const pt = waypoints[currentSpotIdx % waypoints.length];
+                botPos.x = pt.x;
+                botPos.y = pt.y;
+                roamingBot.classList.remove('side-left', 'side-right');
+                roamingBot.classList.add(pt.side);
+                applyBotTransform(botPos.x, botPos.y, 0);
+            }
+        }, { passive: true });
+
+        // Pause flight when user hovers or touches the bot
+        roamingBot.addEventListener('mouseenter', () => { isHoveringBot = true; });
+        roamingBot.addEventListener('mouseleave', () => { isHoveringBot = false; });
+        roamingBot.addEventListener('touchstart', () => { isHoveringBot = true; }, { passive: true });
+        roamingBot.addEventListener('touchend', () => {
+            setTimeout(() => { isHoveringBot = false; }, 3000);
+        }, { passive: true });
+
+        // Smooth Ease-In-Out Cubic function
+        const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+        function launchSmoothFlight() {
+            if (isHoveringBot || isFlying) return;
+            isFlying = true;
+
+            waypoints = getRobotWaypoints();
+            let nextIdx = Math.floor(Math.random() * waypoints.length);
+            if (nextIdx === currentSpotIdx) {
+                nextIdx = (nextIdx + 1) % waypoints.length;
+            }
+            const targetPt = waypoints[nextIdx];
+            currentSpotIdx = nextIdx;
+
+            // Step 1: Smoothly retract speech bubble & flare jet thrusters BEFORE moving
+            roamingBot.classList.add('is-flying');
+
+            setTimeout(() => {
+                const startX = botPos.x;
+                const startY = botPos.y;
+                const deltaX = targetPt.x - startX;
+                const deltaY = targetPt.y - startY;
+                const flightDuration = 1850; // Silky 1.85s flight
+                let startTime = null;
+
+                // Switch bubble side while bubble is hidden so zero jump occurs!
+                roamingBot.classList.remove('side-left', 'side-right');
+                roamingBot.classList.add(targetPt.side);
+
+                function stepFlight(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsed = timestamp - startTime;
+                    const progress = Math.min(elapsed / flightDuration, 1);
+                    const eased = easeInOutCubic(progress);
+
+                    // Parabolic arc lift (-45px at mid-flight so it flies in a graceful curve!)
+                    const arcLift = Math.sin(progress * Math.PI) * -45;
+
+                    botPos.x = startX + deltaX * eased;
+                    botPos.y = startY + deltaY * eased + arcLift;
+
+                    // Smooth aerodynamic banking angle (peaks at mid-flight, returns to 0deg on landing)
+                    const maxBank = deltaX < 0 ? -14 : 14;
+                    const currentTilt = Math.sin(progress * Math.PI) * maxBank;
+
+                    applyBotTransform(botPos.x, botPos.y, currentTilt);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(stepFlight);
+                    } else {
+                        // Step 3: Landed! Level out & pop open the new message
+                        botPos.x = targetPt.x;
+                        botPos.y = targetPt.y;
+                        applyBotTransform(botPos.x, botPos.y, 0);
+
+                        currentMsgIdx = (currentMsgIdx + 1) % upcomingOfferAnnouncements.length;
+                        if (roamingBotKicker && roamingBotCopy) {
+                            roamingBotKicker.textContent = upcomingOfferAnnouncements[currentMsgIdx].kicker;
+                            roamingBotCopy.innerHTML = upcomingOfferAnnouncements[currentMsgIdx].text;
+                        }
+
+                        roamingBot.classList.remove('is-flying', 'bubble-minimized');
+                        isFlying = false;
+                    }
+                }
+
+                requestAnimationFrame(stepFlight);
+            }, 320); // Waits 320ms for bubble to retract first
+        }
+
+        // Fly to a new random spot every 8.5 seconds
+        setInterval(launchSmoothFlight, 8500);
+
+        // Clicking '×' minimizes bubble; clicking the robot avatar toggles bubble back open
+        if (closeOfferBotBtn) {
+            closeOfferBotBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                roamingBot.classList.add('bubble-minimized');
+            });
+        }
     }
 
-    // 4. Real-time cursor tracking for the Floating Mini-Bot's Eyes & 3D Head
+    // 4. Real-Time Cursor Tracking for the Roaming Bot's Glowing Eyes
     if (miniBotHead && miniBotEyes) {
         window.addEventListener('mousemove', (e) => {
-            if (!floatingOfferBot || !floatingOfferBot.classList.contains('bot-visible')) return;
             const rect = miniBotHead.getBoundingClientRect();
             const cx = rect.left + rect.width / 2;
             const cy = rect.top + rect.height / 2;
 
-            const dx = Math.max(-1, Math.min(1, (e.clientX - cx) / 250));
-            const dy = Math.max(-1, Math.min(1, (e.clientY - cy) / 250));
+            const dx = Math.max(-1, Math.min(1, (e.clientX - cx) / 280));
+            const dy = Math.max(-1, Math.min(1, (e.clientY - cy) / 280));
 
             miniBotEyes.style.transform = `translate3d(${(dx * 5).toFixed(1)}px, ${(dy * 3.5).toFixed(1)}px, 0)`;
             miniBotHead.style.transform = `rotateY(${(dx * 14).toFixed(1)}deg) rotateX(${(dy * -10).toFixed(1)}deg)`;
@@ -705,7 +858,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
 
     /* --- M. Portfolio Horizontal Slider Prev/Next SVG Buttons --- */
     const vaultScrollContainer = document.getElementById('vault-scroll-container');
