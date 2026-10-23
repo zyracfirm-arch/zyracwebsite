@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://zyrac.in/sitemap.xml
 Sitemap: https://www.zyrac.in/sitemap.xml
